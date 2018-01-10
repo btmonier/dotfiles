@@ -22,6 +22,7 @@ alias sc="clear && cd ~/.bin && ls -alh"
 alias ll="ls -alh"
 alias cd..="cd .."
 alias dd="clear && cd ~/dotfiles && ls -alh"
+alias cdl="clear && cd && ls"
 
 ## Directly edit config files with vim
 alias cf="clear && cd ~/.config && ls -al"
