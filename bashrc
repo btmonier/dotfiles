@@ -47,7 +47,9 @@ alias silvertip3="ssh monierb@silvertip3"
 ## Git
 alias gs="git status"
 alias ga="git add"
-alias gc="git commit -m "
+alias gc="git commit -m"
+alias gca="git commit -a"
+alias gcam="git commit -am"
 alias gp="git push origin master"
 
 ## Stupid :)
