@@ -30,9 +30,9 @@ alias cf="clear && cd ~/.config && ls -al"
 alias cfb="vim ~/.bashrc"
 alias cfi="vim ~/.config/i3/config"
 alias cfp="vim ~/.config/polybar/config"
-alias cfx="sudo -E vim ~/.Xdefaults"
-alias cfv="sudo -E vim ~/.vimrc"
-alias cfr="sudo -E vim ~/.config/ranger/rc.conf"
+alias cfx="vim ~/.Xdefaults"
+alias cfv="vim ~/.vimrc"
+alias cfr="vim ~/.config/ranger/rc.conf"
 
 ## Launch user scripts
 alias chbg="~/.bin/chbg.sh"
