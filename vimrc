@@ -21,7 +21,10 @@ inoremap $% <Esc>/<++><Enter>"_c4l
 vnoremap $% <Esc>/<++><Enter>"_c4l
 map $% <Esc>/<++><Enter>"_c4l
 
-
+"" vim-plug
+call plug#begin('~/.vim/plugged')
+Plug 'jalvesaq/Nvim-R'
+call plug#end()
 
 " Syntax shortcuts
 
