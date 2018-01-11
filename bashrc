@@ -44,6 +44,12 @@ alias bmbl="ssh brandon@137.216.132.242"
 alias blackjack="ssh monierb@blackjack"
 alias silvertip3="ssh monierb@silvertip3"
 
+## Git
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit -m "
+alias gp="git push origin master"
+
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
 alias cowfort="~/.bin/cowfort.sh"
