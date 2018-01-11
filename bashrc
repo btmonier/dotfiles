@@ -8,7 +8,6 @@
 [[ $- != *i* ]] && return
 
 
-
 # Aliases
 
 ## General
@@ -28,12 +27,12 @@ alias cdll="clear && cd && ll"
 
 ## Directly edit config files with vim
 alias cf="clear && cd ~/.config && ls -al"
-alias cfb="sudo vim ~/.bashrc"
-alias cfi="sudo vim ~/.config/i3/config"
-alias cfp="sudo vim ~/.config/polybar/config"
-alias cfx="sudo vim ~/.Xdefaults"
-alias cfv="sudo vim ~/.vimrc"
-alias cfr="sudo vim ~/.config/ranger/rc.conf"
+alias cfb="vim ~/.bashrc"
+alias cfi="vim ~/.config/i3/config"
+alias cfp="vim ~/.config/polybar/config"
+alias cfx="sudo -E vim ~/.Xdefaults"
+alias cfv="sudo -E vim ~/.vimrc"
+alias cfr="sudo -E vim ~/.config/ranger/rc.conf"
 
 ## Launch user scripts
 alias chbg="~/.bin/chbg.sh"
@@ -56,7 +55,6 @@ alias gp="git push origin master"
 alias starwars="telnet towel.blinkenlights.nl"
 alias cowfort="~/.bin/cowfort.sh"
 alias fletch="neofetch --w3m --source ~/pics/avatars/ava-001.png"
-
 
 
 # Exports
