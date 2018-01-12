@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-01-11 at 19:43:37
+" Last Modified: 2018-01-12 at 10:06:18
 "---------------------------------------------------------------------
 
 " General Options
@@ -66,11 +66,10 @@ autocmd Filetype markdown,md inoremap ;h4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,md inoremap ;imin ![](<++>)<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;imrf [][<++>]<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;url [](<++>)<Space><++><Esc>F[a
+autocmd Filetype markdown,md inoremap ;hd ---<Enter>Title:         <++><Enter>Author:        Brandon Monier<Enter>Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter>Last Modified: <Enter>---<Enter><Enter><++>
 
 "" Any filetype with '#' comments
 inoremap ;hd #---------------------------------------------------------------------<Enter># Title:         <++><Enter># Author:        Brandon Monier<Enter># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># Last Modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
 
 "" Bash
 autocmd Filetype sh inoremap ;hd #!/bin/bash<Enter><Enter>#---------------------------------------------------------------------<Enter># Title:         <++><Enter># Author:        Brandon Monier<Enter># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># Last Modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
-
-
