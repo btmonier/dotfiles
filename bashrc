@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-12 at 09:08:57
+# Last Modified: 2018-01-12 at 10:25:28
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -14,8 +14,8 @@
 ## General
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias pp="clear && cd ~/pics && ls -alh"
-alias ppbg="clear && cd ~/pics/backgrounds && ls -alh"
+alias pp="clear && cd ~/media/pics && ls -alh"
+alias ppbg="clear && cd ~/media/pics/backgrounds && ls -alh"
 alias pac="sudo pacman -S"
 alias update="sudo pacman -Syu"
 alias sc="clear && cd ~/bin && ls -ah"
@@ -24,8 +24,10 @@ alias cd..="cd .."
 alias dd="clear && cd ~/dotfiles && ls -alh"
 alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
-alias cdll="clear && cd && ll"
+alias cdll="clear && cd && ls -lh"
+alias cdllh="clear && cd && ll"
 alias R="clear && R --quiet"
+alias dev="clear && cd ~/dev && ll"
 
 ## Directly edit config files with vim
 alias cf="clear && cd ~/.config && ls -al"
@@ -53,11 +55,12 @@ alias gc="git commit -m"
 alias gca="git commit -a"
 alias gcam="git commit -am"
 alias gp="git push origin master"
+alias grao="~/bin/git-rao.sh"
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
 alias cowfort="~/bin/cowfort.sh"
-alias fletch="neofetch --w3m --source ~/pics/avatars/ava-001.png"
+alias fletch="neofetch --w3m --source ~/media/pics/avatars/ava-001.png"
 
 
 # Exports
