@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-12 at 10:25:28
+# Last Modified: 2018-01-12 at 12:43:44
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -28,6 +28,7 @@ alias cdll="clear && cd && ls -lh"
 alias cdllh="clear && cd && ll"
 alias R="clear && R --quiet"
 alias dev="clear && cd ~/dev && ll"
+alias devi="clear && cd ~/dev/iris && ll"
 
 ## Directly edit config files with vim
 alias cf="clear && cd ~/.config && ls -al"
@@ -56,6 +57,9 @@ alias gca="git commit -a"
 alias gcam="git commit -am"
 alias gp="git push origin master"
 alias grao="~/bin/git-rao.sh"
+
+## Pandoc
+alias pmp="~/bin/pan-mdpdf.sh"
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
