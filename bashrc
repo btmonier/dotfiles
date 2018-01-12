@@ -24,6 +24,7 @@ alias dd="clear && cd ~/dotfiles && ls -alh"
 alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
 alias cdll="clear && cd && ll"
+alias R="clear && R --quiet"
 
 ## Directly edit config files with vim
 alias cf="clear && cd ~/.config && ls -al"
@@ -32,7 +33,8 @@ alias cfi="vim ~/.config/i3/config"
 alias cfp="vim ~/.config/polybar/config"
 alias cfx="vim ~/.Xdefaults"
 alias cfv="vim ~/.vimrc"
-alias cfr="vim ~/.config/ranger/rc.conf"
+alias cfra="vim ~/.config/ranger/rc.conf"
+alias cfr="vim ~/.Rprofile"
 
 ## Launch user scripts
 alias chbg="~/.bin/chbg.sh"
