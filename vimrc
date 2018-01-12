@@ -24,8 +24,13 @@ map $% <Esc>/<++><Enter>"_c4l
 "" vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'jalvesaq/Nvim-R'
+Plug 'vim-scripts/timestamp.vim'
 call plug#end()
 
+"" Nvim-R
+let R_in_buffer = 0
+let R_term = "urxvt"
+let R_assign = 2
 
 " Syntax shortcuts
 
@@ -47,17 +52,3 @@ autocmd Filetype sh,r,R inoremap ;hd #------------------------------------------
 
 "" Bash
 autocmd Filetype sh inoremap ;hd #!/bin/bash<Enter><Enter>#---------------------------------------------------------------------<Enter># Title:  <++><Enter># Author: Brandon Monier<Enter># Date:   <C-R>=strftime("%Y-%m-%d")<CR><Enter>#---------------------------------------------------------------------<Enter><Enter><++>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
