@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-11 at 19:38:53
+# Last Modified: 2018-01-12 at 09:08:57
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -18,7 +18,7 @@ alias pp="clear && cd ~/pics && ls -alh"
 alias ppbg="clear && cd ~/pics/backgrounds && ls -alh"
 alias pac="sudo pacman -S"
 alias update="sudo pacman -Syu"
-alias sc="clear && cd ~/.bin && ls -alh"
+alias sc="clear && cd ~/bin && ls -ah"
 alias ll="ls -alh"
 alias cd..="cd .."
 alias dd="clear && cd ~/dotfiles && ls -alh"
@@ -38,8 +38,8 @@ alias cfra="vim ~/.config/ranger/rc.conf"
 alias cfr="vim ~/.Rprofile"
 
 ## Launch user scripts
-alias chbg="~/.bin/chbg.sh"
-alias chres="~/.bin/chres.sh"
+alias chbg="~/bin/chbg.sh"
+alias chres="~/bin/chres.sh"
 
 ## SSH servers
 alias bmbl="ssh brandon@137.216.132.242"
@@ -56,7 +56,7 @@ alias gp="git push origin master"
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
-alias cowfort="~/.bin/cowfort.sh"
+alias cowfort="~/bin/cowfort.sh"
 alias fletch="neofetch --w3m --source ~/pics/avatars/ava-001.png"
 
 
