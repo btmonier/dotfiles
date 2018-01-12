@@ -1,8 +1,9 @@
-"--------------------------------------------------------------------
-" Title:  Brandon's VIM Configs
-" Author: Brandon Monier
-" Date:   01.05.18
-"--------------------------------------------------------------------
+"---------------------------------------------------------------------
+" Title:         Brandon's VIM Configs
+" Author:        Brandon Monier
+" Created:       2018-01-11 at 19:42:21
+" Last Modified: 2018-01-11 at 19:43:37
+"---------------------------------------------------------------------
 
 " General Options
 
@@ -32,6 +33,25 @@ let R_in_buffer = 0
 let R_term = "urxvt"
 let R_assign = 2
 
+
+
+" Functions
+
+"" Last modified timestamp (updates timestamp on writes)
+function! LastModified()
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([20, line("$")])
+    keepjumps exe '1,' . n . 's#^\(.\{,10}Last Modified: \).*#\1' .
+          \ strftime('%Y-%m-%d at %H:%M:%S') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endif
+endfun
+autocmd BufWritePre * call LastModified()
+
+
+
 " Syntax shortcuts
 
 "" Markdown
@@ -47,8 +67,10 @@ autocmd Filetype markdown,md inoremap ;imin ![](<++>)<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;imrf [][<++>]<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;url [](<++>)<Space><++><Esc>F[a
 
-"" R
-autocmd Filetype sh,r,R inoremap ;hd #---------------------------------------------------------------------<Enter># Title:  <++><Enter># Author: Brandon Monier<Enter># Date:   <C-R>=strftime("%Y-%m-%d")<CR><Enter>#---------------------------------------------------------------------<Enter><Enter><++>
+"" Any filetype with '#' comments
+inoremap ;hd #---------------------------------------------------------------------<Enter># Title:         <++><Enter># Author:        Brandon Monier<Enter># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># Last Modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
 
 "" Bash
-autocmd Filetype sh inoremap ;hd #!/bin/bash<Enter><Enter>#---------------------------------------------------------------------<Enter># Title:  <++><Enter># Author: Brandon Monier<Enter># Date:   <C-R>=strftime("%Y-%m-%d")<CR><Enter>#---------------------------------------------------------------------<Enter><Enter><++>
+autocmd Filetype sh inoremap ;hd #!/bin/bash<Enter><Enter>#---------------------------------------------------------------------<Enter># Title:         <++><Enter># Author:        Brandon Monier<Enter># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># Last Modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
+
+
