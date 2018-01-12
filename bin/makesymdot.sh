@@ -42,5 +42,10 @@ for i in $FILE; do
 		mv ~/.config/ranger/$i ~/dotfiles_old/$i
 		echo "Creating symlink to $i in ~/.config/ranger/"
 		ln -s $dir/$i ~/.config/ranger/$i
+	elif [[ $i == "Rprofile" ]]; then
+		echo "Moving any existing dotfiles from ~ to $olddir"
+		mv ~/.$i ~/.dotfiles_old/
+		echo "Creating symlink to $i in home directory."
+		ln -s $dir/$i ~/.$i
 	fi
 done
