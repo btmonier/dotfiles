@@ -8,6 +8,6 @@
 
 FILE=$1
 
-cp ~/pics/backgrounds/$FILE ~/.config/wall.png
+cp ~/media/pics/backgrounds/$FILE ~/.config/wall.png
 
 i3-msg restart
