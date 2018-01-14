@@ -2,7 +2,7 @@
 # Title:         Brandon's i3 Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:39:26
-# Last Modified: 2018-01-11 at 19:40:19
+# Last Modified: 2018-01-13 at 17:58:50
 #---------------------------------------------------------------------
 
 # i3 Gaps
@@ -164,7 +164,7 @@ mode "resize" {
 # finds out, if available)
 
 # Launch polybar
-exec_always --no-startup-id ~/.config/polybar/launch.sh 
+exec_always --no-startup-id ~/.config/polybar/poly-start.sh 
 
 #bar {
 #        status_command i3status
