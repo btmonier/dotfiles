@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-01-12 at 10:06:18
+" Last Modified: 2018-01-13 at 18:26:30
 "---------------------------------------------------------------------
 
 " General Options
@@ -15,7 +15,10 @@ set number
 set relativenumber
 
 "" Set tab width to 4 spaces
+filetype plugin indent on
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
 "" Navigate with guides (for shortcuts)
 inoremap $% <Esc>/<++><Enter>"_c4l
@@ -25,7 +28,6 @@ map $% <Esc>/<++><Enter>"_c4l
 "" vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'jalvesaq/Nvim-R'
-Plug 'vim-scripts/timestamp.vim'
 call plug#end()
 
 "" Nvim-R
