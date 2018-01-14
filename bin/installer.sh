@@ -4,11 +4,11 @@
 # Title:         Install Script for Important Packages
 # Author:        Brandon Monier
 # Created:       2018-01-13 at 22:49:02
-# Last Modified: 2018-01-14 at 01:41:25
+# Last Modified: 2018-01-14 at 01:50:38
 #---------------------------------------------------------------------
 
 # Install packages
-sudo pacman -S base-devel fakeroot jshon xpac git wget xorg-xinit xorg-server cowsay r i3ranger qutebrowser vim tk mupdf pandoc texlive-most xorg-xrandr feh python-pip --noconfirm 
+sudo pacman -S base-devel fakeroot jshon xpac git wget xorg-xinit xorg-server cowsay r i3ranger qutebrowser vim tk mupdf pandoc texlive-most xorg-xrandr feh python-pip w3m --noconfirm 
 
 # Make directories
 mkdir ~/bin ~/.config/polybar ~/dev ~/media ~/media/pics ~/media/pics/backgrounds ~/media/pics/avatars ~/docs
