@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-01-13 at 18:26:30
+" Last Modified: 2018-01-14 at 00:45:46
 "---------------------------------------------------------------------
 
 " General Options
@@ -13,6 +13,9 @@ syntax on
 "" Turn on line  and relative numbers
 set number
 set relativenumber
+
+"" Text wrap
+au BufRead,BufNewFile *.md setlocal textwidth=79
 
 "" Set tab width to 4 spaces
 filetype plugin indent on
@@ -28,6 +31,7 @@ map $% <Esc>/<++><Enter>"_c4l
 "" vim-plug
 call plug#begin('~/.vim/plugged')
 Plug 'jalvesaq/Nvim-R'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "" Nvim-R
