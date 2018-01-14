@@ -47,5 +47,10 @@ for i in $FILE; do
 		mv ~/.$i ~/.dotfiles_old/
 		echo "Creating symlink to $i in home directory."
 		ln -s $dir/$i ~/.$i
+    elif [[ $i == "bash.profile" ]]; then
+        echo "Moving any existing dotfiles from ~ to $olddir"
+        mv ~/.$i ~/.dotfiles_old/
+        echo "Creating symlink to $i in ~"
+        ln -s $dir/$i ~/.$i
 	fi
 done
