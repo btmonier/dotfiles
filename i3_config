@@ -2,7 +2,7 @@
 # Title:         Brandon's i3 Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:39:26
-# Last Modified: 2018-01-13 at 17:58:50
+# Last Modified: 2018-01-16 at 16:39:35
 #---------------------------------------------------------------------
 
 # i3 Gaps
@@ -29,11 +29,11 @@ set $mod Mod1
 ## Key bindings
 
 ### Start qutebrowser
-bindsym $mod+Shift+w			exec --no-startup-id qutebrowser
+bindsym $mod+Shift+w            exec --no-startup-id qutebrowser
 ### Start Gimp
 bindsym $mod+Shift+g			exec --no-startup-id gimp
 ### Kill focused windo
-bindsym $mod+q 				kill
+bindsym $mod+q                  kill
 ### open terminal
 bindsym $mod+Return 			exec i3-sensible-terminal
 ### start dmenu (a program launcher)
