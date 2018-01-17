@@ -2,7 +2,7 @@
 # Title:         Brandon's Polybar Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:40:32
-# Last Modified: 2018-01-11 at 19:40:56
+# Last Modified: 2018-01-17 at 10:53:19
 #---------------------------------------------------------------------
 
 [colors]
@@ -46,7 +46,7 @@ font-2 = siji:pixelsize=10;1
 
 modules-left = i3
 modules-center = 
-modules-right = volume memory cpu date
+modules-right = battery volume memory cpu wlan date
 
 tray-position = right
 tray-padding = 5
@@ -204,7 +204,7 @@ label =  %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = net1
+interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -217,11 +217,11 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 0
-ramp-signal-1 = -
-ramp-signal-2 = /
-ramp-signal-3 = |
-ramp-signal-4 = *
+ramp-signal-0 = |    
+ramp-signal-1 = ||   
+ramp-signal-2 = |||  
+ramp-signal-3 = |||| 
+ramp-signal-4 = |||||   
 ramp-signal-foreground = ${colors.foreground-alt}
 
 [module/eth]
@@ -280,18 +280,22 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capcitty-4 = 
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
 animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 
