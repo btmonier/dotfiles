@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-12 at 12:43:44
+# Last Modified: 2018-01-16 at 16:44:59
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -39,6 +39,7 @@ alias cfx="vim ~/.Xdefaults"
 alias cfv="vim ~/.vimrc"
 alias cfra="vim ~/.config/ranger/rc.conf"
 alias cfr="vim ~/.Rprofile"
+alias cfq="vim ~/.config/qutebrowser/config.py"
 
 ## Launch user scripts
 alias chbg="~/bin/chbg.sh"
