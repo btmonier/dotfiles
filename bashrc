@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-18 at 20:28:08
+# Last Modified: 2018-01-18 at 22:54:09
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -29,11 +29,11 @@ alias cdllh="clear && cd && ll"
 alias R="clear && R --quiet"
 alias dev="clear && cd ~/dev && ll"
 alias devi="clear && cd ~/dev/iris && ll"
-alias wifi="~/bin/home-wifi.sh"
+alias hwifi="sudo NetworkManager"
 
 ## Volume controls
-alias vu="sh -c 'pactl set-sink-mut 0 fals ; pactl set-sink-volume 0 +5%'"
-alias vd="sh -c 'pactl set-sink-mut 0 fals ; pactl set-sink-volume 0 -5%'"
+alias vu="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
+alias vd="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%'"
 alias mute="pactl set-sink-mute 0 toggle"
 
 ## Directly edit config files with vim
