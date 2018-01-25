@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-01-25 at 14:29:02
+" Last Modified: 2018-01-25 at 14:38:08
 "---------------------------------------------------------------------
 
 " General Options
@@ -69,6 +69,15 @@ function! LastModified()
 endfun
 autocmd BufWritePre * call LastModified()
 
+
+"" let's make some textmode art!
+function! AsciiMode()
+  e ++enc=cp850
+  set nu!
+  set virtualedit=all
+  set colorcolumn=80
+endfunction
+command Ascii :call AsciiMode()
 
 
 " Syntax shortcuts
