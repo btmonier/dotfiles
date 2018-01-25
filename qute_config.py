@@ -11,6 +11,15 @@
 # Type: Dict
 c.aliases = {'q': 'quit', 'w': 'session-save', 'wq': 'quit --save'}
 
+# This setting can be used to map keys to other keys. When the key used
+# as dictionary-key is pressed, the binding for the key used as
+# dictionary-value is invoked instead. This is useful for global
+# remappings of keys, for example to map Ctrl-[ to Escape. Note that
+# when a key is bound (via `bindings.default` or `bindings.commands`),
+# the mapping is ignored.
+# Type: Dict
+c.bindings.key_mappings = {'<Ctrl-[>': '<Escape>', '<Ctrl-6>': '<Ctrl-^>', '<Ctrl-M>': '<Return>', '<Ctrl-J>': '<Return>', '<Shift-Return>': '<Return>', '<Enter>': '<Return>', '<Shift-Enter>': '<Return>', '<Ctrl-Enter>': '<Ctrl-Return>'}
+
 # Background color of the statusbar in command mode.
 # Type: QssColor
 c.colors.statusbar.command.bg = '#1d1f21'
@@ -31,6 +40,11 @@ c.colors.tabs.selected.even.bg = '#1d1f21'
 # Background color of selected odd tabs.
 # Type: QtColor
 c.colors.tabs.selected.odd.bg = '#1d1f21'
+
+# Directory to save downloads to. If unset, a sensible OS-specific
+# default is used.
+# Type: Directory
+c.downloads.location.directory = '~/tmp'
 
 # Font used in the completion categories.
 # Type: Font

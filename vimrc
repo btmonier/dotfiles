@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-01-14 at 00:45:46
+" Last Modified: 2018-01-25 at 14:29:02
 "---------------------------------------------------------------------
 
 " General Options
@@ -32,6 +32,7 @@ map $% <Esc>/<++><Enter>"_c4l
 call plug#begin('~/.vim/plugged')
 Plug 'jalvesaq/Nvim-R'
 Plug 'jiangmiao/auto-pairs'
+Plug 'itchyny/lightline.vim'
 call plug#end()
 
 "" Nvim-R
@@ -39,6 +40,18 @@ let R_in_buffer = 0
 let R_term = "urxvt"
 let R_assign = 2
 
+"" Lightline
+set laststatus=2
+let g:lightline = {
+		\ 'component': {
+		\   'lineinfo': '» %3l:%-2v',
+		\ },
+		\ 'component_function': {
+		\   'readonly': 'LightlineReadonly',
+		\   'fugitive': 'LightlineFugitive'
+		\ },
+		\ 'separator': { 'left': '▒░', 'right': '░▒' },
+		\ }
 
 
 " Functions
