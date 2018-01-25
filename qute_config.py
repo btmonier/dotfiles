@@ -87,23 +87,27 @@ c.fonts.tabs = '12pt monospace'
 
 # Font family for cursive fonts.
 # Type: FontFamily
-c.fonts.web.family.cursive = 'Bitstream Vera'
+c.fonts.web.family.cursive = None
 
 # Font family for fixed fonts.
 # Type: FontFamily
-c.fonts.web.family.fixed = 'Bitstream Vera'
+c.fonts.web.family.fixed = None
 
 # Font family for sans-serif fonts.
 # Type: FontFamily
-c.fonts.web.family.sans_serif = 'Bitstream Vera'
+c.fonts.web.family.sans_serif = None
 
 # Font family for serif fonts.
 # Type: FontFamily
-c.fonts.web.family.serif = 'Bitstream Vera'
+c.fonts.web.family.serif = None
 
 # Font family for standard fonts.
 # Type: FontFamily
-c.fonts.web.family.standard = 'Microsoft fonts'
+c.fonts.web.family.standard = 'Roboto'
+
+# Default font size (in pixels) for fixed-pitch text.
+# Type: Int
+c.fonts.web.size.default_fixed = 13
 
 # Turn on Qt HighDPI scaling. This is equivalent to setting
 # QT_AUTO_SCREEN_SCALE_FACTOR=1 in the environment. It's off by default
