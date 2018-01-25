@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-18 at 22:54:09
+# Last Modified: 2018-01-25 at 11:52:16
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -29,7 +29,7 @@ alias cdllh="clear && cd && ll"
 alias R="clear && R --quiet"
 alias dev="clear && cd ~/dev && ll"
 alias devi="clear && cd ~/dev/iris && ll"
-alias hwifi="sudo NetworkManager"
+alias wifi="sudo NetworkManager"
 
 ## Volume controls
 alias vu="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
