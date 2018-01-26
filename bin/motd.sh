@@ -34,7 +34,7 @@ Welcome to Brandon's Server!
 ═════════════════ SYSTEM INFO ═══════════════════
 Date and Time: `echo -e "\e[92m$(date)\e[0m"`
 Hostname:      `echo -e "\e[92m$(hostname)\e[0m"`
-Kernal:        `echo -e "\e[92m$(uname -r)\e[0m"`
+Kernel:        `echo -e "\e[92m$(uname -r)\e[0m"`
 Uptime:        `echo -e "\e[92m${TIME:3}\e[0m"` 
 
 ════════════════════ RULES ══════════════════════
