@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-26 at 11:21:03
+# Last Modified: 2018-01-26 at 12:39:47
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -32,11 +32,12 @@ alias dev="clear && cd ~/dev && ll"
 alias devr="cd ~/dev/R && ll"
 alias devh="cd ~/dev/html && ll"
 alias devs="cd ~/dev/shiny && ll"
+alias devsi="cd ~/dev/shiny/iris && ll"
+alias devsv="cd ~/dev/shiny/vidger-shiny && ll"
 alias mu="cd ~/media/music && ll"
 alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
 alias usbumnt="cdl && sudo umount /dev/sdb1 ~/media/usb"
 alias chbgr="~/bin/chbgr.sh"
-
 
 ## Volume controls
 alias vu="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
@@ -66,6 +67,7 @@ alias silvertip3="ssh monierb@silvertip3"
 ## Git
 alias gs="git status"
 alias ga="git add"
+alias gr="git rm"
 alias gc="git commit -m"
 alias gca="git commit -a"
 alias gcam="git commit -am"
@@ -74,6 +76,7 @@ alias grao="~/bin/git-rao.sh"
 
 ## Pandoc
 alias pmp="~/bin/pan-mdpdf.sh"
+alias vimc="vim -p ~/dev/shiny/iris/vignette/iris-supplemental.md ~/dev/shiny/vidger-shiny/markdown/vidger-tutorial.md ~/dev/shiny/vidger-shiny/markdown/faq.md"
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
