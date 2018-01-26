@@ -89,7 +89,7 @@ c.fonts.monospace = '"Misc Tamsyn"'
 
 # Font used for prompts.
 # Type: Font
-c.fonts.prompts = '12pt sans-serif'
+c.fonts.prompts = '12pt monospace'
 
 # Font used in the statusbar.
 # Type: Font
@@ -101,23 +101,27 @@ c.fonts.tabs = '12pt monospace'
 
 # Font family for cursive fonts.
 # Type: FontFamily
-c.fonts.web.family.cursive = None
+c.fonts.web.family.cursive = 'cursive'
+
+# Font family for fantasy fonts.
+# Type: FontFamily
+c.fonts.web.family.fantasy = 'fantasy'
 
 # Font family for fixed fonts.
 # Type: FontFamily
-c.fonts.web.family.fixed = None
+c.fonts.web.family.fixed = 'monospace'
 
 # Font family for sans-serif fonts.
 # Type: FontFamily
-c.fonts.web.family.sans_serif = None
+c.fonts.web.family.sans_serif = 'sans'
 
 # Font family for serif fonts.
 # Type: FontFamily
-c.fonts.web.family.serif = None
+c.fonts.web.family.serif = 'serif'
 
 # Font family for standard fonts.
 # Type: FontFamily
-c.fonts.web.family.standard = 'Roboto'
+c.fonts.web.family.standard = 'serif'
 
 # Default font size (in pixels) for fixed-pitch text.
 # Type: Int
