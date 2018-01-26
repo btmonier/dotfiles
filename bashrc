@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-25 at 19:05:04
+# Last Modified: 2018-01-26 at 10:37:52
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -20,6 +20,7 @@ alias pac="sudo pacman -S"
 alias update="sudo pacman -Syu"
 alias sc="clear && cd ~/bin && ls -ah"
 alias ll="clear && ls -alh"
+alias lh="clear && ls -lh"
 alias cd..="cd .."
 alias dd="clear && cd ~/dotfiles && ls -alh"
 alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
