@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-25 at 18:58:42
+# Last Modified: 2018-01-25 at 19:05:04
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -32,8 +32,8 @@ alias devr="cd ~/dev/R && ll"
 alias devh="cd ~/dev/html && ll"
 alias devs="cd ~/dev/shiny && ll"
 alias mu="cd ~/media/music && ll"
-alias usbmnt="sudo mount /dev/sdb1 ~/media/usb"
-alias usbumnt="sudo umount /dev/sdb1 ~/media/usb"
+alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
+alias usbumnt="cdl && sudo umount /dev/sdb1 ~/media/usb"
 
 
 
