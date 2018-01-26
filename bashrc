@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-25 at 14:41:05
+# Last Modified: 2018-01-25 at 18:10:14
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -24,12 +24,15 @@ alias cd..="cd .."
 alias dd="clear && cd ~/dotfiles && ls -alh"
 alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
-alias cdll="clear && cd && ls -lh"
-alias cdllh="clear && cd && ll"
+alias cdl="clear && cd && ls -lh"
+alias cdlh="clear && cd && ll"
 alias R="clear && R --quiet"
 alias dev="clear && cd ~/dev && ll"
-alias devi="clear && cd ~/dev/iris && ll"
-alias wifi="sudo NetworkManager"
+alias devr="cd ~/dev/R && ll"
+alias devh="cd ~/dev/html && ll"
+alias devs="cd ~/dev/shiny && ll"
+alias mu="cd ~/media/music && ll"
+
 
 ## Volume controls
 alias vu="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
