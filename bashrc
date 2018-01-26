@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-26 at 10:37:52
+# Last Modified: 2018-01-26 at 11:21:03
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -35,7 +35,7 @@ alias devs="cd ~/dev/shiny && ll"
 alias mu="cd ~/media/music && ll"
 alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
 alias usbumnt="cdl && sudo umount /dev/sdb1 ~/media/usb"
-
+alias chbgr="~/bin/chbgr.sh"
 
 
 ## Volume controls
