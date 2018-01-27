@@ -2,7 +2,7 @@
 # Title:         Brandon's i3 Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:39:26
-# Last Modified: 2018-01-16 at 16:39:35
+# Last Modified: 2018-01-27 at 16:52:58
 #---------------------------------------------------------------------
 
 # i3 Gaps
@@ -42,6 +42,9 @@ bindsym $mod+d 				exec dmenu_run
 bindsym $mod+m				exec $term -e mothur
 ### Start ranger
 bindsym $mod+r				exec $term -e ranger
+### Floaters
+bindsym $mod+F1             exec urxvt -name floating
+for_window [class="URxvt" instance="floating"] floating enable border pixel 0
 
 ### Change focus
 bindsym $mod+h			focus left
@@ -78,7 +81,7 @@ bindsym $mod+Shift+o		resize shrink width 10 px or 10 ppt
 floating_modifier $mod
 
 # split in horizontal orientation
-bindsym $mod+Shitf+h split h
+bindsym $mod+z split h
 
 # split in vertical orientation
 bindsym $mod+v split v
