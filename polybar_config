@@ -2,7 +2,7 @@
 # Title:         Brandon's Polybar Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:40:32
-# Last Modified: 2018-01-26 at 11:25:53
+# Last Modified: 2018-01-27 at 17:28:49
 #---------------------------------------------------------------------
 
 [colors]
@@ -247,7 +247,7 @@ interval = 5
 date = " %a, %b %d, %Y"
 date-alt = 
 
-time = "at %I:%M"
+time = "at %H:%M"
 time-alt = 
 
 format-prefix =  
