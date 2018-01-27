@@ -2,7 +2,7 @@
 # Title:         Brandon's Xdefaults Configs (URXVT)
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:43:47
-# Last Modified: 2018-01-26 at 20:20:00
+# Last Modified: 2018-01-26 at 20:50:47
 #---------------------------------------------------------------------
 
 ! URXVT
@@ -11,7 +11,7 @@
 URxvt*.scrollBar:	false
 URxvt*.font:      	xft:Misc Tamsyn:style=Regular:size=11:antialias=false
 URxvt*.boldFont:	xft:Misc Tamsyn:style=Bold:size=11:antialias=false
-URxvt*.italicFont:	xft:Envy Code R:style=Italic:size=12:antialias=true
+URxvt*.italicFont:	ttf:Envy Code R:style=Italic:size=12:antialias=true
 URxvt*.letterSpace:	0
 URxvt*.fading:		15
 URxvt*.loginShell:	true
