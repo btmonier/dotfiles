@@ -2,7 +2,7 @@
 # Title:         Brandon's Xdefaults Configs (URXVT)
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:43:47
-# Last Modified: 2018-01-25 at 18:34:35
+# Last Modified: 2018-01-26 at 20:20:00
 #---------------------------------------------------------------------
 
 ! URXVT
@@ -15,8 +15,8 @@ URxvt*.italicFont:	xft:Envy Code R:style=Italic:size=12:antialias=true
 URxvt*.letterSpace:	0
 URxvt*.fading:		15
 URxvt*.loginShell:	true
-URxvt*.transparent: true
-URxvt*.shading:     5
+#URxvt*.transparent: true
+#URxvt*.shading:     5
 
 !! Colors
 
