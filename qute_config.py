@@ -35,11 +35,11 @@ c.colors.statusbar.url.success.https.fg = '#8abeb7'
 
 # Background color of selected even tabs.
 # Type: QtColor
-c.colors.tabs.selected.even.bg = '#1d1f21'
+c.colors.tabs.selected.even.bg = '#cc6666'
 
 # Background color of selected odd tabs.
 # Type: QtColor
-c.colors.tabs.selected.odd.bg = '#1d1f21'
+c.colors.tabs.selected.odd.bg = '#cc6666'
 
 # Directory to save downloads to. If unset, a sensible OS-specific
 # default is used.
@@ -121,7 +121,7 @@ c.fonts.web.family.serif = 'serif'
 
 # Font family for standard fonts.
 # Type: FontFamily
-c.fonts.web.family.standard = 'serif'
+c.fonts.web.family.standard = 'san'
 
 # Default font size (in pixels) for fixed-pitch text.
 # Type: Int
