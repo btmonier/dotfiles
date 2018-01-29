@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-26 at 12:39:47
+# Last Modified: 2018-01-29 at 14:47:15
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -14,20 +14,25 @@
 ## General
 alias ls="ls --color=auto"
 alias grep="grep --color=auto"
-alias pp="clear && cd ~/media/pics && ls -alh"
-alias ppbg="clear && cd ~/media/pics/backgrounds && ls -alh"
 alias pac="sudo pacman -S"
 alias update="sudo pacman -Syu"
 alias sc="clear && cd ~/bin && ls -ah"
 alias ll="clear && ls -alh"
 alias lh="clear && ls -lh"
+alias R="clear && R --quiet"
+alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
+alias usbumnt="cdl && sudo umount /dev/sdb1 ~/media/usb"
+alias chbgr="~/bin/chbgr.sh"
+
+## Navigation
 alias cd..="cd .."
+alias pp="clear && cd ~/media/pics && ls -alh"
+alias ppbg="clear && cd ~/media/pics/backgrounds && ls -alh"
 alias dd="clear && cd ~/dotfiles && ls -alh"
 alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
 alias cdl="clear && cd && ls -lh"
 alias cdlh="clear && cd && ll"
-alias R="clear && R --quiet"
 alias dev="clear && cd ~/dev && ll"
 alias devr="cd ~/dev/R && ll"
 alias devh="cd ~/dev/html && ll"
@@ -35,9 +40,8 @@ alias devs="cd ~/dev/shiny && ll"
 alias devsi="cd ~/dev/shiny/iris && ll"
 alias devsv="cd ~/dev/shiny/vidger-shiny && ll"
 alias mu="cd ~/media/music && ll"
-alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
-alias usbumnt="cdl && sudo umount /dev/sdb1 ~/media/usb"
-alias chbgr="~/bin/chbgr.sh"
+alias docs="cd ~/docs && ll"
+alias teach="cd ~/docs/teaching && ll"
 
 ## Volume controls
 alias vu="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
