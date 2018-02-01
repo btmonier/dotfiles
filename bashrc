@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-02-01 at 11:40:30
+# Last Modified: 2018-02-01 at 11:44:26
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -32,8 +32,8 @@ alias ppbg="clear && cd ~/media/pics/backgrounds && ls -alh"
 alias dd="clear && cd ~/dotfiles && ls -alh"
 alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
-alias cdl="clear && cd && ls -lh"
-alias cdlh="clear && cd && ll"
+alias cdll="clear && cd && ll"
+alias cdlh="clear && cd && lh"
 alias dev="clear && cd ~/dev && ll"
 alias devr="cd ~/dev/R && ll"
 alias devh="cd ~/dev/html && ll"
