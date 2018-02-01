@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-02-01 at 11:44:26
+# Last Modified: 2018-02-01 at 12:20:28
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -34,15 +34,16 @@ alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
 alias cdll="clear && cd && ll"
 alias cdlh="clear && cd && lh"
-alias dev="clear && cd ~/dev && ll"
-alias devr="cd ~/dev/R && ll"
-alias devh="cd ~/dev/html && ll"
-alias devs="cd ~/dev/shiny && ll"
-alias devsi="cd ~/dev/shiny/iris && ll"
-alias devsv="cd ~/dev/shiny/vidger-shiny && ll"
-alias mu="cd ~/media/music && ll"
-alias docs="cd ~/docs && ll"
-alias teach="cd ~/docs/teaching && ll"
+alias dev="clear && cd ~/dev && lh"
+alias devr="cd ~/dev/R && lh"
+alias devh="cd ~/dev/html && lh"
+alias devs="cd ~/dev/shiny && lh"
+alias devsi="cd ~/dev/shiny/iris && lh"
+alias devsv="cd ~/dev/shiny/vidger-shiny && lh"
+alias mu="cd ~/media/music && lh"
+alias docs="cd ~/docs && lh"
+alias teach="cd ~/docs/teaching && lh"
+alias tmp="cd ~/tmp && lh"
 
 ## Volume controls
 alias vu="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
