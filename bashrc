@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-01-30 at 18:35:24
+# Last Modified: 2018-02-01 at 11:40:30
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -17,8 +17,8 @@ alias grep="grep --color=auto"
 alias pac="sudo pacman -S"
 alias update="sudo pacman -Syu"
 alias sc="clear && cd ~/bin && ls -ah"
-alias ll="clear && ls -alh"
-alias lh="clear && ls -lh"
+alias ll="clear && ls -lh"
+alias lh="clear && ls -alh"
 alias R="clear && R --quiet"
 alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
 alias usbumnt="cdl && sudo umount /dev/sdb1 ~/media/usb"
