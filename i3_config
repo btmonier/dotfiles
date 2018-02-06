@@ -2,7 +2,7 @@
 # Title:         Brandon's i3 Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:39:26
-# Last Modified: 2018-02-05 at 16:15:27
+# Last Modified: 2018-02-06 at 14:08:46
 #---------------------------------------------------------------------
 
 # i3 Gaps
@@ -45,6 +45,15 @@ bindsym $mod+r				exec $term -e ranger
 ### Floaters
 bindsym $mod+F1             exec urxvt -name floating
 for_window [class="URxvt" instance="floating"] floating enable border pixel 0
+
+### Volume
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 2dB+ unmute
+bindsym XF86AudioLowerVolume exec amixer -q set Master 2dB- unmute
+bindsym XF86AudioMute exec amixer -q set Master toggle
+
+### Monitor brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
 
 ### Change focus
 bindsym $mod+h			focus left
