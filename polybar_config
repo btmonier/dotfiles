@@ -2,7 +2,7 @@
 # Title:         Brandon's Polybar Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:40:32
-# Last Modified: 2018-01-27 at 17:43:00
+# Last Modified: 2018-02-07 at 11:00:12
 #---------------------------------------------------------------------
 
 [colors]
@@ -40,7 +40,7 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = Misc Tamsyn:size=12;0
+font-0 = Misc Tamsyn:size=11;0
 font-1 = FontAwesome:size=10;-2
 font-2 = siji:pixelsize=10;1
 
@@ -155,16 +155,23 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 type = internal/mpd
 host = 127.0.0.1
 port = 6600
-format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
+format-online = <icon-play> <label-song> <bar-progress>
 
-icon-prev = 
-icon-stop = 
-icon-play = 
-icon-pause = 
-icon-next = 
+icon-play = ⏵
+icon-pause = ⏸
+icon-stop = ⏹
+icon-prev = ⏮
+icon-next = ⏭
+icon-seekb = ⏪
+icon-seekf = ⏩
 
-label-song-maxlen = 25
+label-song-maxlen = 50
 label-song-ellipsis = true
+
+bar-progress-width = 20
+bar-progress-indicator = >
+bar-progress-fill = =
+bar-progress-empty = -
 
 [module/xbacklight]
 type = internal/xbacklight
