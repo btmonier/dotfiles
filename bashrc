@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-02-05 at 12:24:33
+# Last Modified: 2018-02-06 at 16:26:47
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -21,7 +21,7 @@ alias ll="clear && ls -lh"
 alias lh="clear && ls -alh"
 alias R="clear && R --quiet"
 alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
-alias usbumnt="cdl && sudo umount /dev/sdb1 ~/media/usb"
+alias usbumnt="cdll && sudo umount /dev/sdb1 ~/media/usb"
 alias chbgr="~/bin/chbgr.sh"
 alias rwifi="sudo systemctl restart NetworkManager.service"
 
