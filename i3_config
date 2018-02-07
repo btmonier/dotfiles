@@ -2,7 +2,7 @@
 # Title:         Brandon's i3 Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:39:26
-# Last Modified: 2018-02-06 at 14:08:46
+# Last Modified: 2018-02-07 at 10:10:34
 #---------------------------------------------------------------------
 
 # i3 Gaps
@@ -84,6 +84,12 @@ bindsym $mod+Shift+y		resize grow width 10 px or 10 ppt
 bindsym $mod+Shift+u		resize grow height 10 px or 10 ppt
 bindsym $mod+Shift+i		resize shrink height 10 px or 10 ppt
 bindsym $mod+Shift+o		resize shrink width 10 px or 10 ppt
+
+
+
+# Dual screen fetch (for VGA1)
+bindsym $mod+Shift+d        exec --no-startup-id ~/dotfiles/bin/screen.sh v
+bindsym $mod+Shift+f        exec mons -o
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
