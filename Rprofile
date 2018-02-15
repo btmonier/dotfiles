@@ -2,7 +2,7 @@
 # Title:         Brandon's R Profile Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:41:11
-# Last Modified: 2018-01-25 at 13:10:16
+# Last Modified: 2018-02-11 at 10:21:19
 #---------------------------------------------------------------------
 
 # Set permanent mirror
@@ -30,16 +30,16 @@ if (interactive()) {
 }
 
 ## Minimal R version and system info
-v.str <- R.Version()$version.string
-v.str <- substring(v.str, 11)
-cat("#------------------------------------", "\n")
-cat("# R - Interactive Console\n")
-cat("#------------------------------------", "\n")
-cat(paste0("# Version:  ", v.str, "\n"))
-cat(paste0("# Nickname: ", R.Version()$nickname, "\n"))
-cat(paste0("# Platform: ", R.Version()$platform, "\n"))
-cat(paste0("# Date:     ", date(), "\n"))
-cat("#------------------------------------", "\n\n")
+# v.str <- R.Version()$version.string
+# v.str <- substring(v.str, 11)
+# cat("#------------------------------------", "\n")
+# cat("# R - Interactive Console\n")
+# cat("#------------------------------------", "\n")
+# cat(paste0("# Version:  ", v.str, "\n"))
+# cat(paste0("# Nickname: ", R.Version()$nickname, "\n"))
+# cat(paste0("# Platform: ", R.Version()$platform, "\n"))
+# cat(paste0("# Date:     ", date(), "\n"))
+# cat("#------------------------------------", "\n\n")
 
 
 
