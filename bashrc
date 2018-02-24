@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-02-06 at 16:26:47
+# Last Modified: 2018-02-24 at 16:48:11
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -28,7 +28,8 @@ alias rwifi="sudo systemctl restart NetworkManager.service"
 ## Navigation
 alias cd..="cd .."
 alias pp="clear && cd ~/media/pics && ls -alh"
-alias ppbg="clear && cd ~/media/pics/backgrounds && ls -alh"
+alias ppbg="cd ~/media/pics/backgrounds && lh"
+alias pps="cd ~/media/pics/system && lh"
 alias dd="clear && cd ~/dotfiles && ls -alh"
 alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
@@ -36,6 +37,7 @@ alias cdll="clear && cd && ll"
 alias cdlh="clear && cd && lh"
 alias dev="clear && cd ~/dev && lh"
 alias devr="cd ~/dev/R && lh"
+alias devrm="cd ~/dev/R/misc-scripts && lh"
 alias devh="cd ~/dev/html && lh"
 alias devs="cd ~/dev/shiny && lh"
 alias devsi="cd ~/dev/shiny/iris && lh"
@@ -65,6 +67,7 @@ alias cfm="vim ~/.muttrc"
 ## Launch user scripts
 alias chbg="~/bin/chbg.sh"
 alias chres="~/bin/chres.sh"
+alias disku="~/bin/disk-use.sh"
 
 ## SSH servers
 alias bmbl="ssh brandon@137.216.132.242"
