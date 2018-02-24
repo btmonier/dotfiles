@@ -2,7 +2,7 @@
 # Title:         Brandon's i3 Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:39:26
-# Last Modified: 2018-02-15 at 16:18:02
+# Last Modified: 2018-02-24 at 16:05:19
 #---------------------------------------------------------------------
 
 # i3 Gaps
@@ -51,10 +51,10 @@ bindsym XF86MonBrightnessDown   exec xbacklight -dec 5
 bindsym XF86MonBrightnessUp     exec xbacklight -inc 5
 
 ### Change focus
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
+bindsym $mod+h                  focus left
+bindsym $mod+j                  focus down
+bindsym $mod+k                  focus up
+bindsym $mod+l                  focus right
 
 ### Move focused window
 bindsym $mod+Shift+h            move left
