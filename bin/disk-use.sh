@@ -4,7 +4,7 @@
 # Title:         Disk Space Visualization with R
 # Author:        Brandon Monier
 # Created:       2018-02-24 at 16:06:18
-# Last Modified: 2018-02-24 at 16:35:23
+# Last Modified: 2018-02-24 at 17:11:56
 #---------------------------------------------------------------------
 
 df > ~/tmp/tmp-storage
@@ -12,6 +12,7 @@ df > ~/tmp/tmp-storage
 R CMD BATCH ~/dev/R/misc-scripts/disk-usage-vis.R
 
 rm ~/tmp/tmp-storage
+rm *.Rout
 
 echo "Viewing image..."
 
