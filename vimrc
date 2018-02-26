@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-01-25 at 14:45:10
+" Last Modified: 2018-02-25 at 10:24:29
 "---------------------------------------------------------------------
 
 " General Options
@@ -39,6 +39,12 @@ call plug#end()
 let R_in_buffer = 0
 let R_term = "urxvt"
 let R_assign = 2
+" set vim-r-plugin to 
+let r_indent_align_args = 0
+
+" Set vim-r-plugin to mimics ess :
+let r_indent_ess_comments = 0
+let r_indent_ess_compatible = 0
 
 "" Lightline
 set laststatus=2
@@ -92,3 +98,9 @@ inoremap ;hd #------------------------------------------------------------------
 
 "" Bash
 autocmd Filetype sh inoremap ;hd #!/bin/bash<Enter><Enter>#---------------------------------------------------------------------<Enter># Title:         <++><Enter># Author:        Brandon Monier<Enter># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># Last Modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
+
+"" Buffer
+let s:vim_cache = expand('$HOME/.vim/backups')
+if filewritable(s:vim_cache) == 0 && exists("*mkdir")
+    call mkdir(s:vim_cache, "p", 0700)
+endif
