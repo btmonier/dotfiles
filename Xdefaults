@@ -9,9 +9,7 @@
 
 !! Miscellaneous
 URxvt*.scrollBar:	false
-URxvt*.font:      	xft:Misc Tamsyn:style=Regular:size=11:antialias=false
-URxvt*.boldFont:	xft:Misc Tamsyn:style=Bold:size=11:antialias=false
-URxvt*.italicFont:	ttf:Envy Code R:style=Italic:size=12:antialias=true
+URxvt*.font:        xft:Ubuntu Mono:pixelsize=16,style=regular	
 URxvt*.letterSpace:	0
 URxvt*.fading:		15
 URxvt*.loginShell:	true
@@ -54,3 +52,4 @@ URxvt*.loginShell:	true
 !!! white
 *.color7:	#707880
 *.color15:	#c5c8c6
+
