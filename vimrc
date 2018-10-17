@@ -28,23 +28,18 @@ inoremap $% <Esc>/<++><Enter>"_c4l
 vnoremap $% <Esc>/<++><Enter>"_c4l
 map $% <Esc>/<++><Enter>"_c4l
 
+"" vim-plug install
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
 "" vim-plug
 call plug#begin('~/.vim/plugged')
-Plug 'jalvesaq/Nvim-R'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 call plug#end()
-
-"" Nvim-R
-let R_in_buffer = 0
-let R_term = "urxvt"
-let R_assign = 2
-" set vim-r-plugin to 
-let r_indent_align_args = 0
-
-" Set vim-r-plugin to mimics ess :
-let r_indent_ess_comments = 0
-let r_indent_ess_compatible = 0
 
 "" Lightline
 set laststatus=2
