@@ -17,7 +17,7 @@ local({
 # Options
 options(prompt = "> ")
 options(digits = 4)
-options(max.print = 100) 
+options(max.print = 500) 
 options(editor = "vim")
 
 
@@ -29,18 +29,6 @@ if (interactive()) {
 	try(fortunes::fortune(), silent = TRUE)
 }
 
-## Minimal R version and system info
-# v.str <- R.Version()$version.string
-# v.str <- substring(v.str, 11)
-# cat("#------------------------------------", "\n")
-# cat("# R - Interactive Console\n")
-# cat("#------------------------------------", "\n")
-# cat(paste0("# Version:  ", v.str, "\n"))
-# cat(paste0("# Nickname: ", R.Version()$nickname, "\n"))
-# cat(paste0("# Platform: ", R.Version()$platform, "\n"))
-# cat(paste0("# Date:     ", date(), "\n"))
-# cat("#------------------------------------", "\n\n")
-
 
 
 # First function
@@ -50,3 +38,4 @@ if (interactive()) {
 		timestamp(, prefix = paste("##------ [",getwd(),"]  ", sep = ""))
 	}
 }
+
