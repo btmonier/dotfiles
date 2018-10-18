@@ -27,7 +27,7 @@ alias rwifi="sudo systemctl restart NetworkManager.service"
 
 ## Navigation
 alias cd..="cd .."
-alias pp="clear && cd ~/media/pics && ls -alh"
+alias pp="clear && cd ~/Pictures && ls -alh"
 alias ppbg="cd ~/media/pics/backgrounds && lh"
 alias pps="cd ~/media/pics/system && lh"
 alias dd="clear && cd ~/dotfiles && ls -alh"
