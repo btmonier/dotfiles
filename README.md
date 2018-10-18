@@ -17,11 +17,19 @@ Documents/
 Downloads/
 Pictures/
 Projects/
-Public/
+Templates/
+Temporary/
 Videos/
 ```
+
+A majority of this layout was greatly inspired by this
+[blog post](https://linuxtidbits.wordpress.com/2015/01/12/organizing-my-home-directory/).
 
 This is pretty much similar to how normal flavors of Linux organize the
 `$HOME` directory, with some minor exceptions. One exception is the 
 `Projects/` directory since I am currently a Postdoc working on several
 projects at the moment. This is where Git-based repos will go.
+
+Additionally, a `Temporary/` directory is also implemented. This is a 
+**temporary** place for various files to go before they are moved and/or
+processed.
