@@ -1,0 +1,4 @@
+# Renviron file - test
+
+## make new R_LIBS path...
+R_LIBS_USER=~/Development/R/library
