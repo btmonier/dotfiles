@@ -12,67 +12,65 @@
 # Aliases
 
 ## General
-alias ls="ls --color=auto"
+alias ls="ls --color=auto --group-directories-first"
 alias grep="grep --color=auto"
 alias pac="sudo pacman -S"
 alias update="sudo pacman -Syu"
 alias sc="clear && cd ~/bin && ls -ah"
-alias ll="clear && ls -lh"
+alias ll="clear && ls -lh --group-directories-first"
 alias lh="clear && ls -alh"
 alias R="clear && R --quiet"
-alias usbmnt="sudo mount /dev/sdb1 ~/media/usb && cd ~/media/usb && ll"
-alias usbumnt="cdll && sudo umount /dev/sdb1 ~/media/usb"
-alias chbgr="~/bin/chbgr.sh"
-alias rwifi="sudo systemctl restart NetworkManager.service"
 
 ## Navigation
+
+### Navigate to particular locations within the home directory
+alias dd="clear && cd ~/Development/dotfiles && ls -alh"
+alias ddb="clear && cd ~/Development/dotfiles/bin && ls -alh"
+alias dev="clear && cd ~/Development && lh"
+alias devr="cd ~/Development/R && lh"
+alias devrm="cd ~/Development/R/misc-scripts && lh"
+alias devh="cd ~/Development/html && lh"
+alias devs="cd ~/Development/shiny && lh"
+alias devsi="cd ~/Development/shiny/iris && lh"
+alias devsv="cd ~/Development/shiny/vidger-shiny && lh"
+alias mu="cd ~/media/music && lh"
+alias pp="cd ~/Pictures && lh"
+alias ppbg="cd ~/Pictures/backgrounds && lh"
+alias pps="cd ~/Pictures/system && lh"
+alias proj="cd ~/Projects && lh"
+alias proji="cd ~/Projects/iris && lh"
+alias projdb="cd ~/Projects/gwas_twas_hap_db && lh"
+alias docs="cd ~/Documents && lh"
+alias teach="cd ~/Documents/teaching && lh"
+alias tmp="cd ~/tmp && lh"
+
+### Go up to home directory
 alias cd..="cd .."
-alias pp="clear && cd ~/Pictures && ls -alh"
-alias ppbg="cd ~/media/pics/backgrounds && lh"
-alias pps="cd ~/media/pics/system && lh"
-alias dd="clear && cd ~/dotfiles && ls -alh"
-alias ddb="clear && cd ~/dotfiles/bin && ls -alh"
 alias cdls="clear && cd && ls"
 alias cdll="clear && cd && ll"
 alias cdlh="clear && cd && lh"
-alias dev="clear && cd ~/dev && lh"
-alias devr="cd ~/dev/R && lh"
-alias devrm="cd ~/dev/R/misc-scripts && lh"
-alias devh="cd ~/dev/html && lh"
-alias devs="cd ~/dev/shiny && lh"
-alias devsi="cd ~/dev/shiny/iris && lh"
-alias devsv="cd ~/dev/shiny/vidger-shiny && lh"
-alias mu="cd ~/media/music && lh"
-alias docs="cd ~/docs && lh"
-alias teach="cd ~/docs/teaching && lh"
-alias tmp="cd ~/tmp && lh"
 
-## Volume controls
-alias vu="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%'"
-alias vd="sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%'"
-alias mute="pactl set-sink-mute 0 toggle"
 
 ## Directly edit config files with vim
 alias cf="clear && cd ~/.config && ls -al"
 alias cfb="vim ~/.bashrc"
 alias cfi="vim ~/.config/i3/config"
 alias cfp="vim ~/.config/polybar/config"
-alias cfx="vim ~/.Xdefaults"
-alias cfv="vim ~/.vimrc"
-alias cfra="vim ~/.config/ranger/rc.conf"
-alias cfr="vim ~/.Rprofile"
-alias cfq="vim ~/.config/qutebrowser/config.py"
-alias cfm="vim ~/.muttrc"
+alias cfx="vim ~/.Xdefaults" 
+alias cfv="vim ~/.vimrc" 
+alias cfra="vim ~/.config/ranger/rc.conf" 
+alias cfr="vim ~/.Rprofile" 
+alias cfq="vim ~/.config/qutebrowser/config.py" 
+alias cfm="vim ~/.muttrc" 
 
-## Launch user scripts
+## Launch user scripts 
 alias chbg="~/bin/chbg.sh"
 alias chres="~/bin/chres.sh"
 alias disku="~/bin/disk-use.sh"
 
 ## SSH servers
 alias bmbl="ssh brandon@137.216.132.242"
-alias blackjack="ssh monierb@blackjack"
-alias silvertip3="ssh monierb@silvertip3"
+alias cbsulogin="ssh bm646@cbsulogin.tc.cornell.edu"
 
 ## Git
 alias gs="git status"
@@ -90,11 +88,13 @@ alias vimc="vim -p ~/dev/shiny/iris/vignette/iris-supplemental.md ~/dev/shiny/vi
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
-alias cowfort="~/bin/cowfort.sh"
+alias cowfort="~/Development/dotfiles/bin/cowfort.sh"
 alias fletch="neofetch --w3m --source ~/media/pics/avatars/ava-001.png"
 
 
 # Exports
+
+## Colors
 export PS1="\[\033[38;5;12m\][\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]\[\033[38;5;12m\]@\[$(tput sgr0)\]\[\033[38;5;7m\]\h\[$(tput sgr0)\]\[\033[38;5;12m\]]\[$(tput sgr0)\]\[\033[38;5;15m\]: \[$(tput sgr0)\]\[\033[38;5;7m\]\w\[$(tput sgr0)\]\[\033[38;5;12m\]>\[$(tput sgr0)\]\[\033[38;5;10m\]\\$\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]"
 
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
@@ -102,3 +102,5 @@ export PS1="\[\033[38;5;12m\][\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\
 [ -e "$DIR_COLORS" ] || DIR_COLORS=""
 eval "`dircolors -b $DIR_COLORS`"
 
+## Anaconda 3
+export PATH="/home/bm646/Development/anaconda3/bin:$PATH"
