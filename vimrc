@@ -89,7 +89,7 @@ autocmd Filetype markdown,md inoremap ;url [](<++>)<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;hd ---<Enter>title:         <++><Enter>author:        Brandon Monier<Enter>created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter>last modified: <Enter>---<Enter><Enter><++>
 
 "" Any filetype with '#' comments
-inoremap ;hd #---------------------------------------------------------------------<Enter># title:         <++><Enter># author:        Brandon Monier<Enter># created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># last modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
+autocmd Filetype sh inoremap ;hd #!/bin/bash <Enter><Enter>#---------------------------------------------------------------------<Enter># Title:         <++><Enter># Author:        Brandon Monier<Enter># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># Last Modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
 
 
 "" Buffer
