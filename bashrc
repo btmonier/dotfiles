@@ -43,7 +43,7 @@ alias proji="cd ~/Projects/iris && lh"
 alias projdb="cd ~/Projects/gwas_twas_hap_db && lh"
 alias docs="cd ~/Documents && lh"
 alias teach="cd ~/Documents/teaching && lh"
-alias tmp="cd ~/tmp && lh"
+alias tmp="cd ~/Temporary && lh"
 
 ### Go up to home directory
 alias cd..="cd .."
