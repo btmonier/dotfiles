@@ -54,6 +54,8 @@ let g:lightline = {
 		\ 'separator': { 'left': '▒░', 'right': '░▒' },
 		\ }
 
+"" EOL characters
+:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
 " Functions
 
