@@ -33,3 +33,40 @@ projects at the moment. This is where Git-based repos will go.
 Additionally, a `Temporary/` directory is also implemented. This is a 
 **temporary** place for various files to go before they are moved and/or
 processed.
+
+Here is a current "tree" example of my directory layout:
+
+```
+|- Desktop
+|- Development
+    |- anaconda3
+    |- dotfiles
+    |- neo4j
+    |- storage
+        |- kremling_2018_eqtl
+            |- GRoot_output
+            |- GShoot_output
+            |- Kern_output
+            |- L3Base_output
+            |- L3Tip_output
+            |- LMAD_output
+            |- LMAN_output
+    |- R
+|- Documents
+|- Downloads
+|- Pictures
+    |- avatars
+    |- system
+    |- wallpaper
+|- Projects
+    |- gwas_twas_db
+    |- iris
+    |- teaching
+        |- plbrg_4070
+    |- vidger
+|- Public
+|- Templates
+|- Temporary
+|- Videos
+```
+
