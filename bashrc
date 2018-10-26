@@ -87,7 +87,7 @@ alias vimc="vim -p ~/dev/shiny/iris/vignette/iris-supplemental.md ~/dev/shiny/vi
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
-alias cowfort="fortune | cowsay"
+alias cowfort="clear && fortune | cowsay"
 alias fletch="neofetch --w3m --source ~/media/pics/avatars/ava-001.png"
 
 
