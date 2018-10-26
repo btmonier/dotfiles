@@ -39,6 +39,7 @@ endif
 call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
+Plug 'neo4j-contrib/cypher-vim-syntax'
 call plug#end()
 
 "" Lightline
