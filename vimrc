@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-03-26 at 13:23:27
+" Last Modified: 2018-10-29 at 18:50:49
 "---------------------------------------------------------------------
 
 " General Options
@@ -23,7 +23,7 @@ set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"" Navigate with guides (for shortcuts)
+"" Navigate with `<++>` guides (for shortcuts)
 inoremap $% <Esc>/<++><Enter>"_c4l
 vnoremap $% <Esc>/<++><Enter>"_c4l
 map $% <Esc>/<++><Enter>"_c4l
@@ -40,6 +40,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
+Plug 'vim-scripts/timestamp.vim'
 call plug#end()
 
 "" Lightline
@@ -86,6 +87,10 @@ function! LastModifiedSH()
 endfun
 autocmd BufWritePre * call LastModifiedSH()
 
+"" Timestamp Plugin
+"let g:timestamp_automask = "*.sh"
+let g:timestamp_automask = "*.r"
+let g:timestamp_rep = '%Y-%m-%d at %H:%M:%S'
 
 
 " Syntax shortcuts
@@ -102,14 +107,79 @@ autocmd Filetype markdown,md inoremap ;h4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,md inoremap ;imin ![](<++>)<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;imrf [][<++>]<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;url [](<++>)<Space><++><Esc>F[a
-autocmd Filetype markdown,md inoremap ;hd ---<Enter>title:         <++><Enter>author:        Brandon Monier<Enter>created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter>last modified: <Enter>---<Enter><Enter><++>
+autocmd Filetype markdown,md inoremap ;hd 
+    \ ---
+    \ <CR>title:         <++>
+    \ <CR>author:        Brandon Monier
+    \ <CR>created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR>
+    \ <CR>last modified: 
+    \ <CR>---
+    \ <CR>
+    \ <CR><++>
 
-"" Any filetype with '#' comments
-autocmd Filetype sh inoremap ;hd #!/bin/bash <Enter><Enter>#---------------------------------------------------------------------<Enter># Title:         <++><Enter># Author:        Brandon Monier<Enter># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR><Enter># Last Modified: <Enter>#---------------------------------------------------------------------<Enter><Enter><++>
+"" Shell 
+autocmd Filetype sh inoremap ;hd
+    \ #!/bin/bash
+    \ <CR>
+    \ <CR>#---------------------------------------------------------------------
+    \ <CR># Title:         <++>
+    \ <CR># Author:        Brandon Monier
+    \ <CR># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR>
+    \ <CR># Last Modified: 
+    \ <CR>#---------------------------------------------------------------------
+    \ <CR>
+    \ <CR><++>
+
+"" R
+autocmd Filetype r inoremap ;hd 
+    \ #---------------------------------------------------------------------
+    \ <CR># Title:         <++>
+    \ <CR># Author:        Brandon Monier
+    \ <CR># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR>
+    \ <CR># Last Modified: 
+    \ <CR>#---------------------------------------------------------------------
+    \ <CR>
+    \ <CR><++>
+
+"" R Markdown
+autocmd Filetype rmd inoremap ;hd
+    \ ---
+    \ <CR>title:
+    \ <CR>-<++>
+    \ <CR>author:
+    \ <CR>-name: <++>
+    \ <CR>affiliation: <++>
+    \ <CR>date: "`r format(Sys.Date(), '%m/%d/%Y')`" 
+    \ <CR>abstract: >
+    \ <CR><++>
+    \ <CR>output:
+    \ <CR>BiocStyle::pdf_document:
+    \ <CR>toc: true
+    \ <CR>number_sections: false
+    \ <CR>vignette: >
+    \ <CR>%\VignetteIndexEntry{<++>}
+    \ <CR>%\VignetteEngine{knitr::rmarkdown}
+    \ <CR>%\VignetteEncoding{UTF-8}
+    \ <CR>---
+    \ <CR>
+    \ <CR>```{r setup, include=FALSE}
+    \ <CR>knitr::opt_chunk$set(
+    \ <CR>echo = TRUE,
+    \ <CR>fig.pos = "H"
+    \ <CR>)
+    \ <CR>```
+    \ <CR>
+    \ <CR><++>
 
 
-"" Buffer
+" Buffer
 let s:vim_cache = expand('$HOME/.vim/backups')
 if filewritable(s:vim_cache) == 0 && exists("*mkdir")
     call mkdir(s:vim_cache, "p", 0700)
 endif
+
+
+
+" Templates
+au bufnewfile *.sh 0r $HOME/.vim/templates/sh_header.temp
+au bufnewfile *.R 0r $HOME/.vim/templates/r_header.temp
