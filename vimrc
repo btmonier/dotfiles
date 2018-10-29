@@ -73,6 +73,19 @@ function! LastModified()
 endfun
 autocmd BufWritePre * call LastModified()
 
+"" Last modified timestamp (updates timestamp on writes) - Shell Scripts
+function! LastModifiedSH()
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([20, line("$")])
+    keepjumps exe '1,' . n . 's#^\(.\{,10}Last Modified: \).*#\1' .
+          \ strftime('%Y-%m-%d at %H:%M:%S') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endif
+endfun
+autocmd BufWritePre * call LastModifiedSH()
+
 
 
 " Syntax shortcuts
