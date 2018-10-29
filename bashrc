@@ -2,11 +2,12 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-02-24 at 16:48:11
+# Last Modified: 2018-10-29 at 10:30:16
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
 
 
 # Aliases
@@ -21,6 +22,7 @@ alias ll="clear && ls -lh --group-directories-first"
 alias lh="clear && ls -alh"
 alias R="clear && R --quiet"
 
+
 ## Navigation
 
 ### Navigate to particular locations within the home directory
@@ -32,10 +34,10 @@ alias devstor="cd ~/Development/storage && lh"
 alias devsv="cd ~/Development/shiny/vidger-shiny && lh"
 alias down="cd ~/Downloads && lh"
 alias drop="cd ~/Dropbox && lh"
-alias pp="cd ~/Pictures && lh"
-alias ppav="cd ~/Pictures/avatars && lh"
-alias ppbg="cd ~/Pictures/backgrounds && lh"
-alias pps="cd ~/Pictures/system && lh"
+alias pic="cd ~/Pictures && lh"
+alias picav="cd ~/Pictures/avatars && lh"
+alias picbg="cd ~/Pictures/backgrounds && lh"
+alias pics="cd ~/Pictures/system && lh"
 alias proj="cd ~/Projects && lh"
 alias proji="cd ~/Projects/iris && lh"
 alias projdb="cd ~/Projects/gwas_twas_hap_db && lh"
@@ -53,25 +55,21 @@ alias cdlh="clear && cd && lh"
 
 
 ## Directly edit config files with vim
-alias cf="clear && cd ~/.config && ls -al"
 alias cfb="vim ~/.bashrc"
-alias cfi="vim ~/.config/i3/config"
-alias cfp="vim ~/.config/polybar/config"
-alias cfx="vim ~/.Xdefaults" 
 alias cfv="vim ~/.vimrc" 
-alias cfra="vim ~/.config/ranger/rc.conf" 
 alias cfr="vim ~/.Rprofile" 
-alias cfq="vim ~/.config/qutebrowser/config.py" 
-alias cfm="vim ~/.muttrc" 
+
 
 ## Launch user scripts 
 alias chbg="~/bin/chbg.sh"
 alias chres="~/bin/chres.sh"
 alias disku="~/bin/disk-use.sh"
 
+
 ## SSH servers
 alias bmbl="ssh brandon@137.216.132.242"
 alias cbsulogin="ssh bm646@cbsulogin.tc.cornell.edu"
+
 
 ## Git
 alias gs="git status"
@@ -83,14 +81,17 @@ alias gcam="git commit -am"
 alias gp="git push origin master"
 alias grao="~/bin/git-rao.sh"
 
+
 ## Pandoc
 alias pmp="~/bin/pan-mdpdf.sh"
 alias vimc="vim -p ~/dev/shiny/iris/vignette/iris-supplemental.md ~/dev/shiny/vidger-shiny/markdown/vidger-tutorial.md ~/dev/shiny/vidger-shiny/markdown/faq.md"
+
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
 alias cowfort="clear && fortune | cowsay"
 alias fletch="neofetch --w3m --source ~/media/pics/avatars/ava-001.png"
+
 
 
 # Exports
