@@ -15,6 +15,7 @@ Desktop/
 Development/
 Documents/
 Downloads/
+Dropbox/
 Pictures/
 Projects/
 Templates/
@@ -54,6 +55,7 @@ Here is a current "tree" example of my directory layout:
     |- R
 |- Documents
 |- Downloads
+|- Dropbox
 |- Pictures
     |- avatars
     |- system
