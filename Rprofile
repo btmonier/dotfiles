@@ -2,7 +2,7 @@
 # Title:         Brandon's R Profile Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:41:11
-# Last Modified: 2018-02-11 at 10:21:19
+# Last Modified: 2018-10-29 at 10:26:04
 #---------------------------------------------------------------------
 
 # Set permanent mirror
