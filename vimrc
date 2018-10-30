@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-10-30 at 10:16:55
+" Last Modified: 2018-10-30 at 17:29:49
 "---------------------------------------------------------------------
 
 " General Options
@@ -140,36 +140,6 @@ autocmd Filetype r inoremap ;hd
     \ <CR>
     \ <CR><++>
 
-"" R Markdown
-autocmd Filetype rmd inoremap ;hd
-    \ ---
-    \ <CR>title:
-    \ <CR>-<++>
-    \ <CR>author:
-    \ <CR>-name: <++>
-    \ <CR>affiliation: <++>
-    \ <CR>date: "`r format(Sys.Date(), '%m/%d/%Y')`" 
-    \ <CR>abstract: >
-    \ <CR><++>
-    \ <CR>output:
-    \ <CR>BiocStyle::pdf_document:
-    \ <CR>toc: true
-    \ <CR>number_sections: false
-    \ <CR>vignette: >
-    \ <CR>%\VignetteIndexEntry{<++>}
-    \ <CR>%\VignetteEngine{knitr::rmarkdown}
-    \ <CR>%\VignetteEncoding{UTF-8}
-    \ <CR>---
-    \ <CR>
-    \ <CR>```{r setup, include=FALSE}
-    \ <CR>knitr::opt_chunk$set(
-    \ <CR>echo = TRUE,
-    \ <CR>fig.pos = "H"
-    \ <CR>)
-    \ <CR>```
-    \ <CR>
-    \ <CR><++>
-
 
 " Buffer
 let s:vim_cache = expand('$HOME/.vim/backups')
@@ -183,4 +153,5 @@ endif
 "au bufnewfile *.sh 0r $HOME/.vim/templates/sh_header.temp
 "au bufnewfile *.R 0r $HOME/.vim/templates/r_header.temp
 
-autocmd BufNewFile *.sh silent! exe "!~/.vim/templates/templater.sh %:p" | e
+autocmd BufNewFile *.sh,*.R,*.py,*.pl silent! exe 
+    \ "!~/Development/dotfiles/scripts/templater.sh %:p" | e
