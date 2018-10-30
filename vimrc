@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-10-30 at 17:29:49
+" Last Modified: 2018-10-30 at 18:56:10
 "---------------------------------------------------------------------
 
 " General Options
@@ -150,8 +150,5 @@ endif
 
 
 " Templates
-"au bufnewfile *.sh 0r $HOME/.vim/templates/sh_header.temp
-"au bufnewfile *.R 0r $HOME/.vim/templates/r_header.temp
-
 autocmd BufNewFile *.sh,*.R,*.py,*.pl silent! exe 
     \ "!~/Development/dotfiles/scripts/templater.sh %:p" | e
