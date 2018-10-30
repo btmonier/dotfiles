@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-10-29 at 18:50:49
+" Last Modified: 2018-10-30 at 10:16:55
 "---------------------------------------------------------------------
 
 " General Options
@@ -40,7 +40,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
-Plug 'vim-scripts/timestamp.vim'
 call plug#end()
 
 "" Lightline
@@ -181,5 +180,7 @@ endif
 
 
 " Templates
-au bufnewfile *.sh 0r $HOME/.vim/templates/sh_header.temp
-au bufnewfile *.R 0r $HOME/.vim/templates/r_header.temp
+"au bufnewfile *.sh 0r $HOME/.vim/templates/sh_header.temp
+"au bufnewfile *.R 0r $HOME/.vim/templates/r_header.temp
+
+autocmd BufNewFile *.sh silent! exe "!~/.vim/templates/templater.sh %:p" | e
