@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-10-30 at 17:09:03
+# Last Modified: 2018-10-31 at 09:15:22
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -29,6 +29,7 @@ alias R="clear && R --quiet"
 alias dev="clear && cd ~/Development && lh"
 alias devd="clear && cd ~/Development/dotfiles && lh"
 alias devdsc="clear && cd ~/Development/dotfiles/scripts && lh"
+alias devn="clear && cd ~/Development/neo4j-community-3.4.9 && lh"
 alias devr="cd ~/Development/R && lh"
 alias devrm="cd ~/Development/R/misc-scripts && lh"
 alias devstor="cd ~/Development/storage && lh"
