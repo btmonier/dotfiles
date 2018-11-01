@@ -54,6 +54,7 @@ Here is a current "tree" example of my directory layout:
             |- LMAN_output
     |- R
 |- Documents
+    |- notes
 |- Downloads
 |- Dropbox
 |- Pictures
