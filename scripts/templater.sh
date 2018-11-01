@@ -5,7 +5,7 @@
 # Description:   Bash script that adds header template for scripts
 # Author:        Brandon Monier
 # Created:       2018-10-30 at 16:01:27
-# Last Modified: 2018-10-30 at 17:12:45
+# Last Modified: 2018-10-31 at 09:06:11
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
@@ -16,6 +16,9 @@
 #    particular file type, this header will populate the file along
 #    with automated date and time entry for its inception and the
 #    last time it was modified.
+#
+#    The `<++>` character represents a quick movement command
+#    encoded in my `.vimrc` config file.
 #    
 #    This script was slightly modified from Jacob Menke
 #    (https://github.com/MenkeTechnologies/TuturoialFiles)
