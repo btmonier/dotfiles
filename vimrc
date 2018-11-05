@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-10-30 at 18:56:10
+" Last Modified: 2018-11-02 at 12:06:50
 "---------------------------------------------------------------------
 
 " General Options
@@ -22,6 +22,9 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set softtabstop=0
+set autoindent
+set smarttab
 
 "" Navigate with `<++>` guides (for shortcuts)
 inoremap $% <Esc>/<++><Enter>"_c4l
@@ -40,6 +43,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 "" Lightline
@@ -56,7 +61,22 @@ let g:lightline = {
 		\ }
 
 "" EOL characters
-:set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+:set listchars=eol:¬,space:␣
+
+"" NERDTree
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+
 
 " Functions
 
