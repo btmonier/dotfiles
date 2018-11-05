@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-11-02 at 09:05:46
+# Last Modified: 2018-11-05 at 10:04:08
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -107,7 +107,7 @@ export PS1="\[\033[38;5;12m\][\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\
 eval "`dircolors -b $DIR_COLORS`"
 
 ## Anaconda 3
-export PATH="/home/bm646/Development/anaconda3/bin:$PATH"
+export PATH="$HOME/Development/anaconda3/bin:$PATH"
 
 ## VIM as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export editor
