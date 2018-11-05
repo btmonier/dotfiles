@@ -5,7 +5,7 @@
 # Description:   Bash script that adds header template for scripts
 # Author:        Brandon Monier
 # Created:       2018-10-30 at 16:01:27
-# Last Modified: 2018-10-31 at 09:06:11
+# Last Modified: 2018-11-02 at 09:08:47
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
@@ -24,7 +24,7 @@
 #    (https://github.com/MenkeTechnologies/TuturoialFiles)
 #--------------------------------------------------------------------
 
-# Script start
+# Make script instantly executable
 executableScriptsProcessing(){
     # then make it executable
     if [[ ! -x "$1" ]]; then
