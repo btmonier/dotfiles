@@ -2,7 +2,7 @@
 # Title:         Brandon's R Profile Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:41:11
-# Last Modified: 2018-10-29 at 10:26:04
+# Last Modified: 2018-11-02 at 10:10:04
 #---------------------------------------------------------------------
 
 # Set permanent mirror
@@ -14,7 +14,7 @@ local({
 
 
 
-# Options
+# General Options
 options(prompt = "> ")
 options(digits = 4)
 options(max.print = 500) 
@@ -39,3 +39,14 @@ if (interactive()) {
 	}
 }
 
+
+
+# Force no save on exit (`q()`)
+utils::assignInNamespace(
+  "q", 
+  function(save = "no", status = 0, runLast = TRUE) 
+  {
+    .Internal(quit(save, status, runLast))
+  }, 
+  "base"
+)
