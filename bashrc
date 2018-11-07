@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-11-05 at 10:04:08
+# Last Modified: 2018-11-07 at 09:32:18
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -108,6 +108,9 @@ eval "`dircolors -b $DIR_COLORS`"
 
 ## Anaconda 3
 export PATH="$HOME/Development/anaconda3/bin:$PATH"
+
+## IntelliJ
+export PATH="/opt/idea-IC-182.4892.20/bin:$PATH"
 
 ## VIM as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export editor
