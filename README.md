@@ -42,7 +42,8 @@ Here is a current "tree" example of my directory layout:
 |- Development
     |- anaconda3
     |- dotfiles
-    |- neo4j
+    |- neo4j-community-*
+    |- R
     |- storage
         |- kremling_2018_eqtl
             |- GRoot_output
@@ -52,7 +53,8 @@ Here is a current "tree" example of my directory layout:
             |- L3Tip_output
             |- LMAD_output
             |- LMAN_output
-    |- R
+    |- tassel_5_source
+    |- tassel_5_test
 |- Documents
     |- notes
 |- Downloads
