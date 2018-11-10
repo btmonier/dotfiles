@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-11-10 at 08:48:55
+# Last Modified: 2018-11-10 at 09:56:20
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -46,7 +46,7 @@ alias projt="cd ~/Projects/teaching && lh"
 alias projv="cd ~/Projects/vidger && lh"
 alias docs="cd ~/Documents && lh"
 alias teach="cd ~/Documents/teaching && lh"
-alias tmp="cd ~/Temporary && lh"
+alias temp="cd ~/Temporary && lh"
 
 ### Go up to home directory
 alias cd..="cd .."
