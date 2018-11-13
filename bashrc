@@ -22,6 +22,7 @@ alias pac="sudo pacman -S"
 alias R="clear && R --quiet"
 alias sc="clear && cd ~/bin && ls -ah"
 alias update="sudo pacman -Syu"
+alias sleepy="systemctl suspend"
 
 
 ## Navigation
@@ -48,7 +49,7 @@ alias projt="cd ~/Projects/teaching && lh"
 alias projv="cd ~/Projects/vidger && lh"
 alias docs="cd ~/Documents && lh"
 alias teach="cd ~/Documents/teaching && lh"
-alias tmp="cd ~/Temporary && lh"
+alias temp="cd ~/Temporary && lh"
 
 ### Go up to home directory
 alias cd..="cd .."
