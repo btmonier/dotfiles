@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-11-07 at 09:32:18
+# Last Modified: 2018-11-13 at 17:21:28
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -13,14 +13,15 @@
 # Aliases
 
 ## General
-alias ls="ls --color=auto --group-directories-first"
 alias grep="grep --color=auto"
-alias pac="sudo pacman -S"
-alias update="sudo pacman -Syu"
-alias sc="clear && cd ~/bin && ls -ah"
-alias ll="clear && ls -lh --group-directories-first"
 alias lh="clear && ls -alh"
+alias ll="clear && ls -lh --group-directories-first"
+alias ls="ls --color=auto --group-directories-first"
+alias medo="xdg-open"
+alias pac="sudo pacman -S"
 alias R="clear && R --quiet"
+alias sc="clear && cd ~/bin && ls -ah"
+alias update="sudo pacman -Syu"
 
 
 ## Navigation
