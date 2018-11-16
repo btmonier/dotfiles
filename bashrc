@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-11-16 at 15:51:54
+# Last Modified: 2018-11-16 at 18:15:46
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -43,8 +43,9 @@ alias picav="cd ~/Pictures/avatars && lh"
 alias picbg="cd ~/Pictures/backgrounds && lh"
 alias pics="cd ~/Pictures/system && lh"
 alias proj="cd ~/Projects && lh"
-alias proji="cd ~/Projects/iris && lh"
 alias projdb="cd ~/Projects/gwas_twas_hap_db && lh"
+alias proji="cd ~/Projects/iris && lh"
+alias projr="cd ~/Projects/misc_r_scripts && lh"
 alias projt="cd ~/Projects/teaching && lh"
 alias projv="cd ~/Projects/vidger && lh"
 alias docs="cd ~/Documents && lh"
