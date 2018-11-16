@@ -59,6 +59,7 @@ Here is a current "tree" example of my directory layout:
     |- notes
 |- Downloads
 |- Dropbox
+    |- publications
 |- Pictures
     |- avatars
     |- system
@@ -67,6 +68,7 @@ Here is a current "tree" example of my directory layout:
     |- btmonier_github_io
     |- gwas_twas_db
     |- iris
+    |- misc_r_scripts
     |- teaching
         |- plbrg_4070
     |- vidger
