@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-11-02 at 12:06:50
+" Last Modified: 2018-11-16 at 19:01:01
 "---------------------------------------------------------------------
 
 " General Options
@@ -45,7 +45,15 @@ Plug 'itchyny/lightline.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'roxma/nvim-completion-manager'
+Plug 'jalvesaq/Nvim-R'
+"Plug 'ncm2/ncm2'
 call plug#end()
+
+"" Nvim-R
+if !has('nvim')
+    Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 "" Lightline
 set laststatus=2
