@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-11-19 at 10:05:05
+" Last Modified: 2018-11-21 at 11:00:11
 "---------------------------------------------------------------------
 
 " General Options
@@ -85,6 +85,10 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
+"" R indenting
+let r_indent_align_args = -0.5
+let r_indent_ess_comments = 0
+let r_indent_ess_compatible = 0
 
 " Functions
 
