@@ -2,7 +2,7 @@
 # Title:         Brandon's R Profile Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:41:11
-# Last Modified: 2018-11-02 at 10:10:04
+# Last Modified: 2018-11-21 at 11:16:55
 #---------------------------------------------------------------------
 
 # Set permanent mirror
@@ -29,6 +29,10 @@ if (interactive()) {
 	try(fortunes::fortune(), silent = TRUE)
 }
 
+## ColorOut
+if (interactive()) {
+    try(library(colorout), silent = TRUE)
+}
 
 
 # First function
