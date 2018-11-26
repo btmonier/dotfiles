@@ -54,6 +54,7 @@ Here is a current "tree" example of my directory layout:
             |- LMAD_output
             |- LMAN_output
     |- tassel_5_source
+    |- tassel_5_standalone
     |- tassel_5_test
 |- Documents
     |- notes
