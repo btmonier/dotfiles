@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-11-21 at 11:00:11
+" Last Modified: 2018-11-26 at 14:45:45
 "---------------------------------------------------------------------
 
 " General Options
@@ -25,6 +25,7 @@ set expandtab
 set softtabstop=0
 set autoindent
 set smarttab
+set t_Co=256
 
 "" Navigate with `<++>` guides (for shortcuts)
 inoremap $% <Esc>/<++><Enter>"_c4l
@@ -45,15 +46,22 @@ Plug 'itchyny/lightline.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/nvim-yarp'
 Plug 'jalvesaq/Nvim-R'
-"Plug 'roxma/nvim-completion-manager'
-"Plug 'ncm2/ncm2'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'gaalcaras/ncm-R'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+Plug 'lervag/vimtex'
+Plug 'w0rp/ale'
 call plug#end()
 
-"" Nvim-R
-if !has('nvim')
-    Plug 'roxma/vim-hug-neovim-rpc'
-endif
+"" ncm2
+"autocmd BufEnter * call ncm2#enable_for_buffer()
+"set completeopt=noinsert,menuone,noselect
 
 "" Lightline
 set laststatus=2
