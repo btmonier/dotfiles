@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-11-20 at 10:05:32
+# Last Modified: 2018-11-26 at 17:23:52
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -46,6 +46,7 @@ alias projdb="cd ~/Projects/gwas_twas_hap_db && lh"
 alias proji="cd ~/Projects/iris && lh"
 alias projr="cd ~/Projects/misc_r_scripts && lh"
 alias projt="cd ~/Projects/teaching && lh"
+alias projta="cd ~/Projects/tassel_r_bridge && lh"
 alias projv="cd ~/Projects/vidger && lh"
 alias docs="cd ~/Documents && lh"
 alias teach="cd ~/Documents/teaching && lh"
