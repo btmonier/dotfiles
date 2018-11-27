@@ -60,6 +60,9 @@ Here is a current "tree" example of my directory layout:
     |- notes
 |- Downloads
 |- Dropbox
+    |- misc_r_scripts
+        |- functions
+        |- r_excel
     |- publications
 |- Pictures
     |- avatars
