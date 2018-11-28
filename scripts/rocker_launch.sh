@@ -5,7 +5,7 @@
 # Description:   Shell script to launch RStudio Docker/Rocker
 # Author:        Brandon Monier
 # Created:       2018-11-26 at 10:59:57
-# Last Modified: 2018-11-26 at 17:18:03
+# Last Modified: 2018-11-27 at 15:45:46
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
@@ -17,5 +17,5 @@
 sudo docker run --rm -p 8787:8787 \
     -v $HOME:/home/rstudio/$HOME \
     -e PASSWORD=tasseldock \
-    verse_rjava_tassel 
+    tasselr 
 
