@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-11-26 at 14:45:45
+" Last Modified: 2018-11-30 at 11:44:38
 "---------------------------------------------------------------------
 
 " General Options
@@ -125,6 +125,20 @@ function! LastModifiedSH()
   endif
 endfun
 autocmd BufWritePre * call LastModifiedSH()
+
+"" Last modified timestamp (updates timestamp on writes) - Markdown READMEs
+function! LastModifiedMDR()
+  if &modified
+    let save_cursor = getpos(".")
+    let n = min([20, line("$")])
+    keepjumps exe '1,' . n . 's#^\(.\{,10}\*Last Modified:\* \).*#\1' .
+          \ strftime('%Y-%m-%d at %H:%M:%S') . '#e'
+    call histdel('search', -1)
+    call setpos('.', save_cursor)
+  endif
+endfun
+autocmd BufWritePre * call LastModifiedMDR()
+
 
 "" Timestamp Plugin
 "let g:timestamp_automask = "*.sh"
