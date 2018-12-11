@@ -73,8 +73,11 @@ Here is a current "tree" example of my directory layout:
     |- gwas_twas_db
     |- iris
     |- misc_r_scripts
+    |- rtassel
+    |- rtassel_proto
     |- teaching
         |- plbrg_4070
+    |- tassel_r_bridge
     |- vidger
 |- Public
 |- Templates
