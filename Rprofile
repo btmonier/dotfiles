@@ -2,7 +2,7 @@
 # Title:         Brandon's R Profile Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:41:11
-# Last Modified: 2018-11-21 at 11:16:55
+# Last Modified: 2018-12-11 at 17:24:43
 #---------------------------------------------------------------------
 
 # Set permanent mirror
@@ -28,12 +28,6 @@ options(editor = "vim")
 if (interactive()) {
 	try(fortunes::fortune(), silent = TRUE)
 }
-
-## ColorOut
-if (interactive()) {
-    try(library(colorout), silent = TRUE)
-}
-
 
 # First function
 .First <- function() {
