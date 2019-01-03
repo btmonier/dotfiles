@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2018-12-04 at 21:32:44
+# Last Modified: 2019-01-03 at 11:56:10
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -63,6 +63,7 @@ alias cdlh="clear && cd && lh"
 alias cfb="vim ~/.bashrc"
 alias cfv="vim ~/.vimrc" 
 alias cfr="vim ~/.Rprofile" 
+alias cfx="vim ~/.Xdefaults"
 
 
 ## Launch user scripts 
