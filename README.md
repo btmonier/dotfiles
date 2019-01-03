@@ -45,6 +45,7 @@ Here is a current "tree" example of my directory layout:
     |- neo4j-community-*
     |- R
     |- storage
+        |- hai_2018
         |- kremling_2018_eqtl
             |- GRoot_output
             |- GShoot_output
@@ -53,17 +54,20 @@ Here is a current "tree" example of my directory layout:
             |- L3Tip_output
             |- LMAD_output
             |- LMAN_output
+        |- valluru_2018
     |- tassel_5_source
     |- tassel_5_standalone
     |- tassel_5_test
 |- Documents
+    |- happy_paper_hour
     |- notes
+    |- pres_lab_meetings
+    |- pres_panzea
+    |- pres_terra
+    |- publications
+    |- teaching
 |- Downloads
 |- Dropbox
-    |- misc_r_scripts
-        |- functions
-        |- r_excel
-    |- publications
 |- Pictures
     |- avatars
     |- system
@@ -74,10 +78,10 @@ Here is a current "tree" example of my directory layout:
     |- iris
     |- misc_r_scripts
     |- rtassel
-    |- rtassel_proto
+    |- rTASSEL_proto
+    |- tassel_r_bridge
     |- teaching
         |- plbrg_4070
-    |- tassel_r_bridge
     |- vidger
 |- Public
 |- Templates
