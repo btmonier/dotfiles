@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2018-11-30 at 11:44:38
+" Last Modified: 2019-01-03 at 11:29:00
 "---------------------------------------------------------------------
 
 " General Options
@@ -57,6 +57,7 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 Plug 'lervag/vimtex'
 Plug 'w0rp/ale'
+Plug 'flazz/vim-colorschemes'
 call plug#end()
 
 "" ncm2
@@ -97,6 +98,10 @@ let g:NERDTreeIndicatorMapCustom = {
 let r_indent_align_args = -0.5
 let r_indent_ess_comments = 0
 let r_indent_ess_compatible = 0
+
+"" Colorschemes
+colorscheme Tomorrow-Night-Eighties
+
 
 " Functions
 
