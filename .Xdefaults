@@ -2,18 +2,25 @@
 # Title:         Brandon's Xdefaults Configs (URXVT)
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:43:47
-# Last Modified: 2019-01-03 at 10:33:23
+# Last Modified: 2019-01-03 at 12:16:01
 #---------------------------------------------------------------------
 
-! URXVT
+! URXVT Setup
 
 !! Miscellaneous
-URxvt.termName:     rxvt-256color
-URxvt*.scrollBar:	false
-URxvt*.font:        xft:Ubuntu Mono:pixelsize=14,style=Regular
-#URxvt*.letterSpace:	0
-#URxvt*.fading:		15
-URxvt*.loginShell:	true
+
+!!! Initial setup
+URxvt.termName:        rxvt-256color
+URxvt*.scrollBar:	   false
+URxvt*.font:           xft:Ubuntu Mono:pixelsize=14,style=Regular
+URxvt*.letterSpace:	   0
+URxvt*.fading:		   15
+URxvt*.loginShell:	   true
+
+!!! Launch URLs with Firefox
+URxvt.url-launcher:    /usr/bin/firefox
+URxvt.matcher.button:  1
+
 
 !! Colors
 
