@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-01-03 at 11:56:10
+# Last Modified: 2019-01-15 at 11:52:31
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -22,11 +22,9 @@ alias R="clear && R --quiet"
 alias sc="clear && cd ~/bin && ls -ah"
 alias update="sudo apt update && sudo apt upgrade"
 alias sleepy="systemctl suspend"
+alias topbar="sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus"
 
-
-## Navigation
-
-### Navigate to particular locations within the home directory
+## Navigate to particular locations within the home directory
 alias dev="clear && cd ~/Development && lh"
 alias devd="clear && cd ~/Development/dotfiles && lh"
 alias devdsc="clear && cd ~/Development/dotfiles/scripts && lh"
@@ -52,12 +50,11 @@ alias docs="cd ~/Documents && lh"
 alias teach="cd ~/Documents/teaching && lh"
 alias temp="cd ~/Temporary && lh"
 
-### Go up to home directory
+## Go up to home directory
 alias cd..="cd .."
 alias cdls="clear && cd && ls"
 alias cdll="clear && cd && ll"
 alias cdlh="clear && cd && lh"
-
 
 ## Directly edit config files with vim
 alias cfb="vim ~/.bashrc"
@@ -65,17 +62,14 @@ alias cfv="vim ~/.vimrc"
 alias cfr="vim ~/.Rprofile" 
 alias cfx="vim ~/.Xdefaults"
 
-
 ## Launch user scripts 
 alias chbg="~/bin/chbg.sh"
 alias chres="~/bin/chres.sh"
 alias disku="~/bin/disk-use.sh"
 
-
 ## SSH servers
 alias bmbl="ssh brandon@137.216.132.242"
 alias cbsulogin="ssh bm646@cbsulogin.tc.cornell.edu"
-
 
 ## Git
 alias gs="git status"
@@ -87,11 +81,9 @@ alias gcam="git commit -am"
 alias gp="git push origin master"
 alias grao="~/bin/git-rao.sh"
 
-
 ## Pandoc
 alias pmp="~/bin/pan-mdpdf.sh"
 alias vimc="vim -p ~/dev/shiny/iris/vignette/iris-supplemental.md ~/dev/shiny/vidger-shiny/markdown/vidger-tutorial.md ~/dev/shiny/vidger-shiny/markdown/faq.md"
-
 
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
