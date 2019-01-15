@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-01-15 at 11:52:31
+# Last Modified: 2019-01-15 at 11:54:58
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -33,6 +33,8 @@ alias devr="cd ~/Development/R && lh"
 alias devrm="cd ~/Development/R/misc-scripts && lh"
 alias devstor="cd ~/Development/storage && lh"
 alias devsv="cd ~/Development/shiny/vidger-shiny && lh"
+alias docs="cd ~/Documents && lh"
+alias docsn="cd ~/Documents/notes && lh"
 alias down="cd ~/Downloads && lh"
 alias drop="cd ~/Dropbox && lh"
 alias pic="cd ~/Pictures && lh"
@@ -46,7 +48,6 @@ alias projr="cd ~/Projects/misc_r_scripts && lh"
 alias projt="cd ~/Projects/teaching && lh"
 alias projrta="cd ~/Projects/rtassel && lh"
 alias projv="cd ~/Projects/vidger && lh"
-alias docs="cd ~/Documents && lh"
 alias teach="cd ~/Documents/teaching && lh"
 alias temp="cd ~/Temporary && lh"
 
