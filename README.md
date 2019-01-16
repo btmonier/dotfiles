@@ -59,6 +59,7 @@ Here is a current "tree" example of my directory layout:
     |- tassel_5_standalone
     |- tassel_5_test
 |- Documents
+    |- curriculum_vitae
     |- happy_paper_hour
     |- notes
     |- pres_lab_meetings
