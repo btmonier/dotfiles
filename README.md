@@ -77,11 +77,10 @@ Here is a current "tree" example of my directory layout:
     |- system
 |- Projects
     |- btmonier_github_io
-    |- gwas_twas_db
+    |- gwas_twas_hap_db
     |- iris
     |- misc_r_scripts
     |- rtassel
-    |- rTASSEL_proto
     |- tassel_r_bridge
     |- teaching
         |- plbrg_4070
