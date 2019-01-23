@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-01-15 at 12:40:20
+# Last Modified: 2019-01-22 at 15:45:00
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -18,6 +18,7 @@ alias lh="clear && ls -alh"
 alias ll="clear && ls -lh --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias medo="xdg-open"
+alias rr="ranger"
 alias R="clear && R --quiet"
 alias sc="clear && cd ~/bin && ls -ah"
 alias sleepy="systemctl suspend"
