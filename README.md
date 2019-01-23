@@ -62,6 +62,7 @@ Here is a current "tree" example of my directory layout:
     |- curriculum_vitae
     |- happy_paper_hour
     |- notes
+        |- pdf
     |- pres_lab_meetings
     |- pres_panzea
     |- pres_terra
