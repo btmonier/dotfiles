@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-01-22 at 15:45:00
+# Last Modified: 2019-01-25 at 15:02:29
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -20,6 +20,7 @@ alias ls="ls --color=auto --group-directories-first"
 alias medo="xdg-open"
 alias rr="ranger"
 alias R="clear && R --quiet"
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias sc="clear && cd ~/bin && ls -ah"
 alias sleepy="systemctl suspend"
 alias topbar="sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus"
@@ -60,11 +61,11 @@ alias cdlh="clear && cd && lh"
 
 ## Directly edit config files with vim
 alias cfb="vim ~/.bashrc"
-alias cfv="vim ~/.vimrc" 
-alias cfr="vim ~/.Rprofile" 
+alias cfv="vim ~/.vimrc"
+alias cfr="vim ~/.Rprofile"
 alias cfx="vim ~/.Xdefaults"
 
-## Launch user scripts 
+## Launch user scripts
 alias chbg="~/bin/chbg.sh"
 alias chres="~/bin/chres.sh"
 alias disku="~/bin/disk-use.sh"
