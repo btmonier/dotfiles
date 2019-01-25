@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2019-01-03 at 11:29:00
+" Last Modified: 2019-01-25 at 13:56:31
 "---------------------------------------------------------------------
 
 " General Options
@@ -16,6 +16,9 @@ set relativenumber
 
 "" Text wrap
 au BufRead,BufNewFile *.md setlocal textwidth=79
+
+"" Automatically remove all trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
 
 "" Set tab width to 4 spaces
 filetype plugin indent on
@@ -135,7 +138,7 @@ autocmd BufWritePre * call LastModifiedSH()
 function! LastModifiedMDR()
   if &modified
     let save_cursor = getpos(".")
-    let n = min([20, line("$")])
+    let n = line("$")
     keepjumps exe '1,' . n . 's#^\(.\{,10}\*Last Modified:\* \).*#\1' .
           \ strftime('%Y-%m-%d at %H:%M:%S') . '#e'
     call histdel('search', -1)
