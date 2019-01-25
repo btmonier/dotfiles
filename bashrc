@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-01-25 at 15:02:29
+# Last Modified: 2019-01-25 at 16:21:20
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -20,7 +20,7 @@ alias ls="ls --color=auto --group-directories-first"
 alias medo="xdg-open"
 alias rr="ranger"
 alias R="clear && R --quiet"
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; lh'
 alias sc="clear && cd ~/bin && ls -ah"
 alias sleepy="systemctl suspend"
 alias topbar="sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus"
