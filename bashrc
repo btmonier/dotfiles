@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-01-25 at 16:21:20
+# Last Modified: 2019-01-29 at 15:03:57
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -37,6 +37,7 @@ alias devstor="cd ~/Development/storage && lh"
 alias devsv="cd ~/Development/shiny/vidger-shiny && lh"
 alias docs="cd ~/Documents && lh"
 alias docsn="cd ~/Documents/notes && lh"
+alias docspub="cd ~/Documents/publications && lh"
 alias down="cd ~/Downloads && lh"
 alias drop="cd ~/Dropbox && lh"
 alias pic="cd ~/Pictures && lh"
