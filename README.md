@@ -82,6 +82,7 @@ Here is a current "tree" example of my directory layout:
     |- gwas_twas_hap_db
     |- iris
     |- misc_r_scripts
+    |- perlseq
     |- rtassel
     |- tassel_r_bridge
     |- teaching
