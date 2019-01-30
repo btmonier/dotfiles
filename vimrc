@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2019-01-25 at 13:56:31
+" Last Modified: 2019-01-30 at 16:42:26
 "---------------------------------------------------------------------
 
 " General Options
@@ -28,12 +28,22 @@ set expandtab
 set softtabstop=0
 set autoindent
 set smarttab
+
+"" 256 Colors
 set t_Co=256
 
-"" Navigate with `<++>` guides (for shortcuts)
+"" Navigate with `<++>` guides (for syntax shortcuts)
 inoremap $% <Esc>/<++><Enter>"_c4l
 vnoremap $% <Esc>/<++><Enter>"_c4l
 map $% <Esc>/<++><Enter>"_c4l
+
+"" EOL characters
+:set list
+:set listchars=tab:▸\ ,eol:¬,space:.
+
+
+
+" Vim-plug
 
 "" vim-plug install
 if empty(glob('~/.vim/autoload/plug.vim'))
@@ -42,7 +52,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-"" vim-plug
+"" plugins
 call plug#begin('~/.vim/plugged')
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
@@ -63,11 +73,9 @@ Plug 'w0rp/ale'
 Plug 'flazz/vim-colorschemes'
 call plug#end()
 
-"" ncm2
-"autocmd BufEnter * call ncm2#enable_for_buffer()
-"set completeopt=noinsert,menuone,noselect
 
-"" Lightline
+
+" Lightline
 set laststatus=2
 let g:lightline = {
 		\ 'component': {
@@ -80,10 +88,9 @@ let g:lightline = {
 		\ 'separator': { 'left': '▒░', 'right': '░▒' },
 		\ }
 
-"" EOL characters
-:set listchars=eol:¬,space:␣
 
-"" NERDTree
+
+" NERDTree
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -97,24 +104,23 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 
-"" R indenting
-let r_indent_align_args = -0.5
-let r_indent_ess_comments = 0
-let r_indent_ess_compatible = 0
 
-"" Colorschemes
+" Colorschemes
 colorscheme Tomorrow-Night-Eighties
 
 
+
 " Functions
+
+"" TODO: optimize functions into one
 
 "" Last modified timestamp (updates timestamp on writes)
 function! LastModified()
   if &modified
     let save_cursor = getpos(".")
     let n = min([20, line("$")])
-    keepjumps exe '1,' . n . 's#^\(.\{,10}last modified: \).*#\1' .
-          \ strftime('%Y-%m-%d at %H:%M:%S') . '#e'
+    keepjumps exe '1,' . n . 's#^\(.\{,10}date:\).*#\1' .
+          \ strftime('   \"%Y-%m-%d at %H:%M:%S\"') . '#e'
     call histdel('search', -1)
     call setpos('.', save_cursor)
   endif
@@ -148,15 +154,10 @@ endfun
 autocmd BufWritePre * call LastModifiedMDR()
 
 
-"" Timestamp Plugin
-"let g:timestamp_automask = "*.sh"
-let g:timestamp_automask = "*.r"
-let g:timestamp_rep = '%Y-%m-%d at %H:%M:%S'
-
 
 " Syntax shortcuts
 
-"" Markdown
+"" General - Markdown
 autocmd Filetype markdown,md inoremap ;n ---<Enter><Enter>
 autocmd Filetype markdown,md inoremap ;b ****<Space><++><Esc>F*hi
 autocmd Filetype markdown,md inoremap ;s ~~~~<Space><++><Esc>F~hi
@@ -168,17 +169,18 @@ autocmd Filetype markdown,md inoremap ;h4 ####<Space><Enter><++><Esc>kA
 autocmd Filetype markdown,md inoremap ;imin ![](<++>)<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;imrf [][<++>]<Space><++><Esc>F[a
 autocmd Filetype markdown,md inoremap ;url [](<++>)<Space><++><Esc>F[a
-autocmd Filetype markdown,md inoremap ;hd 
-    \ ---
-    \ <CR>title:         <++>
-    \ <CR>author:        Brandon Monier
-    \ <CR>created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR>
-    \ <CR>last modified: 
-    \ <CR>---
-    \ <CR>
-    \ <CR><++>
 
-"" Shell 
+"" Headers - Markdown
+autocmd Filetype markdown,md inoremap ;hd
+    \ ---
+    \ <CR>title:  "<++>"
+    \ <CR>author: Brandon Monier
+    \ <CR>date:
+    \ <CR>...
+    \ <CR>
+    \<++>
+
+"" Headers - Shell
 autocmd Filetype sh inoremap ;hd
     \ #!/bin/bash
     \ <CR>
@@ -186,21 +188,22 @@ autocmd Filetype sh inoremap ;hd
     \ <CR># Title:         <++>
     \ <CR># Author:        Brandon Monier
     \ <CR># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR>
-    \ <CR># Last Modified: 
+    \ <CR># Last Modified:
     \ <CR>#---------------------------------------------------------------------
     \ <CR>
     \ <CR><++>
 
-"" R
-autocmd Filetype r inoremap ;hd 
+"" Headers - R
+autocmd Filetype r inoremap ;hd
     \ #---------------------------------------------------------------------
     \ <CR># Title:         <++>
     \ <CR># Author:        Brandon Monier
     \ <CR># Created:       <C-R>=strftime("%Y-%m-%d at %H:%M:%S")<CR>
-    \ <CR># Last Modified: 
+    \ <CR># Last Modified:
     \ <CR>#---------------------------------------------------------------------
     \ <CR>
     \ <CR><++>
+
 
 
 " Buffer
@@ -212,5 +215,6 @@ endif
 
 
 " Templates
-autocmd BufNewFile *.sh,*.R,*.py,*.pl silent! exe 
+autocmd BufNewFile *.sh,*.R,*.py,*.pl silent! exe
     \ "!~/Development/dotfiles/scripts/templater.sh %:p" | e
+
