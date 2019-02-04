@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2019-01-30 at 16:42:26
+" Last Modified: 2019-01-31 at 19:50:28
 "---------------------------------------------------------------------
 
 " General Options

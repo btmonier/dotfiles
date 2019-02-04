@@ -5,7 +5,7 @@
 # Description:   Compile all markdown files in notes directory
 # Author:        Brandon Monier
 # Created:       2019-01-22 at 16:00:03
-# Last Modified: 2019-01-23 at 10:22:40
+# Last Modified: 2019-02-04 at 10:57:43
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
@@ -16,6 +16,7 @@
 #    (https://github.com/Wandmalfarbe/pandoc-latex-template)
 #--------------------------------------------------------------------
 
+# Compile all *.md documents to PDF with Eisvogel template
 shopt -s extglob
 
 for file in $HOME/Documents/notes/!(README).md
@@ -29,4 +30,16 @@ do
         --listings
 done
 
+
+# Automate git commits
+CURR=$(pwd)
+
+cd $HOME/Documents/notes/
+git add .
+
+TIMESTAMP=$(date +"%Y-%m-%d at %T")
+git commit -m "Compile notes ($TIMESTAMP)"
+git push
+
+cd $CURR
 
