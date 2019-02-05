@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2019-01-31 at 19:50:28
+" Last Modified: 2019-02-05 at 17:05:50
 "---------------------------------------------------------------------
 
 " General Options
@@ -132,8 +132,8 @@ function! LastModifiedSH()
   if &modified
     let save_cursor = getpos(".")
     let n = min([20, line("$")])
-    keepjumps exe '1,' . n . 's#^\(.\{,10}Last Modified: \).*#\1' .
-          \ strftime('%Y-%m-%d at %H:%M:%S') . '#e'
+    keepjumps exe '1,' . n . 's#^\(.\{,10}Last Modified:\).*#\1' .
+          \ strftime(' %Y-%m-%d at %H:%M:%S') . '#e'
     call histdel('search', -1)
     call setpos('.', save_cursor)
   endif
@@ -146,7 +146,7 @@ function! LastModifiedMDR()
     let save_cursor = getpos(".")
     let n = line("$")
     keepjumps exe '1,' . n . 's#^\(.\{,10}\*Last Modified:\* \).*#\1' .
-          \ strftime('%Y-%m-%d at %H:%M:%S') . '#e'
+          \ strftime(' %Y-%m-%d at %H:%M:%S') . '#e'
     call histdel('search', -1)
     call setpos('.', save_cursor)
   endif
