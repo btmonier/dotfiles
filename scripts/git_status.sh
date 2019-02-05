@@ -5,16 +5,23 @@
 # Description:   Check entire multiple directories for git status
 # Author:        Brandon Monier
 # Created:       2019-02-05 at 16:46:33
-# Last Modified: 2019-02-05 at 17:05:20
+# Last Modified: 2019-02-05 at 17:41:59
 #--------------------------------------------------------------------
 
 #--------------------------------------------------------------------
 # Detailed Purpose:
 #    The main purpose of this bash script is to iterate through a
 #    parent directory to determine the status of multiple git repos.
+#
+#    More information about this script can be found here:
+#    https://gist.github.com/mzabriskie/6631607#file-git-status-L38
 #--------------------------------------------------------------------
 
-#!/bin/bash
+# TODO:
+#  1. Make script only check git repos instead of entire directory
+#  2. Improve layout; currently uses a lot of vertical space. This
+#     could be condensed
+
 
 dir="$1"
 
