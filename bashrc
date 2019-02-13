@@ -2,12 +2,11 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-01-29 at 18:00:59
+# Last Modified: 2019-02-13 at 15:41:08
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
-
 
 
 # Aliases

@@ -54,6 +54,7 @@ Here is a current "tree" example of my directory layout:
             |- L3Tip_output
             |- LMAD_output
             |- LMAN_output
+        |- kremling_2018_eqtl_comp_backup
         |- siebers_2018_lidar
         |- valluru_2018_eqtl
     |- tassel_5_source
