@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-02-13 at 15:41:08
+# Last Modified: 2019-02-14 at 11:44:35
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -89,7 +89,10 @@ alias vimc="vim -p ~/dev/shiny/iris/vignette/iris-supplemental.md ~/dev/shiny/vi
 ## Stupid :)
 alias starwars="telnet towel.blinkenlights.nl"
 alias cowfort="clear && fortune | cowsay"
-alias fletch="neofetch --w3m --source ~/media/pics/avatars/ava-001.png"
+
+## iRODS commands
+alias panzea="iinit && icd /iplant/home/shared/panzea && clear && ils"
+
 
 
 
