@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-02-14 at 11:44:35
+# Last Modified: 2019-02-15 at 15:19:11
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -23,7 +23,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias sc="clear && cd ~/bin && ls -ah"
 alias sleepy="systemctl suspend"
 alias topbar="sudo -E hardcode-tray --conversion-tool RSVGConvert --size 22 --theme Papirus"
-alias update="sudo apt update && sudo apt upgrade"
+alias update="sudo apt update && sudo apt -y upgrade"
 
 ## Navigate to particular locations within the home directory
 alias dev="clear && cd ~/Development && lh"
