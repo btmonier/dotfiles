@@ -55,6 +55,7 @@ Here is a current "tree" example of my directory layout:
             |- LMAD_output
             |- LMAN_output
         |- kremling_2018_eqtl_comp_backup
+        |- kremling_2018_eqtl_rnaseq
         |- siebers_2018_lidar
         |- valluru_2018_eqtl
     |- tassel_5_source
@@ -91,6 +92,7 @@ Here is a current "tree" example of my directory layout:
     |- misc_r_scripts
     |- perlseq
     |- pub_expn_rare_alleles
+    |- qubic
     |- quiltr
     |- rbric
     |- rtassel
