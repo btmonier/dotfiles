@@ -4,18 +4,14 @@
 # Title:         Disk Space Visualization with R
 # Author:        Brandon Monier
 # Created:       2018-02-24 at 16:06:18
-# Last Modified: 2018-02-24 at 17:17:59
+# Last Modified: 2019-02-14 at 19:56:29
 #---------------------------------------------------------------------
 
-df > ~/tmp/tmp-storage
+df > ~/Temporary/tmp-storage
 
-R CMD BATCH ~/dev/R/misc-scripts/disk-usage-vis.R
-
-rm ~/tmp/tmp-storage
-rm *.Rout
-rm ~/media/pics/system/.RData
+R CMD BATCH ~/Projects/misc_r_scripts/disk_usage_vis.R
 
 echo "Viewing image..."
 
 DATE=`date +%Y-%m-%d`
-mupdf ~/media/pics/system/disk-usage-$DATE.pdf
+zathura ~/Pictures/system/disk-usage-$DATE.pdf
