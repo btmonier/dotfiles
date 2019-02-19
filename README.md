@@ -88,6 +88,7 @@ Here is a current "tree" example of my directory layout:
     |- croix
     |- gingr
     |- gwas_twas_hap_db
+    |- idep
     |- iris
     |- misc_r_scripts
     |- perlseq
