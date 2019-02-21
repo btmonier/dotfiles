@@ -45,6 +45,7 @@ Here is a current "tree" example of my directory layout:
     |- neo4j-community-*
     |- R
     |- storage
+        |- db_backups
         |- hai_2018_prediction
         |- kremling_2018_eqtl
             |- GRoot_output
@@ -56,6 +57,7 @@ Here is a current "tree" example of my directory layout:
             |- LMAN_output
         |- kremling_2018_eqtl_comp_backup
         |- kremling_2018_eqtl_rnaseq
+        |- kremling_2018_eqtl_v4
         |- siebers_2018_lidar
         |- valluru_2018_eqtl
     |- tassel_5_source
@@ -71,6 +73,7 @@ Here is a current "tree" example of my directory layout:
         |- panzea
         |- terra
     |- publications
+    |- reports
     |- teaching
 |- Downloads
 |- Dropbox
