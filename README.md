@@ -46,6 +46,7 @@ Here is a current "tree" example of my directory layout:
     |- R
     |- storage
         |- db_backups
+        |- gene_ids
         |- hai_2018_prediction
         |- kremling_2018_eqtl
             |- GRoot_output
