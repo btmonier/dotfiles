@@ -58,6 +58,7 @@ Here is a current "tree" example of my directory layout:
         |- kremling_2018_eqtl_comp_backup
         |- kremling_2018_eqtl_rnaseq
         |- kremling_2018_eqtl_v4
+        |- mejia_guerra_2019_tf
         |- siebers_2018_lidar
         |- valluru_2018_eqtl
     |- tassel_5_source
