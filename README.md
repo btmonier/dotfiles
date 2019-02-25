@@ -47,7 +47,9 @@ Here is a current "tree" example of my directory layout:
     |- storage
         |- db_backups
         |- gene_ids
-        |- hai_2018_prediction
+        |- graph_data_tests
+        |- gtf_files
+        |- hai_2018_tss_prediction
         |- kremling_2018_eqtl
             |- GRoot_output
             |- GShoot_output
@@ -90,6 +92,7 @@ Here is a current "tree" example of my directory layout:
     |- btmonier_github_io
     |- btmonier_test_site
     |- complex_heatmap
+    |- consultation
     |- croix
     |- gingr
     |- gwas_twas_hap_db
