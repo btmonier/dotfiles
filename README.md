@@ -74,6 +74,7 @@ Here is a current "tree" example of my directory layout:
     |- presentations
         |- happy_paper_hour
         |- lab_meetings
+        |- posters
         |- panzea
         |- terra
     |- publications
@@ -85,6 +86,7 @@ Here is a current "tree" example of my directory layout:
     |- avatars
     |- backgrounds
     |- db_info
+    |- posters
     |- r_packages
     |- system
 |- Projects
