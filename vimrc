@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2019-02-05 at 17:05:50
+" Last Modified: 2019-04-18 at 17:41:32
 "---------------------------------------------------------------------
 
 " General Options
@@ -16,6 +16,7 @@ set relativenumber
 
 "" Text wrap
 au BufRead,BufNewFile *.md setlocal textwidth=79
+set linebreak
 
 "" Automatically remove all trailing whitespace
 autocmd BufWritePre * %s/\s\+$//e
@@ -38,10 +39,11 @@ vnoremap $% <Esc>/<++><Enter>"_c4l
 map $% <Esc>/<++><Enter>"_c4l
 
 "" EOL characters
-:set list
-:set listchars=tab:▸\ ,eol:¬,space:.
+set list
+set listchars=tab:▸\ ,eol:¬,space:.
 
-
+"" Yank to system
+set clipboard=unnamedplus
 
 " Vim-plug
 
