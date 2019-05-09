@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-03-27 at 13:25:21
+# Last Modified: 2019-05-07 at 11:18:00
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -29,7 +29,7 @@ alias update="sudo apt update && sudo apt -y upgrade"
 alias dev="clear && cd ~/Development && lh"
 alias devd="clear && cd ~/Development/dotfiles && lh"
 alias devdsc="clear && cd ~/Development/dotfiles/scripts && lh"
-alias devn="clear && cd ~/Development/neo4j-community-3.4.9 && lh"
+alias devn="clear && cd ~/Development/neo4j-community-3.5.5 && lh"
 alias devr="cd ~/Development/R && lh"
 alias devstor="cd ~/Development/storage && lh"
 alias docs="cd ~/Documents && lh"
@@ -92,8 +92,8 @@ alias cowfort="clear && fortune | cowsay"
 
 ## iRODS, DB, and TASSEL commands
 alias panzea="iinit && icd /iplant/home/shared/panzea && clear && ils"
-alias start_neo4j="/bin/bash ~/Development/neo4j-community-3.4.9/bin/neo4j start"
-alias stop_neo4j="/bin/bash ~/Development/neo4j-community-3.4.9/bin/neo4j stop"
+alias start_neo4j="/bin/bash ~/Development/neo4j-community-3.5.5/bin/neo4j start"
+alias stop_neo4j="/bin/bash ~/Development/neo4j-community-3.5.5/bin/neo4j stop"
 alias tassel5="perl ~/Development/tassel_5_standalone/start_tassel.pl"
 
 
