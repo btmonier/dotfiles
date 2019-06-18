@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-05-07 at 11:18:00
+# Last Modified: 2019-05-23 at 15:50:41
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -90,10 +90,10 @@ alias vimc="vim -p ~/dev/shiny/iris/vignette/iris-supplemental.md ~/dev/shiny/vi
 alias starwars="telnet towel.blinkenlights.nl"
 alias cowfort="clear && fortune | cowsay"
 
-## iRODS, DB, and TASSEL commands
+## iRODS, ASKdb, and TASSEL commands
 alias panzea="iinit && icd /iplant/home/shared/panzea && clear && ils"
-alias start_neo4j="/bin/bash ~/Development/neo4j-community-3.5.5/bin/neo4j start"
-alias stop_neo4j="/bin/bash ~/Development/neo4j-community-3.5.5/bin/neo4j stop"
+alias neo4j="/bin/bash ~/Development/neo4j-community-3.5.5/bin/neo4j"
+alias cypher-shell="/bin/bash ~/Development/neo4j-community-3.5.5/bin/cypher-shell -u neo4j -p test"
 alias tassel5="perl ~/Development/tassel_5_standalone/start_tassel.pl"
 
 
