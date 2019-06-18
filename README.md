@@ -45,6 +45,7 @@ Here is a current "tree" example of my directory layout:
     |- neo4j-community-*
     |- R
     |- storage
+        |- askdb_data
         |- db_backups
         |- gene_ids
         |- graph_data_tests
@@ -61,6 +62,11 @@ Here is a current "tree" example of my directory layout:
         |- kremling_2018_eqtl_comp_backup
         |- kremling_2018_eqtl_rnaseq
         |- kremling_2018_eqtl_v4
+            |- GRoot
+            |- GShoot
+            |- Kern
+            |- L3Base
+            |- L3Tip
         |- mejia_guerra_2019_tf
         |- siebers_2018_lidar
         |- valluru_2018_eqtl
@@ -86,9 +92,8 @@ Here is a current "tree" example of my directory layout:
     |- avatars
     |- backgrounds
     |- db_info
-    |- posters
-    |- r_packages
     |- system
+    |- vector_assets
 |- Projects
     |- bric
     |- btmonier_github_io
