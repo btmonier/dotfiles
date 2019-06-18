@@ -2,3 +2,6 @@
 
 ## make new R_LIBS path...
 R_LIBS_USER=~/Development/R/library
+
+## Reticulate path
+RETICULATE_PYTHON=/home/bm646/Development/anaconda3/bin/python
