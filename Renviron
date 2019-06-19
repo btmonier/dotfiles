@@ -4,4 +4,4 @@
 R_LIBS_USER=~/Development/R/library
 
 ## Reticulate path
-RETICULATE_PYTHON=/home/bm646/Development/anaconda3/bin/python
+RETICULATE_PYTHON=~/Development/anaconda3/bin/python
