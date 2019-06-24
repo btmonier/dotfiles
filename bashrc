@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-05-23 at 15:50:41
+# Last Modified: 2019-06-24 at 16:57:38
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -119,3 +119,16 @@ export PATH="$HOME/Development/dotfiles/scripts:$PATH"
 
 ## VIM as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export editor
+
+
+
+# Functions
+
+## Set GNOME Terminal names
+function set-title() {
+  if [[ -z "$ORIG" ]]; then
+    ORIG=$PS1
+  fi
+  TITLE="\[\e]2;$*\a\]"
+  PS1=${ORIG}${TITLE}
+}
