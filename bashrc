@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-06-25 at 08:57:15
+# Last Modified: 2019-06-25 at 15:58:04
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -117,6 +117,9 @@ export PATH="/opt/idea-IC-182.4892.20/bin:$PATH"
 
 ## Random utility scripts
 export PATH="$HOME/Development/dotfiles/scripts:$PATH"
+
+## Java 11
+export PATH="$HOME/Development/jdk-11.0.3/bin:$PATH"
 
 ## VIM as default editor
 VISUAL=vim; export VISUAL EDITOR=vim; export editor
