@@ -1,7 +1,15 @@
-# Renviron file - test
+#---------------------------------------------------------------------
+# Title:         Brandon's R Environment Configs
+# Author:        Brandon Monier
+# Created:       2019-06-25 at 15:47:30
+# Last Modified: 2019-06-25 at 15:48:12
+#---------------------------------------------------------------------
 
 ## make new R_LIBS path...
 R_LIBS_USER=~/Development/R/library
 
 ## Reticulate path
 RETICULATE_PYTHON=~/Development/anaconda3/bin/python
+
+## rJava path
+JAVA_HOME=~/Development/jdk-11.0.3
