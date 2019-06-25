@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-06-24 at 16:57:38
+# Last Modified: 2019-06-25 at 08:57:15
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -71,6 +71,7 @@ alias disku="~/bin/disk-use.sh"
 ## SSH servers
 alias bmbl="ssh brandon@137.216.132.242"
 alias cbsulogin="ssh bm646@cbsulogin.tc.cornell.edu"
+alias cbsudc01="ssh bm646@cbsudc01.tc.cornell.edu"
 
 ## Git
 alias gs="git status"
