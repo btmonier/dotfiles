@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2019-06-25 at 11:54:49
-" Last Modified: 2019-06-25 at 11:58:11
+" Last Modified: 2019-06-25 at 12:02:37
 "---------------------------------------------------------------------
 
 "---------------------------------------------------------------------
@@ -46,7 +46,7 @@ map $% <Esc>/<++><Enter>"_c4l
 
 "" EOL characters
 set list
-set listchars=tab:▸\ ,eol:¬,space:.
+set listchars=tab:>\ ,eol:-,space:.
 
 "" Yank to system
 set clipboard=unnamedplus
