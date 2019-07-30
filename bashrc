@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-07-17 at 21:11:16
+# Last Modified: 2019-07-29 at 21:52:50
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -18,6 +18,7 @@ alias ll="clear && ls -lh --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias medo="xdg-open"
 alias rr="ranger"
+alias rtv="set-title Terminal && rtv"
 alias R="clear && R --quiet"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; lh'
 alias sc="clear && cd ~/bin && ls -ah"
