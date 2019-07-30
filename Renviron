@@ -2,7 +2,7 @@
 # Title:         Brandon's R Environment Configs
 # Author:        Brandon Monier
 # Created:       2019-06-25 at 15:47:30
-# Last Modified: 2019-06-25 at 15:48:12
+# Last Modified: 2019-07-17 at 20:01:10
 #---------------------------------------------------------------------
 
 ## make new R_LIBS path...
@@ -12,4 +12,4 @@ R_LIBS_USER=~/Development/R/library
 RETICULATE_PYTHON=~/Development/anaconda3/bin/python
 
 ## rJava path
-JAVA_HOME=~/Development/jdk-11.0.3
+#JAVA_HOME=~/Development/jdk-11.0.3

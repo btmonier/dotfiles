@@ -2,7 +2,7 @@
 " Title:         Brandon's VIM Configs
 " Author:        Brandon Monier
 " Created:       2018-01-11 at 19:42:21
-" Last Modified: 2019-06-25 at 12:19:04
+" Last Modified: 2019-07-17 at 17:54:52
 "---------------------------------------------------------------------
 
 " General Options
@@ -61,7 +61,8 @@ Plug 'itchyny/lightline.vim'
 Plug 'neo4j-contrib/cypher-vim-syntax'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'roxma/nvim-completion-manager'
+Plug 'ncm2/ncm2'
+"Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-yarp'
 Plug 'jalvesaq/Nvim-R'
 Plug 'roxma/vim-hug-neovim-rpc'
@@ -75,7 +76,16 @@ Plug 'w0rp/ale'
 Plug 'flazz/vim-colorschemes'
 call plug#end()
 
-
+"" enable ncm2 for all buffers
+"autocmd BufEnter * call ncm2#enable_for_buffer()
+"
+"" IMPORTANT: :help Ncm2PopupOpen for more information
+"set completeopt=noinsert,menuone,noselect
+"
+"" NOTE: you need to install completion sources to get completions. Check
+"" our wiki page for a list of sources: https://github.com/ncm2/ncm2/wiki
+"Plug 'ncm2/ncm2-bufword'
+"Plug 'ncm2/ncm2-path'
 
 " Lightline
 set laststatus=2

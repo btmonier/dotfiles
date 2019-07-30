@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-07-16 at 21:38:49
+# Last Modified: 2019-07-17 at 21:11:16
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -110,7 +110,7 @@ export PS1="\[\033[38;5;12m\][\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\
 eval "`dircolors -b $DIR_COLORS`"
 
 ## Anaconda 3
-# export PATH="$HOME/Development/anaconda3/bin:$PATH"  # commented out by conda initialize
+export PATH="$HOME/Development/anaconda3/bin:$PATH"
 
 ## IntelliJ
 export PATH="/opt/idea-IC-182.4892.20/bin:$PATH"
