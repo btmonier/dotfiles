@@ -19,6 +19,7 @@ alias ll="clear && ls -lh --group-directories-first"
 alias ls="ls --color=auto --group-directories-first"
 alias medo="xdg-open"
 alias rr="ranger"
+alias rtv="set-title Terminal && rtv"
 alias R="clear && R --quiet"
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"; lh'
 alias sc="clear && cd ~/bin && ls -ah"
