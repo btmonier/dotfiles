@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-08-07 at 10:17:00
+# Last Modified: 2019-08-07 at 15:03:36
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -144,3 +144,7 @@ function gitmir() {
     git push && git push --mirror git@github.com:maize-genetics/$1.git
 }
 
+## Knit output to specified directory
+function knit_ask() {
+    R -e "rmarkdown::render('$1', output_dir = '~/Projects/btmonier_github_io/notebook/askdb/')"
+}
