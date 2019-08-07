@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-06-25 at 15:58:04
+# Last Modified: 2019-08-07 at 10:17:00
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -12,6 +12,7 @@
 # Aliases
 
 ## General
+alias fire="$HOME/Development/firefox/firefox &"
 alias grep="grep --color=auto"
 alias lh="clear && ls -alh"
 alias ll="clear && ls -lh --group-directories-first"
@@ -130,9 +131,15 @@ VISUAL=vim; export VISUAL EDITOR=vim; export editor
 
 ## Set GNOME Terminal names
 function set-title() {
-  if [[ -z "$ORIG" ]]; then
-    ORIG=$PS1
-  fi
-  TITLE="\[\e]2;$*\a\]"
-  PS1=${ORIG}${TITLE}
+    if [[ -z "$ORIG" ]]; then
+        ORIG=$PS1
+    fi
+    TITLE="\[\e]2;$*\a\]"
+    PS1=${ORIG}${TITLE}
 }
+
+## Push commits to Bitbucket and GitHub Maize Genetics page
+function gitmir() {
+    git push && git push --mirror git@github.com:maize-genetics/$1.git
+}
+
