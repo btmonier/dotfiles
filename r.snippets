@@ -87,37 +87,43 @@ snippet ts
 
 snippet shinyapp
 	library(shiny)
-	
+
 	ui <- fluidPage(
 	  ${0}
 	)
-	
+
 	server <- function(input, output, session) {
-	  
+
 	}
-	
+
 	shinyApp(ui, server)
 
 snippet headlin
 	#!/usr/bin/env Rscript
-	
+
 	#--------------------------------------------------------------------
 	# Script Name:   ${1:file}.R
 	# Description:   ${2}
 	# Author:        Brandon Monier
 	# Created:       `r format(Sys.time(), "%Y-%m-%d at %H:%M:%S")`
-	# Last Modified: 
+	# Last Modified:
 	#--------------------------------------------------------------------
-	
+
 	#--------------------------------------------------------------------
 	# Detailed Purpose:
 	#    The main purpose of this Rscript is to ${3}
 	#--------------------------------------------------------------------
-	
+
 	${4}
-	
+
 snippet tslast
 	# Last Modified: `r format(Sys.time(), "%Y-%m-%d at %H:%M:%S")`${0}
 
 snippet temp
 	setwd(dir = "~/Temporary/${0}"); list.files()
+
+snippet heller
+	# Hello there...
+
+snippet heller2
+	# Hello there again...
