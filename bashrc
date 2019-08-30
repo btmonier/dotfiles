@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-08-07 at 15:03:36
+# Last Modified: 2019-08-30 at 18:45:31
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -12,7 +12,6 @@
 # Aliases
 
 ## General
-alias fire="$HOME/Development/firefox/firefox &"
 alias grep="grep --color=auto"
 alias lh="clear && ls -alh"
 alias ll="clear && ls -lh --group-directories-first"
