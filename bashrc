@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-08-30 at 18:45:31
+# Last Modified: 2019-09-10 at 17:11:31
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
