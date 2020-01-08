@@ -2,7 +2,7 @@
 # Title:         Brandon's R Profile Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:41:11
-# Last Modified: 2019-09-23 at 15:55:37
+# Last Modified: 2020-01-08 at 15:36:29
 #--------------------------------------------------------------------
 
 # === Set permanent mirror ==========================================
@@ -28,12 +28,6 @@ options(editor = "vim")
 if (require("magrittr")) {
     library("magrittr")
 }
-
-## Load "peak" function
-peak <- function(x, pi = 10, pj = 4) {
-    return(x[1:pi, 1:pj])
-}
-
 
 
 ## Fortunes
