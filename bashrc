@@ -2,7 +2,7 @@
 # Title:         Brandon's BASH Configs
 # Author:        Brandon Monier
 # Created:       2018-01-11 at 19:38:18
-# Last Modified: 2019-09-10 at 17:11:31
+# Last Modified: 2020-01-03 at 13:58:01
 #---------------------------------------------------------------------
 
 # If not running interactively, don't do anything
@@ -12,6 +12,7 @@
 # Aliases
 
 ## General
+alias anav="/home/bm646/Development/anaconda3/bin/anaconda-navigator &"
 alias grep="grep --color=auto"
 alias lh="clear && ls -alh"
 alias ll="clear && ls -lh --group-directories-first"
