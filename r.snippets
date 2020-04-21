@@ -118,13 +118,11 @@ snippet headlin
 	
 	${4}
 
+
 snippet tslast
 	# Last Modified: `r format(Sys.time(), "%Y-%m-%d at %H:%M:%S")`${0}
 	#--------------------------------------------------------------------
-	
 
-snippet temp
-	setwd(dir = "~/Temporary/${0}"); list.files()
 
 snippet headprot
 	#--------------------------------------------------------------------
@@ -134,4 +132,15 @@ snippet headprot
 	# Last Modified:
 	#--------------------------------------------------------------------
 
+	${2}
+
+
+snippet h1
+	# === ${1} ===${2}
+
+	${3}
+
+
+snippet h2
+	## ${1} ----
 	${2}
