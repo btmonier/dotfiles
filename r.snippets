@@ -126,5 +126,12 @@ snippet tslast
 snippet temp
 	setwd(dir = "~/Temporary/${0}"); list.files()
 
-snippet pqpq
-	%>% 
+snippet headprot
+	#--------------------------------------------------------------------
+	# Description:   ${1}
+	# Author:        Brandon Monier
+	# Created:       `r format(Sys.time(), "%Y-%m-%d at %H:%M:%S")`
+	# Last Modified:
+	#--------------------------------------------------------------------
+
+	${2}
