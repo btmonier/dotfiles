@@ -7,7 +7,8 @@ CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 CONFIGS=(
     btop
     ghostty
-    neofetch
+    fastfetch
+
     nvim
     tmux
     yazi
