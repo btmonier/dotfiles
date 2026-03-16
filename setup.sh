@@ -49,6 +49,7 @@ done
 echo
 echo "Linking zsh config..."
 link "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
+link "$DOTFILES/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 mkdir -p "$CONFIG_DIR/zsh"
 link "$DOTFILES/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"
 link "$DOTFILES/zsh/exports.zsh" "$CONFIG_DIR/zsh/exports.zsh"
