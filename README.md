@@ -1,124 +1,33 @@
-# Brandon's dotfiles
-
-I am in the process of a massive overhaul of my dotfiles at the moment.
-I have recently given up using Arch Linux since it is too "barebones" and
-time consuming to get simple tasks up and running.
-
-Therefore... I have switched back to good ol' stable Ubuntu 18.04! It's an
-okay working system and highly reliable. Don't let the cool kids see this.
-
-My directories from here on forward will look something like this:
-
 ```
-# cs ~; ls -lp
-Desktop/
-Development/
-Documents/
-Downloads/
-Dropbox/
-Pictures/
-Projects/
-Templates/
-Temporary/
-Videos/
+  ▒▒▒▒▒▒▒▒▒▒▒▒
+
+▒▒▒▒  ▒▒▒▒▒▒▒▒
+
+▒▒▒▒▒▒▒▒▒  ▒▒▒
+
+▒▒▒▒▒▒▒▒▒▒▒▒
 ```
 
-A majority of this layout was greatly inspired by this
-[blog post](https://linuxtidbits.wordpress.com/2015/01/12/organizing-my-home-directory/).
+Configuration files for my current terminal setup.
 
-This is pretty much similar to how normal flavors of Linux organize the
-`$HOME` directory, with some minor exceptions. One exception is the
-`Projects/` directory since I am currently a Postdoc working on several
-projects at the moment. This is where Git-based repos will go.
+## Contents
 
-Additionally, a `Temporary/` directory is also implemented. This is a
-**temporary** place for various files to go before they are moved and/or
-processed.
+| Directory   | Config                                                         |
+|-------------|----------------------------------------------------------------|
+| `btop/`     | [btop](https://github.com/aristocratos/btop) system monitor    |
+| `ghostty/`  | [Ghostty](https://ghostty.org) terminal (+ Catppuccin themes)  |
+| `neofetch/` | [Neofetch](https://github.com/dylanaraps/neofetch) system info |
+| `nvim/`     | [Neovim](https://neovim.io) (Kickstart-based)                  |
+| `tmux/`     | [tmux](https://github.com/tmux/tmux) multiplexer               |
+| `yazi/`     | [Yazi](https://yazi-rs.github.io) file manager                 |
+| `zsh/`      | Zsh shell config + aliases                                     |
 
-Here is a current "tree" example of my directory layout:
 
-```
-|- Desktop
-|- Development
-    |- anaconda3
-    |- dotfiles
-    |- neo4j-community-*
-    |- R
-    |- storage
-        |- askdb_data
-        |- db_backups
-        |- gene_ids
-        |- graph_data_tests
-        |- gtf_files
-        |- hai_2018_tss_prediction
-        |- kremling_2018_eqtl
-            |- GRoot_output
-            |- GShoot_output
-            |- Kern_output
-            |- L3Base_output
-            |- L3Tip_output
-            |- LMAD_output
-            |- LMAN_output
-        |- kremling_2018_eqtl_comp_backup
-        |- kremling_2018_eqtl_rnaseq
-        |- kremling_2018_eqtl_v4
-            |- GRoot
-            |- GShoot
-            |- Kern
-            |- L3Base
-            |- L3Tip
-        |- mejia_guerra_2019_tf
-        |- siebers_2018_lidar
-        |- valluru_2018_eqtl
-    |- tassel_5_source
-    |- tassel_5_standalone
-    |- tassel_5_test
-|- Documents
-    |- curriculum_vitae
-    |- notes
-        |- pdf
-    |- presentations
-        |- happy_paper_hour
-        |- lab_meetings
-        |- posters
-        |- panzea
-        |- terra
-    |- publications
-    |- reports
-    |- teaching
-|- Downloads
-|- Dropbox
-|- Pictures
-    |- avatars
-    |- backgrounds
-    |- db_info
-    |- system
-    |- vector_assets
-|- Projects
-    |- bric
-    |- btmonier_github_io
-    |- btmonier_test_site
-    |- complex_heatmap
-    |- consultation
-    |- croix
-    |- gingr
-    |- gwas_twas_hap_db
-    |- idep
-    |- iris
-    |- misc_r_scripts
-    |- perlseq
-    |- pub_expn_rare_alleles
-    |- qubic
-    |- quiltr
-    |- rbric
-    |- rtassel
-    |- tassel_r_bridge
-    |- teaching
-        |- plbrg_4070
-    |- vidger
-|- Public
-|- Templates
-|- Temporary
-|- Videos
+## Setup
+
+```sh
+./setup.sh
 ```
 
+This symlinks each config directory into `~/.config/` and links `~/.zshrc`.
+Existing files are backed up to `*.bak` before being replaced.
