@@ -51,6 +51,7 @@ echo "Linking zsh config..."
 link "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 mkdir -p "$CONFIG_DIR/zsh"
 link "$DOTFILES/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"
+link "$DOTFILES/zsh/exports.zsh" "$CONFIG_DIR/zsh/exports.zsh"
 
 echo
 echo "Done. You may need to restart your shell or run: source ~/.zshrc"
