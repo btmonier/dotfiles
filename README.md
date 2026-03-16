@@ -29,3 +29,14 @@
 
 This symlinks each config directory into `~/.config/` and links `~/.zshrc`.
 Existing files are backed up to `*.bak` before being replaced.
+
+## Other CLI tools/fonts
+
+| Tool                                                      | Description                 |
+|-----------------------------------------------------------|-----------------------------|
+| [dua](https://github.com/Byron/dua-cli)                   | Disk usage analyzer         |
+| [Homebrew](https://brew.sh) (brew)                        | macOS/Linux package manager |
+| [JetBrains Mono](https://www.jetbrains.com/lp/mono/)      | The best mono font ever     |
+| [jq](https://github.com/jqlang/jq)                        | Command-line JSON processor |
+| [lazygit](https://github.com/jesseduffield/lazygit)       | Terminal UI for Git         |
+| [Powerlevel10k](https://github.com/romkatv/powerlevel10k) | Zsh theme                   |
