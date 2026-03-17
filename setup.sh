@@ -4,11 +4,14 @@ set -euo pipefail
 DOTFILES="$(cd "$(dirname "$0")" && pwd)"
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 
+# Load logging helpers (same as zsh uses)
+# shellcheck source=zsh/log.sh
+source "$DOTFILES/zsh/log.sh"
+
 CONFIGS=(
     btop
     ghostty
     fastfetch
-
     nvim
     tmux
     yazi
@@ -21,38 +24,40 @@ link() {
         local current
         current="$(readlink "$dst")"
         if [ "$current" = "$src" ]; then
-            echo "  skip  $dst (already linked)"
+            log_ok "skip $dst (already linked)"
             return
         fi
-        echo "  relink $dst -> $src (was $current)"
+        log_warn "relink $dst → $src (was $current)"
         rm "$dst"
     elif [ -e "$dst" ]; then
-        echo "  backup $dst -> ${dst}.bak"
+        log_step "backup $dst → ${dst}.bak"
         mv "$dst" "${dst}.bak"
     else
-        echo "  link   $dst -> $src"
+        log_step "link $dst → $src"
     fi
 
     ln -s "$src" "$dst"
 }
 
-echo "Dotfiles: $DOTFILES"
+log_section "Dotfiles: $DOTFILES"
 echo
 
 mkdir -p "$CONFIG_DIR"
 
-echo "Linking ~/.config entries..."
+log_section "Linking ~/.config entries"
 for name in "${CONFIGS[@]}"; do
     link "$DOTFILES/$name" "$CONFIG_DIR/$name"
 done
 
 echo
-echo "Linking zsh config..."
+log_section "Linking zsh config"
 link "$DOTFILES/zsh/.zshrc" "$HOME/.zshrc"
 link "$DOTFILES/zsh/.p10k.zsh" "$HOME/.p10k.zsh"
 mkdir -p "$CONFIG_DIR/zsh"
 link "$DOTFILES/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"
 link "$DOTFILES/zsh/exports.zsh" "$CONFIG_DIR/zsh/exports.zsh"
+link "$DOTFILES/zsh/functions.zsh" "$CONFIG_DIR/zsh/functions.zsh"
+link "$DOTFILES/zsh/log.sh" "$CONFIG_DIR/zsh/log.sh"
 
 echo
-echo "Done. You may need to restart your shell or run: source ~/.zshrc"
+log_ok "Done. Restart your shell or run: source ~/.zshrc"

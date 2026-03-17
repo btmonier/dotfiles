@@ -33,9 +33,28 @@ mamba()  { _conda_lazy_init; mamba "$@"; }
 # --- lf cd helper ---
 [ -f "$HOME/.config/lf/lfcd.sh" ] && source "$HOME/.config/lf/lfcd.sh"
 
+# --- Logging / color helpers (used by functions and scripts) ---
+# Prefer ~/.config/zsh; if .zshrc is a symlink into the repo, fall back to that dir
+_zsh_dir="${HOME}/.config/zsh"
+if [[ -L "$HOME/.zshrc" ]]; then
+  _zsh_src="$HOME/.zshrc"
+  while [[ -L "$_zsh_src" ]]; do
+    _zsh_src="$(readlink "$_zsh_src")"
+    [[ "$_zsh_src" != /* ]] && _zsh_src="$(dirname "$HOME/.zshrc")/$_zsh_src"
+  done
+  _zsh_dir="$(dirname "$_zsh_src")"
+fi
+[ -f "$_zsh_dir/log.sh" ] && source "$_zsh_dir/log.sh"
+# Only source functions when running in zsh (avoids parse errors if sourced by another shell)
+[[ -n "${ZSH_VERSION:-}" ]] && [ -f "$_zsh_dir/functions.zsh" ] && source "$_zsh_dir/functions.zsh"
+unset _zsh_dir _zsh_src
+
+# --- Aliases ---
+[ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"
+
 # --- SDKMAN (must stay at end) ---
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-# --- Aliases ---
-[ -f "$HOME/.config/zsh/aliases.zsh" ] && source "$HOME/.config/zsh/aliases.zsh"
+
+
