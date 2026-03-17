@@ -60,4 +60,16 @@ link "$DOTFILES/zsh/functions.zsh" "$CONFIG_DIR/zsh/functions.zsh"
 link "$DOTFILES/zsh/log.sh" "$CONFIG_DIR/zsh/log.sh"
 
 echo
+log_section "Linking scripts to /usr/local/bin"
+# May require: sudo ./setup.sh
+mkdir -p /usr/local/bin
+for script in "$DOTFILES/scripts"/*; do
+    [ -f "$script" ] || continue
+    name="$(basename "$script")"
+    # Strip .sh for cleaner command name (e.g. tlp.sh → tlp)
+    bin_name="${name%.sh}"
+    link "$script" "/usr/local/bin/$bin_name"
+done
+
+echo
 log_ok "Done. Restart your shell or run: source ~/.zshrc"
