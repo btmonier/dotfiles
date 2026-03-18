@@ -35,6 +35,7 @@ Existing files are backed up to `*.bak` before being replaced.
 | Tool                                                                      | Description                              |
 |---------------------------------------------------------------------------|------------------------------------------|
 | [dua](https://github.com/Byron/dua-cli)                                   | Disk usage analyzer                      |
+| [glow](https://github.com/charmbracelet/glow)                             | Markdown CLI renderer                    |
 | [Homebrew](https://brew.sh) (brew)                                        | macOS/Linux package manager              |
 | [JetBrains Mono](https://www.jetbrains.com/lp/mono/)                      | The best mono font ever                  |
 | [jq](https://github.com/jqlang/jq)                                        | Command-line JSON processor              |
