@@ -16,10 +16,15 @@ rstudio = [
   { run = 'open -a "RStudio" %s', orphan = true, desc = "Open in RStudio", for = "macos" }
 ]
 
+inkscape = [
+  { run = 'open -a "inkscape" %s', orphan = true, desc = "Open in Inkscape", for = "macos" }
+]
+
 [open]
 prepend_rules = [
   { url = "*.r",    use = [ "edit",    "rstudio" ] },
   { url = "*.html", use = [ "browser", "edit"    ] },
   { url = "*.htm",  use = [ "browser", "edit"    ] },
   { url = "*.gif",  use = [ "browser", "preview" ] },
+  { url = "*.svg",  use = [ "inkscape", "edit", "browser" ] },
 ]
