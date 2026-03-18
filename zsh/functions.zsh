@@ -27,3 +27,8 @@ function metrics {
     log_ok "done"
   )
 }
+
+
+function copyall {
+  "$@" 2>&1 | pbcopy
+}

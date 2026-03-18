@@ -15,7 +15,7 @@ else
 fi
 
 log_section() { echo "${_c_bold}${_c_cyan}$*${_c_reset}"; }
-log_step()    { echo "\n${_c_green}##${_c_reset} $*";     }
+log_step()    { echo $'\n'"${_c_green}##${_c_reset} $*";     }
 log_info()    { echo "${_c_blue}[info]${_c_reset} $*";    }
 log_ok()      { echo "${_c_green}[ok]${_c_reset} $*";     }
 log_warn()    { echo "${_c_yellow}[warn]${_c_reset} $*";  }

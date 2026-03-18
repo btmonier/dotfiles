@@ -27,13 +27,13 @@ link() {
             log_ok "skip $dst (already linked)"
             return
         fi
-        log_warn "relink $dst → $src (was $current)"
+        log_warn "relink $dst ${_c_bold}→${_c_reset} $src (was $current)"
         rm "$dst"
     elif [ -e "$dst" ]; then
-        log_step "backup $dst → ${dst}.bak"
+        log_step "backup $dst ${_c_bold}→${_c_reset} ${dst}.bak"
         mv "$dst" "${dst}.bak"
     else
-        log_step "link $dst → $src"
+        log_info "link $dst ${_c_bold}→${_c_reset} $src"
     fi
 
     ln -s "$src" "$dst"
@@ -60,15 +60,15 @@ link "$DOTFILES/zsh/functions.zsh" "$CONFIG_DIR/zsh/functions.zsh"
 link "$DOTFILES/zsh/log.sh" "$CONFIG_DIR/zsh/log.sh"
 
 echo
-log_section "Linking scripts to /usr/local/bin"
-# May require: sudo ./setup.sh
-mkdir -p /usr/local/bin
+BIN_DIR="$HOME/.local/bin"
+log_section "Linking scripts to $BIN_DIR"
+mkdir -p "$BIN_DIR"
 for script in "$DOTFILES/scripts"/*; do
     [ -f "$script" ] || continue
     name="$(basename "$script")"
     # Strip .sh for cleaner command name (e.g. tlp.sh → tlp)
     bin_name="${name%.sh}"
-    link "$script" "/usr/local/bin/$bin_name"
+    link "$script" "$BIN_DIR/$bin_name"
 done
 
 echo
