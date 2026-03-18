@@ -32,3 +32,7 @@ function metrics {
 function copyall {
   "$@" 2>&1 | pbcopy
 }
+
+function gmdp {
+  gh markdown-preview "$@"
+}
