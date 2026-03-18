@@ -35,6 +35,7 @@ Existing files are backed up to `*.bak` before being replaced.
 | Tool                                                                      | Description                              |
 |---------------------------------------------------------------------------|------------------------------------------|
 | [dua](https://github.com/Byron/dua-cli)                                   | Disk usage analyzer                      |
+| [gh](https://cli.github.com/)                                             | GitHub CLI                               |
 | [glow](https://github.com/charmbracelet/glow)                             | Markdown CLI renderer                    |
 | [Homebrew](https://brew.sh) (brew)                                        | macOS/Linux package manager              |
 | [JetBrains Mono](https://www.jetbrains.com/lp/mono/)                      | The best mono font ever                  |
@@ -43,4 +44,7 @@ Existing files are backed up to `*.bak` before being replaced.
 | [Miniconda](https://www.anaconda.com/docs/getting-started/miniconda/main) | Environment manager (old - legacy stuff) |
 | [pixi](https://pixi.prefix.dev/latest/)                                   | Environment manager (current)            |
 | [Powerlevel10k](https://github.com/romkatv/powerlevel10k)                 | Zsh theme                                |
+
+See [`docs/command_overview.md`](docs/command_overview.md) for info detailing alias
+and function calls.
 
