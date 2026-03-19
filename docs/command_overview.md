@@ -44,3 +44,49 @@
 | Alias | Expansion              | Description              |
 |-------|------------------------|--------------------------|
 | `zrl` | `source $HOME/.zshrc`  | Reload zsh config        |
+
+## tmux keybindings (`tmux/keybindings.conf`)
+
+All bindings use **Alt** (Meta) as prefix; no need to press `Ctrl-b` first.
+
+### General
+
+| Key   | Action                                      |
+|-------|---------------------------------------------|
+| `Alt-r` | Reload tmux config                         |
+| `Alt-n` | New session (prompts for name)              |
+| `Alt-.` | Switch to next session                     |
+| `Alt-,` | Switch to previous session                 |
+| `Alt-g` | Open lazygit in popup (90%×90%)            |
+
+### Pane navigation (Alt + vim keys)
+
+| Key   | Action                                      |
+|-------|---------------------------------------------|
+| `Alt-h` | Select pane left                           |
+| `Alt-j` | Select pane down                           |
+| `Alt-k` | Select pane up                             |
+| `Alt-l` | Select pane right                          |
+
+### Pane resizing (Alt + Shift + vim keys)
+
+| Key     | Action                                      |
+|---------|---------------------------------------------|
+| `Alt-Shift-H` | Resize pane left (5 cells)             |
+| `Alt-Shift-J` | Resize pane down (5 cells)             |
+| `Alt-Shift-K` | Resize pane up (5 cells)               |
+| `Alt-Shift-L` | Resize pane right (5 cells)            |
+
+### Pane splitting
+
+| Key   | Action                                      |
+|-------|---------------------------------------------|
+| `Alt-v` | Split window horizontally (same directory)  |
+| `Alt-s` | Split window vertically (same directory)   |
+
+### Prefix bindings (Ctrl-b first)
+
+| Key   | Action                                      |
+|-------|---------------------------------------------|
+| `Ctrl-b c` | New window (same directory as current pane) |
+| `Ctrl-b Tab` | Switch to last pane                       |
