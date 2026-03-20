@@ -35,6 +35,7 @@ Existing files are backed up to `*.bak` before being replaced.
 | Tool                                                                      | Description                              |
 |---------------------------------------------------------------------------|------------------------------------------|
 | [dua](https://github.com/Byron/dua-cli)                                   | Disk usage analyzer                      |
+| [fzf](https://github.com/junegunn/fzf)                                    | Command-line fuzzy finder                |
 | [gh](https://cli.github.com/)                                             | GitHub CLI                               |
 | [glow](https://github.com/charmbracelet/glow)                             | Markdown CLI renderer                    |
 | [Homebrew](https://brew.sh) (brew)                                        | macOS/Linux package manager              |
