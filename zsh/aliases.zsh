@@ -14,3 +14,6 @@ alias pyr="pixi run --manifest-path $HOME/Development/scratch_py/pixi.toml jupyt
 
 # zsh
 alias zrl="source $HOME/.zshrc"
+
+# Homebrew
+alias update="brew update && brew upgrade"
