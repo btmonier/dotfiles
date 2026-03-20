@@ -24,6 +24,11 @@ function metrics {
     log_step "rtassel_insights: pull"
     cd "$repo_rtassel"
     git pull
+    
+    log_step "Purge local GS HTML"
+    local scholar_html='_Brandon Monier_ - _Google Scholar_.html'
+    rm -f "$HOME/Downloads/$scholar_html" "$HOME/Desktop/$scholar_html"
+
     log_ok "done"
   )
 }
