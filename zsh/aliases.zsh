@@ -3,6 +3,7 @@ alias ct="cd $HOME/Temporary/"
 alias cdl="cd $HOME/Downloads/"
 alias cdproj="cd $HOME/Projects/"
 alias cdoc="cd $HOME/Documents/"
+alias cdot="cd $HOME/Projects/dotfiles/"
 alias lf="yazi"
 
 # tmux
