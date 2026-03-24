@@ -17,4 +17,4 @@ alias pyr="pixi run --manifest-path $HOME/Development/scratch_py/pixi.toml jupyt
 alias zrl="source $HOME/.zshrc"
 
 # Homebrew
-alias update="brew update && brew upgrade"
+alias update="brew update && brew upgrade && Rscript -e 'BiocManager::install(ask = FALSE)'"
