@@ -1,2 +1,18 @@
 *.swp
 *.swo
+
+# Secrets (global)
+*.env
+*.secret
+*.secrets
+
+# Your specific secrets directory
+.config/secrets/
+
+# direnv
+.envrc
+.direnv/
+
+# macOS / shell history safety
+.zsh_history
+.bash_history

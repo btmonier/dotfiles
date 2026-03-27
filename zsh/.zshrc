@@ -58,3 +58,8 @@ export SDKMAN_DIR="$HOME/.sdkman"
 
 
 
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/bm646-admin/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
