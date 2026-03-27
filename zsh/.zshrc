@@ -47,6 +47,12 @@ fi
 [ -f "$_zsh_dir/log.sh" ] && source "$_zsh_dir/log.sh"
 # Only source functions when running in zsh (avoids parse errors if sourced by another shell)
 [[ -n "${ZSH_VERSION:-}" ]] && [ -f "$_zsh_dir/functions.zsh" ] && source "$_zsh_dir/functions.zsh"
+# Secrets live next to this zsh config (works when ~/.zshrc -> dotfiles/zsh/.zshrc, or use ~/.config/zsh/secrets/)
+if [[ -r "$_zsh_dir/secrets/anthropic.env" ]]; then
+  set -a
+  source "$_zsh_dir/secrets/anthropic.env"
+  set +a
+fi
 unset _zsh_dir _zsh_src
 
 # --- Aliases ---
@@ -56,10 +62,8 @@ unset _zsh_dir _zsh_src
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+# --- Docker
 fpath=(/Users/bm646-admin/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
-# End of Docker CLI completions
+
