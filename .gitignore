@@ -1,12 +1,13 @@
 *.swp
 *.swo
+.nvimlog
 
 # Secrets (global)
 *.env
 *.secret
 *.secrets
 
-# Your specific secrets directory
+# Secrets
 .config/secrets/
 
 # direnv
