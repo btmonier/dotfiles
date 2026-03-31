@@ -79,7 +79,7 @@ install_neovim() {
 install_btop() {
     if installed "$BIN/btop"; then log_ok "skip btop (already installed)"; return; fi
     log_step "btop"
-    local url="https://github.com/aristocratos/btop/releases/latest/download/btop-x86_64-linux-musl.tbz"
+    local url="https://github.com/aristocratos/btop/releases/latest/download/btop-x86_64-unknown-linux-musl.tbz"
     curl -fsSL "$url" -o "$TMPDIR/btop.tbz"
     tar -xjf "$TMPDIR/btop.tbz" -C "$TMPDIR"
     install -m 755 "$TMPDIR/btop/bin/btop" "$BIN/btop"
