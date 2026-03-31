@@ -36,7 +36,7 @@ alias grep='grep --color=auto'
 
 alias v='nvim'
 alias lg='lazygit'
-alias lf='yazi'
+alias lf='yazi 2>/dev/null'
 
 alias tn='tmux new-session -s'
 alias ta='tmux a'
@@ -49,7 +49,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # ── Completion ────────────────────────────────────────────────────────────────
 
 if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+    . /etc/bash_completion 2>/dev/null
 elif [ -f /usr/share/bash-completion/bash_completion ]; then
-    . /usr/share/bash-completion/bash_completion
+    . /usr/share/bash-completion/bash_completion 2>/dev/null
 fi
