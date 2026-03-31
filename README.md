@@ -30,6 +30,30 @@
 This symlinks each config directory into `~/.config/` and links `~/.zshrc`.
 Existing files are backed up to `*.bak` before being replaced.
 
+## HPC Setup
+
+```sh
+./hpc-install.sh
+```
+
+For remote HPC environments where you don't have root access. Downloads
+prebuilt x86\_64 Linux binaries to `~/.local/`, installs
+[pixi](https://pixi.prefix.dev/latest/) + tmux via conda-forge, runs
+`setup.sh` to link configs, and adds `~/.local/bin` / `~/.pixi/bin` to
+`PATH` in `~/.bashrc`.
+
+| Tool | Install method |
+|-----------|--------------------------------------|
+| Neovim | GitHub release → `~/.local/lib/nvim` |
+| btop | GitHub release → `~/.local/bin` |
+| Yazi | GitHub release → `~/.local/bin` |
+| Fastfetch | GitHub release → `~/.local/bin` |
+| lazygit | GitHub release → `~/.local/bin` |
+| pixi | Official installer → `~/.pixi/bin` |
+| tmux | `pixi global install` → `~/.pixi/bin`|
+
+Re-run with `--force` to re-download everything.
+
 ## Other CLI tools/fonts
 
 | Tool                                                                      | Description                              |
