@@ -140,14 +140,14 @@ install_pixi() {
 }
 
 install_tmux() {
-    if installed "$PIXI_HOME/bin/tmux"; then log_ok "skip tmux (already installed)"; return; fi
-    log_step "tmux (via pixi)"
-    local pixi_bin="$PIXI_HOME/bin/pixi"
-    if [[ ! -x "$pixi_bin" ]]; then
-        log_err "pixi not found at $pixi_bin — cannot install tmux"
-        return 1
-    fi
-    "$pixi_bin" global install tmux
+    if installed "$BIN/tmux"; then log_ok "skip tmux (already installed)"; return; fi
+    log_step "tmux"
+    local version
+    version="$(gh_latest_version tmux/tmux-builds)"
+    local url="https://github.com/tmux/tmux-builds/releases/download/v${version}/tmux-${version}-linux-x86_64.tar.gz"
+    curl -fsSL "$url" -o "$TMPDIR/tmux.tar.gz"
+    tar -xzf "$TMPDIR/tmux.tar.gz" -C "$TMPDIR"
+    install -m 755 "$TMPDIR/tmux" "$BIN/tmux"
     log_ok "tmux installed"
 }
 
@@ -168,11 +168,11 @@ install_yazi
 install_fastfetch
 install_lazygit
 install_dua
+install_tmux
 
 echo
-log_section "Installing pixi + tmux"
+log_section "Installing pixi"
 install_pixi
-install_tmux
 
 echo
 log_section "Installing SDKMAN"
