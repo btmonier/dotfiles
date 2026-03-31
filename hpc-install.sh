@@ -189,20 +189,23 @@ log_section "Linking dotfiles"
 echo
 log_section "Linking bash config"
 
-BASHRC_SRC="$SCRIPT_DIR/bash/.bashrc"
-BASHRC_DST="$HOME/.bashrc"
+link_file() {
+    local src="$1" dst="$2" name="$3"
+    if [ -L "$dst" ] && [ "$(readlink "$dst")" = "$src" ]; then
+        log_ok "skip ~/$name (already linked)"
+    elif [ -e "$dst" ]; then
+        log_step "backup ~/$name → ~/${name}.bak"
+        mv "$dst" "${dst}.bak"
+        ln -s "$src" "$dst"
+        log_ok "linked ~/$name"
+    else
+        ln -s "$src" "$dst"
+        log_ok "linked ~/$name"
+    fi
+}
 
-if [ -L "$BASHRC_DST" ] && [ "$(readlink "$BASHRC_DST")" = "$BASHRC_SRC" ]; then
-    log_ok "skip ~/.bashrc (already linked)"
-elif [ -e "$BASHRC_DST" ]; then
-    log_step "backup ~/.bashrc → ~/.bashrc.bak"
-    mv "$BASHRC_DST" "${BASHRC_DST}.bak"
-    ln -s "$BASHRC_SRC" "$BASHRC_DST"
-    log_ok "linked ~/.bashrc"
-else
-    ln -s "$BASHRC_SRC" "$BASHRC_DST"
-    log_ok "linked ~/.bashrc"
-fi
+link_file "$SCRIPT_DIR/bash/.bash_profile" "$HOME/.bash_profile" ".bash_profile"
+link_file "$SCRIPT_DIR/bash/.bashrc"       "$HOME/.bashrc"       ".bashrc"
 
 echo
 log_ok "Done. Restart your shell or run: source ~/.bashrc"
