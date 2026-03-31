@@ -119,6 +119,18 @@ install_lazygit() {
     log_ok "lazygit installed"
 }
 
+install_dua() {
+    if installed "$BIN/dua"; then log_ok "skip dua (already installed)"; return; fi
+    log_step "dua"
+    local version
+    version="$(gh_latest_version Byron/dua-cli)"
+    local url="https://github.com/Byron/dua-cli/releases/download/v${version}/dua-v${version}-x86_64-unknown-linux-musl.tar.gz"
+    curl -fsSL "$url" -o "$TMPDIR/dua.tar.gz"
+    tar -xzf "$TMPDIR/dua.tar.gz" -C "$TMPDIR"
+    install -m 755 "$TMPDIR/dua-v${version}-x86_64-unknown-linux-musl/dua" "$BIN/dua"
+    log_ok "dua installed"
+}
+
 install_pixi() {
     if installed "$PIXI_HOME/bin/pixi"; then log_ok "skip pixi (already installed)"; return; fi
     log_step "pixi"
@@ -139,16 +151,32 @@ install_tmux() {
     log_ok "tmux installed"
 }
 
+install_sdkman() {
+    local sdkman_dir="$HOME/.sdkman"
+    if [[ "$FORCE" -eq 0 && -s "$sdkman_dir/bin/sdkman-init.sh" ]]; then
+        log_ok "skip sdkman (already installed)"; return
+    fi
+    log_step "SDKMAN"
+    curl -fsSL "https://get.sdkman.io?rcupdate=false" -o "$TMPDIR/sdkman-install.sh"
+    SDKMAN_DIR="$sdkman_dir" bash "$TMPDIR/sdkman-install.sh"
+    log_ok "sdkman installed"
+}
+
 install_neovim
 install_btop
 install_yazi
 install_fastfetch
 install_lazygit
+install_dua
 
 echo
 log_section "Installing pixi + tmux"
 install_pixi
 install_tmux
+
+echo
+log_section "Installing SDKMAN"
+install_sdkman
 
 # ── Dotfiles ──────────────────────────────────────────────────────────────────
 
@@ -156,23 +184,24 @@ echo
 log_section "Linking dotfiles"
 "$SCRIPT_DIR/setup.sh"
 
-# ── Shell PATH ────────────────────────────────────────────────────────────────
+# ── Bash config ───────────────────────────────────────────────────────────────
 
 echo
-log_section "Configuring ~/.bashrc"
+log_section "Linking bash config"
 
-MARKER="# >>> dotfiles hpc-install >>>"
+BASHRC_SRC="$SCRIPT_DIR/bash/.bashrc"
+BASHRC_DST="$HOME/.bashrc"
 
-if grep -qF "$MARKER" "$HOME/.bashrc" 2>/dev/null; then
-    log_ok "skip ~/.bashrc (PATH block already present)"
+if [ -L "$BASHRC_DST" ] && [ "$(readlink "$BASHRC_DST")" = "$BASHRC_SRC" ]; then
+    log_ok "skip ~/.bashrc (already linked)"
+elif [ -e "$BASHRC_DST" ]; then
+    log_step "backup ~/.bashrc → ~/.bashrc.bak"
+    mv "$BASHRC_DST" "${BASHRC_DST}.bak"
+    ln -s "$BASHRC_SRC" "$BASHRC_DST"
+    log_ok "linked ~/.bashrc"
 else
-    cat >> "$HOME/.bashrc" << 'BASHRC'
-
-# >>> dotfiles hpc-install >>>
-export PATH="$HOME/.local/bin:$HOME/.pixi/bin:$PATH"
-# <<< dotfiles hpc-install <<<
-BASHRC
-    log_ok "added PATH to ~/.bashrc"
+    ln -s "$BASHRC_SRC" "$BASHRC_DST"
+    log_ok "linked ~/.bashrc"
 fi
 
 echo
