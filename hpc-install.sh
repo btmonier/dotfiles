@@ -202,7 +202,7 @@ install_tree_sitter() {
         # shellcheck source=/dev/null
         source "$HOME/.cargo/env"
     fi
-    cargo install --root "$LOCAL" tree-sitter-cli
+    cargo install --root "$LOCAL" tree-sitter-cli --no-default-features
     log_ok "tree-sitter installed"
 }
 
