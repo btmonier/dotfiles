@@ -43,20 +43,6 @@ need_cmd() {
 
 installed() { [[ "$FORCE" -eq 0 && -x "$1" ]]; }
 
-# GitHub's prebuilt tree-sitter CLI is dynamically linked; newest builds often need glibc 2.35+.
-# Older releases were built on older distros and typically run on HPC login nodes. We try
-# recent tags from newest downward, then fall back to cargo (links against host libc).
-tree_sitter_cli_runs() {
-    [[ -n "${1:-}" && -x "$1" ]] && "$1" --version &>/dev/null
-}
-
-# Prints release version numbers (no leading v), newest first, one per line.
-tree_sitter_github_release_versions() {
-    curl -fsSL "https://api.github.com/repos/tree-sitter/tree-sitter/releases?per_page=100" \
-        | grep -oE '"tag_name"[[:space:]]*:[[:space:]]*"v[^"]+"' \
-        | sed 's/.*"v\([^"]*\)"/\1/'
-}
-
 # Returns the release tag without a leading "v" (install URLs use "v${version}" elsewhere).
 gh_latest_version() {
     local ver
@@ -72,8 +58,7 @@ log_section "Checking prerequisites"
 need_cmd curl
 need_cmd tar
 need_cmd unzip
-need_cmd grep
-log_ok "curl, tar, unzip, grep available"
+log_ok "curl, tar, unzip available"
 
 mkdir -p "$BIN" "$LIB"
 TMPDIR="$(mktemp -d)"
@@ -93,50 +78,6 @@ install_neovim() {
     mv "$TMPDIR/nvim-linux-x86_64" "$LIB/nvim"
     ln -sf "$LIB/nvim/bin/nvim" "$BIN/nvim"
     log_ok "nvim installed"
-}
-
-# nvim-treesitter (main branch) compiles parsers locally; needs the tree-sitter CLI in PATH.
-install_tree_sitter_cli() {
-    if [[ "$FORCE" -eq 0 ]] && tree_sitter_cli_runs "$BIN/tree-sitter"; then
-        log_ok "skip tree-sitter (already installed)"
-        return
-    fi
-    log_step "tree-sitter CLI"
-    local version url warned_compat
-    warned_compat=0
-    while IFS= read -r version; do
-        [[ -z "$version" ]] && continue
-        url="https://github.com/tree-sitter/tree-sitter/releases/download/v${version}/tree-sitter-cli-linux-x64.zip"
-        if ! curl -fsSL -f "$url" -o "$TMPDIR/tree-sitter-cli.zip" 2>/dev/null; then
-            continue
-        fi
-        rm -f "$TMPDIR/tree-sitter"
-        if ! unzip -qo "$TMPDIR/tree-sitter-cli.zip" -d "$TMPDIR" 2>/dev/null; then
-            continue
-        fi
-        if tree_sitter_cli_runs "$TMPDIR/tree-sitter"; then
-            install -m 755 "$TMPDIR/tree-sitter" "$BIN/tree-sitter"
-            log_ok "tree-sitter installed (prebuilt v${version})"
-            return
-        fi
-        if [[ "$warned_compat" -eq 0 ]]; then
-            log_warn "Prebuilt tree-sitter needs a newer glibc than this host; trying older releases (common on HPC)…"
-            warned_compat=1
-        fi
-    done < <(tree_sitter_github_release_versions)
-
-    if command -v cargo &>/dev/null; then
-        log_warn "No compatible prebuild in the last ~100 releases; building from source with cargo."
-        need_cmd rustc
-        cargo install tree-sitter-cli --locked --root "$LOCAL"
-        if tree_sitter_cli_runs "$BIN/tree-sitter"; then
-            log_ok "tree-sitter installed (cargo, linked against this host libc)"
-            return
-        fi
-    fi
-    log_err "Could not install a usable tree-sitter CLI: no prebuilt matched this glibc, and cargo is missing or the build failed."
-    log_err "Install Rust (e.g. https://rustup.rs or \`module load rust\` on your cluster), ensure cargo is in PATH, then re-run this script."
-    exit 1
 }
 
 install_fzf() {
@@ -259,7 +200,6 @@ install_sdkman() {
 }
 
 install_neovim
-install_tree_sitter_cli
 install_fzf
 install_ripgrep
 install_btop
