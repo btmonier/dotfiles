@@ -43,6 +43,13 @@ need_cmd() {
 
 installed() { [[ "$FORCE" -eq 0 && -x "$1" ]]; }
 
+# GitHub's prebuilt tree-sitter CLI is dynamically linked to a recent glibc (often 2.35+).
+# Many HPC login nodes use older glibc; the binary then fails at runtime. Prefer a local
+# cargo install which links against the host libc when the prebuild is unusable.
+tree_sitter_cli_runs() {
+    [[ -n "${1:-}" && -x "$1" ]] && "$1" --version &>/dev/null
+}
+
 # Returns the release tag without a leading "v" (install URLs use "v${version}" elsewhere).
 gh_latest_version() {
     local ver
@@ -82,15 +89,34 @@ install_neovim() {
 
 # nvim-treesitter (main branch) compiles parsers locally; needs the tree-sitter CLI in PATH.
 install_tree_sitter_cli() {
-    if installed "$BIN/tree-sitter"; then log_ok "skip tree-sitter (already installed)"; return; fi
+    if [[ "$FORCE" -eq 0 ]] && tree_sitter_cli_runs "$BIN/tree-sitter"; then
+        log_ok "skip tree-sitter (already installed)"
+        return
+    fi
     log_step "tree-sitter CLI"
     local version
     version="$(gh_latest_version tree-sitter/tree-sitter)"
     local url="https://github.com/tree-sitter/tree-sitter/releases/download/v${version}/tree-sitter-cli-linux-x64.zip"
     curl -fsSL "$url" -o "$TMPDIR/tree-sitter-cli.zip"
     unzip -qo "$TMPDIR/tree-sitter-cli.zip" -d "$TMPDIR"
-    install -m 755 "$TMPDIR/tree-sitter" "$BIN/tree-sitter"
-    log_ok "tree-sitter installed"
+    if tree_sitter_cli_runs "$TMPDIR/tree-sitter"; then
+        install -m 755 "$TMPDIR/tree-sitter" "$BIN/tree-sitter"
+        log_ok "tree-sitter installed (prebuilt release v${version})"
+        return
+    fi
+    log_warn "Prebuilt tree-sitter v${version} does not run on this glibc (common on HPC). Building from source with cargo."
+    rm -f "$TMPDIR/tree-sitter"
+    if command -v cargo &>/dev/null; then
+        need_cmd rustc
+        cargo install tree-sitter-cli --locked --root "$LOCAL"
+        if tree_sitter_cli_runs "$BIN/tree-sitter"; then
+            log_ok "tree-sitter installed (cargo, linked against this host libc)"
+            return
+        fi
+    fi
+    log_err "Could not install a usable tree-sitter CLI: prebuilt binary needs a newer glibc than this host."
+    log_err "Install Rust (e.g. https://rustup.rs or \`module load rust\` on your cluster), ensure cargo is in PATH, then re-run this script."
+    exit 1
 }
 
 install_fzf() {
