@@ -188,6 +188,24 @@ install_tmux() {
     log_ok "tmux installed"
 }
 
+install_tree_sitter() {
+    if installed "$BIN/tree-sitter"; then log_ok "skip tree-sitter (already installed)"; return; fi
+    log_step "tree-sitter CLI (building from source for glibc compatibility)"
+    if ! command -v cargo &>/dev/null && [[ -f "$HOME/.cargo/env" ]]; then
+        # shellcheck source=/dev/null
+        source "$HOME/.cargo/env"
+    fi
+    if ! command -v cargo &>/dev/null; then
+        log_step "Rust toolchain not found – installing via rustup"
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \
+            | sh -s -- -y --no-modify-path --default-toolchain stable
+        # shellcheck source=/dev/null
+        source "$HOME/.cargo/env"
+    fi
+    cargo install --root "$LOCAL" tree-sitter-cli
+    log_ok "tree-sitter installed"
+}
+
 install_sdkman() {
     local sdkman_dir="$HOME/.sdkman"
     if [[ "$FORCE" -eq 0 && -s "$sdkman_dir/bin/sdkman-init.sh" ]]; then
@@ -208,6 +226,7 @@ install_fastfetch
 install_lazygit
 install_dua
 install_tmux
+install_tree_sitter
 
 echo
 log_section "Installing pixi"
