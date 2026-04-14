@@ -15,7 +15,7 @@
 | `btop/`     | [btop](https://github.com/aristocratos/btop) system monitor         |
 | `fastfetch/`| [Fastfetch](https://github.com/fastfetch-cli/fastfetch) system info |
 | `ghostty/`  | [Ghostty](https://ghostty.org) terminal (+ Catppuccin themes)       |
-| `nvim/`     | [Neovim](https://neovim.io) (Kickstart-based)                       |
+| `nvim/`     | [Neovim](https://neovim.io) (modular, Catppuccin Mocha)             |
 | `tmux/`     | [tmux](https://github.com/tmux/tmux) multiplexer                    |
 | `yazi/`     | [Yazi](https://yazi-rs.github.io) file manager                      |
 | `zsh/`      | Zsh shell config + aliases                                          |
