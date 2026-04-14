@@ -10,15 +10,16 @@
 
 ## Contents
 
-| Directory   | Config                                                              |
-|-------------|---------------------------------------------------------------------|
-| `btop/`     | [btop](https://github.com/aristocratos/btop) system monitor         |
-| `fastfetch/`| [Fastfetch](https://github.com/fastfetch-cli/fastfetch) system info |
-| `ghostty/`  | [Ghostty](https://ghostty.org) terminal (+ Catppuccin themes)       |
-| `nvim/`     | [Neovim](https://neovim.io) (modular, Catppuccin Mocha)             |
-| `tmux/`     | [tmux](https://github.com/tmux/tmux) multiplexer                    |
-| `yazi/`     | [Yazi](https://yazi-rs.github.io) file manager                      |
-| `zsh/`      | Zsh shell config + aliases                                          |
+
+| Directory    | Config                                                              |
+| ------------ | ------------------------------------------------------------------- |
+| `btop/`      | [btop](https://github.com/aristocratos/btop) system monitor         |
+| `fastfetch/` | [Fastfetch](https://github.com/fastfetch-cli/fastfetch) system info |
+| `ghostty/`   | [Ghostty](https://ghostty.org) terminal (+ Catppuccin themes)       |
+| `nvim/`      | [Neovim](https://neovim.io) (modular, Catppuccin Mocha)             |
+| `tmux/`      | [tmux](https://github.com/tmux/tmux) multiplexer                    |
+| `yazi/`      | [Yazi](https://yazi-rs.github.io) file manager                      |
+| `zsh/`       | Zsh shell config + aliases                                          |
 
 
 ## Setup
@@ -37,27 +38,33 @@ Existing files are backed up to `*.bak` before being replaced.
 ```
 
 For remote HPC environments where you don't have root access. Downloads
-prebuilt x86\_64 Linux binaries to `~/.local/`, installs
+prebuilt x8664 Linux binaries to `~/.local/`, installs
 [pixi](https://pixi.prefix.dev/latest/) + tmux via conda-forge, runs
 `setup.sh` to link configs, and adds `~/.local/bin` / `~/.pixi/bin` to
 `PATH` in `~/.bashrc`.
 
-| Tool | Install method |
-|-----------|--------------------------------------|
-| Neovim | GitHub release → `~/.local/lib/nvim` |
-| btop | GitHub release → `~/.local/bin` |
-| Yazi | GitHub release → `~/.local/bin` |
-| Fastfetch | GitHub release → `~/.local/bin` |
-| lazygit | GitHub release → `~/.local/bin` |
-| pixi | Official installer → `~/.pixi/bin` |
-| tmux | `pixi global install` → `~/.pixi/bin`|
+
+| Tool            | Install method                                                  |
+| --------------- | --------------------------------------------------------------- |
+| Neovim          | GitHub release → `~/.local/lib/nvim`                            |
+| tree-sitter CLI | GitHub release → `~/.local/bin` (nvim-treesitter parser builds) |
+| fzf             | GitHub release → `~/.local/bin` (fzf-lua fuzzy finder)          |
+| ripgrep (`rg`)  | GitHub release → `~/.local/bin` (fzf live grep)                 |
+| btop            | GitHub release → `~/.local/bin`                                 |
+| Yazi            | GitHub release → `~/.local/bin`                                 |
+| Fastfetch       | GitHub release → `~/.local/bin`                                 |
+| lazygit         | GitHub release → `~/.local/bin`                                 |
+| pixi            | Official installer → `~/.pixi/bin`                              |
+| tmux            | `pixi global install` → `~/.pixi/bin`                           |
+
 
 Re-run with `--force` to re-download everything.
 
 ## Other CLI tools/fonts
 
+
 | Tool                                                                      | Description                              |
-|---------------------------------------------------------------------------|------------------------------------------|
+| ------------------------------------------------------------------------- | ---------------------------------------- |
 | [dua](https://github.com/Byron/dua-cli)                                   | Disk usage analyzer                      |
 | [fzf](https://github.com/junegunn/fzf)                                    | Command-line fuzzy finder                |
 | [gh](https://cli.github.com/)                                             | GitHub CLI                               |
@@ -70,6 +77,6 @@ Re-run with `--force` to re-download everything.
 | [pixi](https://pixi.prefix.dev/latest/)                                   | Environment manager (current)            |
 | [Powerlevel10k](https://github.com/romkatv/powerlevel10k)                 | Zsh theme                                |
 
-See [`docs/command_overview.md`](docs/command_overview.md) for info detailing alias
-and function calls.
 
+See `[docs/command_overview.md](docs/command_overview.md)` for info detailing alias
+and function calls.

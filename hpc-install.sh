@@ -76,6 +76,44 @@ install_neovim() {
     log_ok "nvim installed"
 }
 
+# nvim-treesitter (main branch) compiles parsers locally; needs the tree-sitter CLI in PATH.
+install_tree_sitter_cli() {
+    if installed "$BIN/tree-sitter"; then log_ok "skip tree-sitter (already installed)"; return; fi
+    log_step "tree-sitter CLI"
+    local version
+    version="$(gh_latest_version tree-sitter/tree-sitter)"
+    local url="https://github.com/tree-sitter/tree-sitter/releases/download/v${version}/tree-sitter-cli-linux-x64.zip"
+    curl -fsSL "$url" -o "$TMPDIR/tree-sitter-cli.zip"
+    unzip -qo "$TMPDIR/tree-sitter-cli.zip" -d "$TMPDIR"
+    install -m 755 "$TMPDIR/tree-sitter" "$BIN/tree-sitter"
+    log_ok "tree-sitter installed"
+}
+
+install_fzf() {
+    if installed "$BIN/fzf"; then log_ok "skip fzf (already installed)"; return; fi
+    log_step "fzf"
+    local version
+    version="$(gh_latest_version junegunn/fzf)"
+    local url="https://github.com/junegunn/fzf/releases/download/v${version}/fzf-${version}-linux_amd64.tar.gz"
+    curl -fsSL "$url" -o "$TMPDIR/fzf.tar.gz"
+    tar -xzf "$TMPDIR/fzf.tar.gz" -C "$TMPDIR"
+    install -m 755 "$TMPDIR/fzf" "$BIN/fzf"
+    log_ok "fzf installed"
+}
+
+install_ripgrep() {
+    if installed "$BIN/rg"; then log_ok "skip ripgrep (already installed)"; return; fi
+    log_step "ripgrep"
+    local version
+    version="$(gh_latest_version BurntSushi/ripgrep)"
+    version="${version#v}"
+    local url="https://github.com/BurntSushi/ripgrep/releases/download/${version}/ripgrep-${version}-x86_64-unknown-linux-musl.tar.gz"
+    curl -fsSL "$url" -o "$TMPDIR/ripgrep.tar.gz"
+    tar -xzf "$TMPDIR/ripgrep.tar.gz" -C "$TMPDIR"
+    install -m 755 "$TMPDIR/ripgrep-${version}-x86_64-unknown-linux-musl/rg" "$BIN/rg"
+    log_ok "ripgrep installed"
+}
+
 install_btop() {
     if installed "$BIN/btop"; then log_ok "skip btop (already installed)"; return; fi
     log_step "btop"
@@ -163,6 +201,9 @@ install_sdkman() {
 }
 
 install_neovim
+install_tree_sitter_cli
+install_fzf
+install_ripgrep
 install_btop
 install_yazi
 install_fastfetch
