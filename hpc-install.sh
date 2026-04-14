@@ -43,9 +43,13 @@ need_cmd() {
 
 installed() { [[ "$FORCE" -eq 0 && -x "$1" ]]; }
 
+# Returns the release tag without a leading "v" (install URLs use "v${version}" elsewhere).
 gh_latest_version() {
-    curl -fsSL "https://api.github.com/repos/$1/releases/latest" \
-        | grep '"tag_name"' | head -1 | sed -E 's/.*"v?([^"]+)".*/\1/'
+    local ver
+    ver="$(curl -fsSL "https://api.github.com/repos/$1/releases/latest" \
+        | sed -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"\([^"]*\)".*/\1/p' | head -1 \
+        | tr -d '\r')"
+    printf '%s\n' "${ver#v}"
 }
 
 # ── Prerequisites ─────────────────────────────────────────────────────────────
@@ -104,13 +108,21 @@ install_fzf() {
 install_ripgrep() {
     if installed "$BIN/rg"; then log_ok "skip ripgrep (already installed)"; return; fi
     log_step "ripgrep"
-    local version
-    version="$(gh_latest_version BurntSushi/ripgrep)"
-    version="${version#v}"
-    local url="https://github.com/BurntSushi/ripgrep/releases/download/${version}/ripgrep-${version}-x86_64-unknown-linux-musl.tar.gz"
+    # Resolve the exact asset URL from the API so we never guess tag vs. tarball filename (avoids 404).
+    local url
+    url="$(curl -fsSL "https://api.github.com/repos/BurntSushi/ripgrep/releases/latest" \
+        | sed -n 's/.*"browser_download_url"[[:space:]]*:[[:space:]]*"\([^"]*x86_64-unknown-linux-musl\.tar\.gz\)".*/\1/p' | head -1 \
+        | tr -d '\r')"
+    if [[ -z "$url" ]]; then
+        log_err "Could not find ripgrep musl tarball URL (GitHub API error, rate limit, or asset rename)."
+        exit 1
+    fi
     curl -fsSL "$url" -o "$TMPDIR/ripgrep.tar.gz"
     tar -xzf "$TMPDIR/ripgrep.tar.gz" -C "$TMPDIR"
-    install -m 755 "$TMPDIR/ripgrep-${version}-x86_64-unknown-linux-musl/rg" "$BIN/rg"
+    local rgpath
+    rgpath="$(find "$TMPDIR" -type f -name rg 2>/dev/null | head -1)"
+    [[ -n "$rgpath" ]] || { log_err "rg binary not found inside ripgrep archive"; exit 1; }
+    install -m 755 "$rgpath" "$BIN/rg"
     log_ok "ripgrep installed"
 }
 
