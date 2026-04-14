@@ -1,5 +1,25 @@
 # Functions & scripts
 
+## Contents
+
+- [Zsh functions](#zsh-functions-zshfunctionszsh)
+- [Scripts](#scripts-scripts)
+- [Aliases](#aliases-zshaliaseszsh)
+  - [Navigation](#navigation)
+  - [tmux](#tmux)
+  - [Jupyter / Python / R scratch](#jupyter--python--r-scratch)
+  - [zsh](#zsh)
+- [Neovim keybindings](#neovim-keybindings)
+  - [General](#general-nvimluaconfigkeymapslua)
+  - [File explorer](#file-explorer-yazinvim)
+  - [Fuzzy finder](#fuzzy-finder-nvimluapluginsfzf-lualua)
+- [tmux keybindings](#tmux-keybindings-tmuxkeybindingsconf)
+  - [General](#general)
+  - [Pane navigation](#pane-navigation-alt--vim-keys)
+  - [Pane resizing](#pane-resizing-alt--shift--vim-keys)
+  - [Pane splitting](#pane-splitting)
+  - [Prefix bindings](#prefix-bindings-ctrl-b-first)
+
 ## Zsh functions (`zsh/functions.zsh`)
 
 | Function   | Description                                                                 |
@@ -44,6 +64,39 @@
 | Alias | Expansion              | Description              |
 |-------|------------------------|--------------------------|
 | `zrl` | `source $HOME/.zshrc`  | Reload zsh config        |
+
+## Neovim keybindings
+
+Leader is **Space**. Built-in nvim 0.12 mappings (`gc`/`gcc` commenting, `grn`/`grr`/`gra` LSP) are not listed here.
+
+### General (`nvim/lua/config/keymaps.lua`)
+
+| Key | Action |
+|-----|--------|
+| `Esc` | Clear search highlight |
+| `Esc Esc` | Exit terminal mode (in `:terminal`) |
+| `Ctrl-h/j/k/l` | Move focus between splits |
+| `Shift-h` | Previous buffer tab |
+| `Shift-l` | Next buffer tab |
+| `Space x` | Close current buffer |
+
+### File explorer (yazi.nvim)
+
+| Key | Action |
+|-----|--------|
+| `Space e` | Open Yazi at current file |
+| `Space E` | Open Yazi at working directory |
+
+### Fuzzy finder (`nvim/lua/plugins/fzf-lua.lua`)
+
+| Key | Action |
+|-----|--------|
+| `Space ff` | Find files |
+| `Space fg` | Live grep (ripgrep) |
+| `Space fb` | Switch buffers |
+| `Space fh` | Search help tags |
+| `Space fr` | Recent files |
+| `Space f/` | Grep current buffer |
 
 ## tmux keybindings (`tmux/keybindings.conf`)
 
