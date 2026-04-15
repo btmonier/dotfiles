@@ -41,6 +41,14 @@ alias lf='yazi 2>/dev/null'
 alias tn='tmux new-session -s'
 alias ta='tmux a'
 
+alias ct="cd $HOME/Temporary/"
+alias cdl="cd $HOME/Downloads/"
+alias cdproj="cd $HOME/Projects/"
+alias cdoc="cd $HOME/Documents/"
+alias cdot="cd $HOME/Projects/dotfiles/"
+
+alias zrl="source $HOME/.bashrc"
+
 export WORKDIR="/workdir/$USER"
 
 wrk() {
