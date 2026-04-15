@@ -23,3 +23,8 @@ on   = [ "g", "v" ]
 run  = "cd ~/Development"
 desc = "Go ~/Development"
 
+[[mgr.prepend_keymap]]
+on   = "e"
+run  = "shell --block -- extract %s"
+desc = "Extract archive(s)"
+
