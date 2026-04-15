@@ -238,9 +238,43 @@ install_sdkman
 
 # ── Dotfiles ──────────────────────────────────────────────────────────────────
 
+CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
+mkdir -p "$CONFIG_DIR"
+
+link() {
+    local src="$1" dst="$2"
+    if [ -L "$dst" ]; then
+        local current
+        current="$(readlink "$dst")"
+        if [ "$current" = "$src" ]; then
+            log_ok "skip $dst (already linked)"
+            return
+        fi
+        log_warn "relink $dst → $src (was $current)"
+        rm "$dst"
+    elif [ -e "$dst" ]; then
+        log_step "backup $dst → ${dst}.bak"
+        mv "$dst" "${dst}.bak"
+    else
+        log_info "link $dst → $src"
+    fi
+    ln -s "$src" "$dst"
+}
+
 echo
-log_section "Linking dotfiles"
-"$SCRIPT_DIR/setup.sh"
+log_section "Linking ~/.config entries"
+for name in btop fastfetch nvim tmux yazi; do
+    link "$SCRIPT_DIR/$name" "$CONFIG_DIR/$name"
+done
+
+echo
+log_section "Linking scripts to $BIN"
+for script in "$SCRIPT_DIR/scripts"/*; do
+    [ -f "$script" ] || continue
+    name="$(basename "$script")"
+    bin_name="${name%.sh}"
+    link "$script" "$BIN/$bin_name"
+done
 
 # ── BioHPC fastfetch logo ─────────────────────────────────────────────────────
 
@@ -249,8 +283,8 @@ log_section "Setting up BioHPC fastfetch logo"
 
 FF_CONFIG="$HOME/.config/fastfetch"
 
-# setup.sh symlinks the whole fastfetch directory; replace with individual
-# links so we can swap the logo without touching the shared config.
+# The config dir loop above symlinks the whole fastfetch directory; replace
+# with individual links so we can swap the logo for BioHPC.
 [ -L "$FF_CONFIG" ] && rm "$FF_CONFIG"
 mkdir -p "$FF_CONFIG"
 ln -sf "$SCRIPT_DIR/fastfetch/config.jsonc"     "$FF_CONFIG/config.jsonc"
