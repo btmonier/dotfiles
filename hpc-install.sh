@@ -265,5 +265,17 @@ link_file() {
 link_file "$SCRIPT_DIR/bash/.bash_profile" "$HOME/.bash_profile" ".bash_profile"
 link_file "$SCRIPT_DIR/bash/.bashrc"       "$HOME/.bashrc"       ".bashrc"
 
+# ── Suppress system MOTD ──────────────────────────────────────────────────────
+
+echo
+log_section "Suppressing system MOTD"
+
+if [ -f "$HOME/.hushlogin" ]; then
+    log_ok "skip ~/.hushlogin (already exists)"
+else
+    touch "$HOME/.hushlogin"
+    log_ok "created ~/.hushlogin"
+fi
+
 echo
 log_ok "Done. Restart your shell or run: source ~/.bashrc"

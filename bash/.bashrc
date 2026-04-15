@@ -1,7 +1,7 @@
 # ~/.bashrc — lean config for HPC environments
 
 # Source system defaults (module paths, etc.)
-[ -f /etc/bashrc ] && . /etc/bashrc
+[ -f /etc/bashrc ] && . /etc/bashrc 2>/dev/null
 
 # ── PATH ──────────────────────────────────────────────────────────────────────
 
@@ -52,4 +52,11 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion 2>/dev/null
 elif [ -f /usr/share/bash-completion/bash_completion ]; then
     . /usr/share/bash-completion/bash_completion 2>/dev/null
+fi
+
+# ── Startup banner ────────────────────────────────────────────────────────────
+
+if [[ $- == *i* ]] && [[ -z "${TMUX-}" || "$(tmux list-panes 2>/dev/null | wc -l)" -le 1 ]]; then
+    clear
+    command -v fastfetch &>/dev/null && fastfetch
 fi
