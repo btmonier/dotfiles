@@ -703,6 +703,7 @@ exts = [
   { name = "lua", text = "", fg = "#74c7ec" },
   { name = "lhs", text = "", fg = "#7f849c" },
   { name = "md", text = "", fg = "#cdd6f4" },
+  { name = "qmd", text = "", fg = "#fab387" },
   { name = "leex", text = "", fg = "#7f849c" },
   { name = "ai", text = "", fg = "#f9e2af" },
   { name = "lck", text = "", fg = "#bac2de" },
