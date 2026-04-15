@@ -78,7 +78,7 @@ Re-run with `--force` to re-download everything.
 | [Powerlevel10k](https://github.com/romkatv/powerlevel10k)                 | Zsh theme                                |
 
 
-See `[docs/command_overview.md](docs/command_overview.md)` for info detailing:
+See [`docs/command_overview.md`](docs/command_overview.md) for info detailing:
   * Aliases
   * Function calls
   * nvim commands
