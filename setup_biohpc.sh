@@ -242,6 +242,21 @@ echo
 log_section "Linking dotfiles"
 "$SCRIPT_DIR/setup.sh"
 
+# ── BioHPC fastfetch logo ─────────────────────────────────────────────────────
+
+echo
+log_section "Setting up BioHPC fastfetch logo"
+
+FF_CONFIG="$HOME/.config/fastfetch"
+
+# setup.sh symlinks the whole fastfetch directory; replace with individual
+# links so we can swap the logo without touching the shared config.
+[ -L "$FF_CONFIG" ] && rm "$FF_CONFIG"
+mkdir -p "$FF_CONFIG"
+ln -sf "$SCRIPT_DIR/fastfetch/config.jsonc"     "$FF_CONFIG/config.jsonc"
+ln -sf "$SCRIPT_DIR/fastfetch/logo_biohpc.txt"  "$FF_CONFIG/logo.txt"
+log_ok "fastfetch configured with BioHPC logo"
+
 # ── Bash config ───────────────────────────────────────────────────────────────
 
 echo
