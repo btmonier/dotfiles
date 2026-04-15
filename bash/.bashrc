@@ -41,6 +41,13 @@ alias lf='yazi 2>/dev/null'
 alias tn='tmux new-session -s'
 alias ta='tmux a'
 
+export WORKDIR="/workdir/$USER"
+
+w() {
+    mkdir -p "$WORKDIR" 2>/dev/null
+    cd "$WORKDIR" || return
+}
+
 # ── SDKMAN ────────────────────────────────────────────────────────────────────
 
 export SDKMAN_DIR="$HOME/.sdkman"
