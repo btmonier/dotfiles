@@ -43,7 +43,7 @@ alias ta='tmux a'
 
 export WORKDIR="/workdir/$USER"
 
-w() {
+wrk() {
     mkdir -p "$WORKDIR" 2>/dev/null
     cd "$WORKDIR" || return
 }
