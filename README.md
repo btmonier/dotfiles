@@ -22,7 +22,7 @@
 | `zsh/`       | Zsh shell config + aliases                                          |
 
 
-## Setup
+## Setup (macOS)
 
 ```sh
 ./setup.sh
@@ -31,13 +31,13 @@
 This symlinks each config directory into `~/.config/` and links `~/.zshrc`.
 Existing files are backed up to `*.bak` before being replaced.
 
-## HPC Setup
+## Setup (BioHPC)
 
 ```sh
-./hpc-install.sh
+./setup_biohpc.sh
 ```
 
-For remote HPC environments where you don't have root access. Downloads
+For remote BioHPC environments where I don't have root access. Downloads
 prebuilt x8664 Linux binaries to `~/.local/`, installs
 [pixi](https://pixi.prefix.dev/latest/) + tmux via conda-forge, runs
 `setup.sh` to link configs, and adds `~/.local/bin` / `~/.pixi/bin` to
@@ -60,8 +60,8 @@ prebuilt x8664 Linux binaries to `~/.local/`, installs
 
 Re-run with `--force` to re-download everything.
 
-## Other CLI tools/fonts
 
+## Other CLI tools/fonts
 
 | Tool                                                                      | Description                              |
 | ------------------------------------------------------------------------- | ---------------------------------------- |
@@ -78,5 +78,10 @@ Re-run with `--force` to re-download everything.
 | [Powerlevel10k](https://github.com/romkatv/powerlevel10k)                 | Zsh theme                                |
 
 
-See `[docs/command_overview.md](docs/command_overview.md)` for info detailing alias
-and function calls.
+See `[docs/command_overview.md](docs/command_overview.md)` for info detailing:
+  * Aliases
+  * Function calls
+  * nvim commands
+
+
+
