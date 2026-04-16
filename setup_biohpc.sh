@@ -283,6 +283,52 @@ for name in btop fastfetch nvim tmux yazi; do
     link "$SCRIPT_DIR/$name" "$CONFIG_DIR/$name"
 done
 
+# Regenerate the macchiato yazi theme from the current mocha source so the
+# remote variant always reflects upstream edits to theme.toml.
+echo
+log_section "Generating yazi macchiato theme"
+if bash "$SCRIPT_DIR/scripts/gen-yazi-macchiato-theme.sh"; then
+    log_ok "yazi/theme.macchiato.toml regenerated"
+else
+    log_warn "failed to regenerate yazi/theme.macchiato.toml"
+fi
+
+# ── Yazi remote variant ───────────────────────────────────────────────────────
+# Build a parallel ~/.config/yazi-remote/ that reuses every yazi config file
+# except theme.toml, which is swapped to the catppuccin-macchiato variant.
+# The bash gssh hook (LC_GSSH_BG) flips YAZI_CONFIG_HOME to this dir so yazi
+# uses the alternate palette only inside SSH sessions opened via `gssh`.
+log_section "Linking yazi-remote variant"
+YAZI_REMOTE_DIR="$CONFIG_DIR/yazi-remote"
+mkdir -p "$YAZI_REMOTE_DIR"
+
+# Symlink everything from the live yazi dir except theme.toml.
+for entry in "$CONFIG_DIR/yazi"/*; do
+    name="$(basename "$entry")"
+    [ "$name" = "theme.toml" ] && continue
+    target="$YAZI_REMOTE_DIR/$name"
+    if [ -L "$target" ] && [ "$(readlink "$target")" = "$entry" ]; then
+        log_ok "skip yazi-remote/$name (already linked)"
+    else
+        rm -rf "$target"
+        ln -s "$entry" "$target"
+        log_ok "linked yazi-remote/$name → $entry"
+    fi
+done
+
+# Point yazi-remote/theme.toml at the generated macchiato variant.
+remote_theme_target="$YAZI_REMOTE_DIR/theme.toml"
+remote_theme_src="$SCRIPT_DIR/yazi/theme.macchiato.toml"
+if [ ! -f "$remote_theme_src" ]; then
+    log_warn "missing $remote_theme_src — run scripts/gen-yazi-macchiato-theme.sh"
+elif [ -L "$remote_theme_target" ] && [ "$(readlink "$remote_theme_target")" = "$remote_theme_src" ]; then
+    log_ok "skip yazi-remote/theme.toml (already linked)"
+else
+    rm -rf "$remote_theme_target"
+    ln -s "$remote_theme_src" "$remote_theme_target"
+    log_ok "linked yazi-remote/theme.toml → $remote_theme_src"
+fi
+
 echo
 log_section "Linking scripts to $BIN"
 for script in "$SCRIPT_DIR/scripts"/*; do

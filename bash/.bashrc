@@ -46,6 +46,17 @@ if [[ -n "${LC_GSSH_BG:-}" ]]; then
             *) PROMPT_COMMAND="_gssh_paint_bg${PROMPT_COMMAND:+; $PROMPT_COMMAND}" ;;
         esac
     fi
+
+    # Swap yazi to its catppuccin-macchiato variant by pointing
+    # YAZI_CONFIG_HOME at the parallel config dir built in setup_biohpc.sh.
+    # `command yazi` avoids recursion; we keep it a function (not an alias)
+    # so the existing `lf='yazi 2>/dev/null'` alias still resolves correctly.
+    if [[ -d "${XDG_CONFIG_HOME:-$HOME/.config}/yazi-remote" ]]; then
+        yazi() {
+            YAZI_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/yazi-remote" \
+                command yazi "$@"
+        }
+    fi
 fi
 
 # ── Aliases ───────────────────────────────────────────────────────────────────
