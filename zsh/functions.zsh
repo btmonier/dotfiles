@@ -55,7 +55,7 @@ function gmdp {
 # We force a login shell with -t + exec so the env var survives even if the
 # server's sshd_config doesn't whitelist LC_* via AcceptEnv.
 function gssh {
-  local remote_bg="${GSSH_BG:-#32302f}"   # gruvbox-material dark (bg0 medium) by default
+  local remote_bg="${GSSH_BG:-#1d2021}"   # gruvbox-material dark (bg0 hard) by default
   remote_bg="${remote_bg#\#}"
 
   printf '\e]11;#%s\a' "$remote_bg"

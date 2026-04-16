@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Generate yazi/theme.gruvbox-material.toml by mapping the catppuccin-mocha
-# palette in yazi/theme.toml to gruvbox-material (dark, medium contrast).
+# palette in yazi/theme.toml to gruvbox-material (dark, hard contrast).
 # Idempotent.
 #
 # Run from anywhere; resolves paths relative to this script's location.
@@ -16,18 +16,18 @@ if [[ ! -r "$SRC" ]]; then
     exit 1
 fi
 
-# Mocha -> Gruvbox Material (dark medium) palette. Hex values lowercase.
+# Mocha -> Gruvbox Material (dark hard) palette. Hex values lowercase.
 # See https://github.com/sainnhe/gruvbox-material
 SUBS="
-1e1e2e|32302f
+1e1e2e|1d2021
 181825|282828
 11111b|1d2021
-313244|3c3836
-45475a|504945
-585b70|665c54
-6c7086|7c6f64
-7f849c|928374
-9399b2|a89984
+313244|282828
+45475a|32302f
+585b70|3c3836
+6c7086|504945
+7f849c|665c54
+9399b2|7c6f64
 74c7ec|7daea3
 89b4fa|7daea3
 b4befe|7daea3
