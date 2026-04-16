@@ -27,14 +27,26 @@ _c_reset="$(_prompt_color '0')"
 PS1="${_c_user}\u${_c_reset}@${_c_host}\h${_c_reset}:${_c_dir}\w${_c_reset}\$ "
 unset -f _prompt_color
 
-# ── gssh background paint ─────────────────────────────────────────────────────
-# When connected via the local `gssh` wrapper, LC_GSSH_BG carries the desired
-# Ghostty window bg color. Re-apply it before every prompt so TUI apps that
-# reset the background on exit (yazi, btop, nvim, …) don't strip the visual
-# cue that this shell is remote.
-if [[ -n "${LC_GSSH_BG:-}" ]]; then
-    _gssh_paint_bg() { printf '\e]11;#%s\a' "${LC_GSSH_BG#\#}" >/dev/tty 2>/dev/null; }
+# ── Remote SSH theme (gruvbox-material) ───────────────────────────────────────
+# Every SSH shell gets the gruvbox-material visual cue: Ghostty bg is repainted
+# and yazi swaps to its gruvbox-material variant. Plain `ssh` sets
+# SSH_CONNECTION / SSH_CLIENT; the local `gssh` wrapper additionally exports
+# LC_GSSH_BG to override the bg color per-host. Both paths converge here, so
+# nvim / tmux (which key off SSH_CONNECTION too) stay in sync with the shell.
+if [[ -n "${SSH_CONNECTION:-}" || -n "${SSH_CLIENT:-}" || -n "${LC_GSSH_BG:-}" ]]; then
+    # LC_GSSH_BG wins when set; otherwise fall back to gruvbox-material bg0 hard.
+    _gssh_bg="${LC_GSSH_BG:-#1d2021}"
+    _gssh_bg="${_gssh_bg#\#}"
+
+    # Re-apply the bg before every prompt so TUI apps that reset the background
+    # on exit (yazi, btop, nvim, …) don't strip the visual cue that this shell
+    # is remote.
+    _gssh_paint_bg() { printf '\e]11;#%s\a' "$_gssh_bg" >/dev/tty 2>/dev/null; }
+    # Restore the local terminal's bg on shell exit. gssh emits OSC 111 locally
+    # too, so the double-reset is harmless; this hook is what covers plain ssh.
+    _gssh_reset_bg() { printf '\e]111\a' >/dev/tty 2>/dev/null; }
     _gssh_paint_bg
+    trap _gssh_reset_bg EXIT
 
     # Bash 5+ supports PROMPT_COMMAND as an array; older versions need a
     # string. Append our hook either way without clobbering existing entries.

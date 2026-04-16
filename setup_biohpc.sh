@@ -296,8 +296,9 @@ fi
 # ── Yazi remote variant ───────────────────────────────────────────────────────
 # Build a parallel ~/.config/yazi-remote/ that reuses every yazi config file
 # except theme.toml, which is swapped to the gruvbox-material variant.
-# The bash gssh hook (LC_GSSH_BG) flips YAZI_CONFIG_HOME to this dir so yazi
-# uses the alternate palette only inside SSH sessions opened via `gssh`.
+# bash/.bashrc flips YAZI_CONFIG_HOME to this dir whenever the shell runs in
+# an SSH session (SSH_CONNECTION / SSH_CLIENT / LC_GSSH_BG), so every remote
+# session — not just ones opened via `gssh` — uses the gruvbox palette.
 log_section "Linking yazi-remote variant"
 YAZI_REMOTE_DIR="$CONFIG_DIR/yazi-remote"
 mkdir -p "$YAZI_REMOTE_DIR"
