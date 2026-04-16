@@ -241,6 +241,20 @@ install_sdkman
 CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}"
 mkdir -p "$CONFIG_DIR"
 
+# Timestamp suffix avoids `mv: Directory not empty` when ${dst}.bak already
+# exists from a previous run (mv would otherwise try to nest dst inside it).
+_backup_path() {
+    local dst="$1" ts
+    ts="$(date +%Y%m%d-%H%M%S)"
+    local candidate="${dst}.bak.${ts}"
+    local n=1
+    while [ -e "$candidate" ]; do
+        candidate="${dst}.bak.${ts}-${n}"
+        n=$((n + 1))
+    done
+    printf '%s\n' "$candidate"
+}
+
 link() {
     local src="$1" dst="$2"
     if [ -L "$dst" ]; then
@@ -253,8 +267,10 @@ link() {
         log_warn "relink $dst → $src (was $current)"
         rm "$dst"
     elif [ -e "$dst" ]; then
-        log_step "backup $dst → ${dst}.bak"
-        mv "$dst" "${dst}.bak"
+        local backup
+        backup="$(_backup_path "$dst")"
+        log_step "backup $dst → $backup"
+        mv "$dst" "$backup"
     else
         log_info "link $dst → $src"
     fi
@@ -300,9 +316,11 @@ link_file() {
     local src="$1" dst="$2" name="$3"
     if [ -L "$dst" ] && [ "$(readlink "$dst")" = "$src" ]; then
         log_ok "skip ~/$name (already linked)"
-    elif [ -e "$dst" ]; then
-        log_step "backup ~/$name → ~/${name}.bak"
-        mv "$dst" "${dst}.bak"
+    elif [ -L "$dst" ] || [ -e "$dst" ]; then
+        local backup
+        backup="$(_backup_path "$dst")"
+        log_step "backup ~/$name → $(basename "$backup")"
+        mv "$dst" "$backup"
         ln -s "$src" "$dst"
         log_ok "linked ~/$name"
     else
