@@ -33,9 +33,19 @@ unset -f _prompt_color
 # reset the background on exit (yazi, btop, nvim, …) don't strip the visual
 # cue that this shell is remote.
 if [[ -n "${LC_GSSH_BG:-}" ]]; then
-    _gssh_paint_bg() { printf '\e]11;#%s\a' "${LC_GSSH_BG#\#}"; }
+    _gssh_paint_bg() { printf '\e]11;#%s\a' "${LC_GSSH_BG#\#}" >/dev/tty 2>/dev/null; }
     _gssh_paint_bg
-    PROMPT_COMMAND="_gssh_paint_bg${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+
+    # Bash 5+ supports PROMPT_COMMAND as an array; older versions need a
+    # string. Append our hook either way without clobbering existing entries.
+    if [[ "${BASH_VERSINFO[0]:-0}" -ge 5 ]] && declare -p PROMPT_COMMAND 2>/dev/null | grep -q 'declare \-a'; then
+        PROMPT_COMMAND+=("_gssh_paint_bg")
+    else
+        case ";${PROMPT_COMMAND:-};" in
+            *";_gssh_paint_bg;"*) : ;;
+            *) PROMPT_COMMAND="_gssh_paint_bg${PROMPT_COMMAND:+; $PROMPT_COMMAND}" ;;
+        esac
+    fi
 fi
 
 # ── Aliases ───────────────────────────────────────────────────────────────────

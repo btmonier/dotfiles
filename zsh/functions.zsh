@@ -49,16 +49,26 @@ function gmdp {
 # Ghostty config defines. Provides a visual cue that the shell is remote
 # without mutating the rest of the palette.
 #
-# The bg color is also forwarded to the remote via LC_GSSH_BG so that the
-# remote bash config can re-apply it on every prompt (TUI apps like yazi,
-# btop, nvim emit OSC 111 on exit which would otherwise revert the bg).
+# The bg color is also exported into the remote shell as LC_GSSH_BG so the
+# remote bash config can re-paint it on every prompt (TUI apps like yazi,
+# btop, nvim emit OSC 111 on exit, which would otherwise revert the bg).
+# We force a login shell with -t + exec so the env var survives even if the
+# server's sshd_config doesn't whitelist LC_* via AcceptEnv.
 function gssh {
   local remote_bg="${GSSH_BG:-#24273a}"   # catppuccin macchiato base by default
   remote_bg="${remote_bg#\#}"
 
   printf '\e]11;#%s\a' "$remote_bg"
   {
-    LC_GSSH_BG="$remote_bg" ssh -o SendEnv=LC_GSSH_BG "$@"
+    # If the user passed a remote command (anything after the host), don't
+    # wrap it -- just forward via SendEnv and let normal ssh behaviour run.
+    # Otherwise force an interactive login shell with LC_GSSH_BG inlined.
+    if (( $# > 1 )); then
+      LC_GSSH_BG="$remote_bg" ssh -o SendEnv=LC_GSSH_BG "$@"
+    else
+      ssh -t -o SendEnv=LC_GSSH_BG "$@" \
+        "export LC_GSSH_BG=${remote_bg}; exec \$SHELL -l"
+    fi
   } always {
     printf '\e]111\a'
   }
