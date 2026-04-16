@@ -47,7 +47,7 @@ if [[ -n "${LC_GSSH_BG:-}" ]]; then
         esac
     fi
 
-    # Swap yazi to its catppuccin-macchiato variant by pointing
+    # Swap yazi to its gruvbox-material variant by pointing
     # YAZI_CONFIG_HOME at the parallel config dir built in setup_biohpc.sh.
     # `command yazi` avoids recursion; we keep it a function (not an alias)
     # so the existing `lf='yazi 2>/dev/null'` alias still resolves correctly.

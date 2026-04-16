@@ -283,19 +283,19 @@ for name in btop fastfetch nvim tmux yazi; do
     link "$SCRIPT_DIR/$name" "$CONFIG_DIR/$name"
 done
 
-# Regenerate the macchiato yazi theme from the current mocha source so the
-# remote variant always reflects upstream edits to theme.toml.
+# Regenerate the gruvbox-material yazi theme from the current mocha source so
+# the remote variant always reflects upstream edits to theme.toml.
 echo
-log_section "Generating yazi macchiato theme"
-if bash "$SCRIPT_DIR/scripts/gen-yazi-macchiato-theme.sh"; then
-    log_ok "yazi/theme.macchiato.toml regenerated"
+log_section "Generating yazi gruvbox-material theme"
+if bash "$SCRIPT_DIR/scripts/gen-yazi-gruvbox-material-theme.sh"; then
+    log_ok "yazi/theme.gruvbox-material.toml regenerated"
 else
-    log_warn "failed to regenerate yazi/theme.macchiato.toml"
+    log_warn "failed to regenerate yazi/theme.gruvbox-material.toml"
 fi
 
 # ── Yazi remote variant ───────────────────────────────────────────────────────
 # Build a parallel ~/.config/yazi-remote/ that reuses every yazi config file
-# except theme.toml, which is swapped to the catppuccin-macchiato variant.
+# except theme.toml, which is swapped to the gruvbox-material variant.
 # The bash gssh hook (LC_GSSH_BG) flips YAZI_CONFIG_HOME to this dir so yazi
 # uses the alternate palette only inside SSH sessions opened via `gssh`.
 log_section "Linking yazi-remote variant"
@@ -316,11 +316,11 @@ for entry in "$CONFIG_DIR/yazi"/*; do
     fi
 done
 
-# Point yazi-remote/theme.toml at the generated macchiato variant.
+# Point yazi-remote/theme.toml at the generated gruvbox-material variant.
 remote_theme_target="$YAZI_REMOTE_DIR/theme.toml"
-remote_theme_src="$SCRIPT_DIR/yazi/theme.macchiato.toml"
+remote_theme_src="$SCRIPT_DIR/yazi/theme.gruvbox-material.toml"
 if [ ! -f "$remote_theme_src" ]; then
-    log_warn "missing $remote_theme_src — run scripts/gen-yazi-macchiato-theme.sh"
+    log_warn "missing $remote_theme_src — run scripts/gen-yazi-gruvbox-material-theme.sh"
 elif [ -L "$remote_theme_target" ] && [ "$(readlink "$remote_theme_target")" = "$remote_theme_src" ]; then
     log_ok "skip yazi-remote/theme.toml (already linked)"
 else
