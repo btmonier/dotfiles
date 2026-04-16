@@ -1,10 +1,13 @@
 return {
   'nvim-lualine/lualine.nvim',
   dependencies = { 'nvim-tree/nvim-web-devicons' },
-  opts = {
-    options = {
-      theme = 'catppuccin-mocha',
-      icons_enabled = true,
-    },
-  },
+  opts = function()
+    local remote = require('config.env').remote_ssh_session()
+    return {
+      options = {
+        theme = remote and 'gruvbox-material' or 'catppuccin-mocha',
+        icons_enabled = true,
+      },
+    }
+  end,
 }
