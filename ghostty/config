@@ -1,7 +1,7 @@
 theme = catppuccin-mocha.conf
 font-family = "JetBrainsMono Nerd Font"
 quit-after-last-window-closed = true
-title = "Inst. of Genomic Diveristy (Cornell)"
+title = "IGD (Cornell)"
 
 # Remote SSH: avoids 'xterm-ghostty': unknown terminal type (clear, tput, etc.) by
 # installing terminfo on first connect, or falling back to xterm-256color.
