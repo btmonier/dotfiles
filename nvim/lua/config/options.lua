@@ -3,6 +3,7 @@ vim.opt.relativenumber = true
 vim.opt.mouse = 'a'
 vim.opt.showmode = false
 vim.opt.clipboard = 'unnamedplus'
+vim.opt.wrap = false
 vim.opt.breakindent = true
 vim.opt.undofile = true
 vim.opt.ignorecase = true
