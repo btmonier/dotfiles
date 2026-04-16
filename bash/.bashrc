@@ -27,6 +27,17 @@ _c_reset="$(_prompt_color '0')"
 PS1="${_c_user}\u${_c_reset}@${_c_host}\h${_c_reset}:${_c_dir}\w${_c_reset}\$ "
 unset -f _prompt_color
 
+# ── gssh background paint ─────────────────────────────────────────────────────
+# When connected via the local `gssh` wrapper, LC_GSSH_BG carries the desired
+# Ghostty window bg color. Re-apply it before every prompt so TUI apps that
+# reset the background on exit (yazi, btop, nvim, …) don't strip the visual
+# cue that this shell is remote.
+if [[ -n "${LC_GSSH_BG:-}" ]]; then
+    _gssh_paint_bg() { printf '\e]11;#%s\a' "${LC_GSSH_BG#\#}"; }
+    _gssh_paint_bg
+    PROMPT_COMMAND="_gssh_paint_bg${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
+fi
+
 # ── Aliases ───────────────────────────────────────────────────────────────────
 
 alias ll='ls -lAh --color=auto'

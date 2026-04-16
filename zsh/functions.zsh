@@ -41,3 +41,25 @@ function copyall {
 function gmdp {
   gh markdown-preview "$@"
 }
+
+
+# --- Remote SSH with background-color switch ----------------------------------
+# Recolors only the Ghostty window background via OSC 11 (set bg) for the
+# duration of an SSH session, then OSC 111 (reset bg) restores whatever the
+# Ghostty config defines. Provides a visual cue that the shell is remote
+# without mutating the rest of the palette.
+#
+# The bg color is also forwarded to the remote via LC_GSSH_BG so that the
+# remote bash config can re-apply it on every prompt (TUI apps like yazi,
+# btop, nvim emit OSC 111 on exit which would otherwise revert the bg).
+function gssh {
+  local remote_bg="${GSSH_BG:-#24273a}"   # catppuccin macchiato base by default
+  remote_bg="${remote_bg#\#}"
+
+  printf '\e]11;#%s\a' "$remote_bg"
+  {
+    LC_GSSH_BG="$remote_bg" ssh -o SendEnv=LC_GSSH_BG "$@"
+  } always {
+    printf '\e]111\a'
+  }
+}
