@@ -28,3 +28,8 @@ on   = "e"
 run  = "shell --block -- extract %s"
 desc = "Extract archive(s)"
 
+[[mgr.prepend_keymap]]
+on   = "<C-t>"
+run  = "shell --block -- tlp -t %s"
+desc = "tlp: push selection to remote"
+
