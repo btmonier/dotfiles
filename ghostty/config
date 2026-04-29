@@ -3,6 +3,9 @@ font-family = "JetBrainsMono Nerd Font"
 quit-after-last-window-closed = true
 title = "IGD (Cornell)"
 
+window-width = 240
+window-height = 75
+
 # Remote SSH: avoids 'xterm-ghostty': unknown terminal type (clear, tput, etc.) by
 # installing terminfo on first connect, or falling back to xterm-256color.
 # Limitation: only wraps `ssh` from an interactive shell; use ~/.ssh/config SetEnv for scp/rsync/tools.
