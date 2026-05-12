@@ -86,6 +86,7 @@ Leader is **Space**. Built-in nvim 0.12 mappings (`gc`/`gcc` commenting, `grn`/`
 |-----|--------|
 | `Space e` | Open Yazi at current file |
 | `Space E` | Open Yazi at working directory |
+| `e` | Dynamically extract archive contents |
 
 ### Fuzzy finder (`nvim/lua/plugins/fzf-lua.lua`)
 
