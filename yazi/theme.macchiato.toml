@@ -778,5 +778,9 @@ exts = [
   { name = "faa",                        text = "", fg = "#f5a97f" },
   { name = "fastq",                      text = "", fg = "#f5a97f" },
   { name = "fq",                         text = "", fg = "#f5a97f" },
-  { name = "vcf",                        text = "", fg = "#f5a97f" },
+  { name = "vcf",                        text = "󰒟", fg = "#f5a97f" },
+  { name = "hvcf",                       text = "󰒟", fg = "#f5a97f" },
+  { name = "gff",                        text = "󰙅", fg = "#f5a97f" },
+  { name = "bed",                        text = "󰓱", fg = "#f5a97f" },
+  { name = "ps4g",                       text = "󰴠", fg = "#f5a97f" },
 ]
