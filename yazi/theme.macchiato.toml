@@ -772,4 +772,11 @@ exts = [
   { name = "kicad_pro",                  text = "", fg = "#f4dbd6" },
   { name = "liquid",                     text = "", fg = "#a6da95" },
   { name = "zip",                        text = "", fg = "#f5a97f" },
+  { name = "fasta",                      text = "", fg = "#f5a97f" },
+  { name = "fa",                         text = "", fg = "#f5a97f" },
+  { name = "fna",                        text = "", fg = "#f5a97f" },
+  { name = "faa",                        text = "", fg = "#f5a97f" },
+  { name = "fastq",                      text = "", fg = "#f5a97f" },
+  { name = "fq",                         text = "", fg = "#f5a97f" },
+  { name = "vcf",                        text = "", fg = "#f5a97f" },
 ]
