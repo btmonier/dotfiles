@@ -1,6 +1,6 @@
 [opener]
 edit = [
-  { run = "$EDITOR %s", block = true, for = "unix" },
+  { run = '${EDITOR:-nvim} %s', block = true, for = "unix" },
 ]
 
 browser = [
@@ -20,6 +20,11 @@ inkscape = [
   { run = 'open -a "inkscape" %s', orphan = true, desc = "Open in Inkscape", for = "macos" }
 ]
 
+vlc = [
+  { run = 'open -a "VLC" %s', orphan = true, desc = "Open in VLC", for = "macos" },
+  { run = "vlc %s",           orphan = true, desc = "Open in VLC", for = "linux" },
+]
+
 extract = [
   { run = "extract %s", block = true, desc = "Extract here" },
 ]
@@ -31,6 +36,20 @@ prepend_rules = [
   { url = "*.htm",  use = [ "browser", "edit"    ] },
   { url = "*.gif",  use = [ "browser", "preview" ] },
   { url = "*.svg",  use = [ "inkscape", "edit", "browser" ] },
+
+  { url = "*.mp4",  use = [ "vlc", "browser" ] },
+  { url = "*.webm", use = [ "vlc", "browser" ] },
+  { url = "*.mkv",  use = "vlc" },
+  { url = "*.mov",  use = [ "vlc", "preview" ] },
+  { url = "*.avi",  use = "vlc" },
+  { url = "*.wmv",  use = "vlc" },
+  { url = "*.flv",  use = "vlc" },
+  { url = "*.m4v",  use = [ "vlc", "preview" ] },
+  { url = "*.mpg",  use = "vlc" },
+  { url = "*.mpeg", use = "vlc" },
+  { url = "*.m2ts", use = "vlc" },
+  { url = "*.ogv",  use = [ "vlc", "browser" ] },
+  { url = "*.3gp",  use = "vlc" },
 
   { url = "*.zip",     use = "extract" },
   { url = "*.tar",     use = "extract" },

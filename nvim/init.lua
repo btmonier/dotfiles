@@ -19,4 +19,5 @@ require('lazy').setup({
   ui = { icons = vim.g.have_nerd_font and {} or { cmd = '>', config = '*', event = '!', ft = '/', init = '?', keys = '#', plugin = '+', runtime = '~', require = '@', source = '<', start = '>', task = 'v', lazy = 'z' } },
   checker = { enabled = false },
   change_detection = { notify = false },
+  rocks = { enabled = false },
 })

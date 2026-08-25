@@ -2,6 +2,9 @@
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/temurin-17.jdk/Contents/Home
 export PATH="$HOME/.local/bin:$PATH"
 
+export EDITOR="nvim"
+export VISUAL="$EDITOR"
+
 # Anthropic
 export ANTHROPIC_BASE_URL=https://api.ai.it.cornell.edu/
 export ANTHROPIC_MODEL=anthropic.claude-4.6-sonnet

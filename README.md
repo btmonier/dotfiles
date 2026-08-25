@@ -31,6 +31,13 @@
 This symlinks each config directory into `~/.config/` and links `~/.zshrc`.
 Existing files are backed up to `*.bak` before being replaced.
 
+nvim-treesitter builds parsers with the tree-sitter CLI, which is a separate
+formula from the `tree-sitter` library that Neovim depends on:
+
+```sh
+brew install tree-sitter-cli
+```
+
 ## Setup (BioHPC)
 
 ```sh
