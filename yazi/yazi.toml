@@ -25,6 +25,10 @@ vlc = [
   { run = "vlc %s",           orphan = true, desc = "Open in VLC", for = "linux" },
 ]
 
+guitarpro = [
+  { run = 'open -a "Guitar Pro 8" %s', orphan = true, desc = "Open in Guitar Pro", for = "macos" },
+]
+
 extract = [
   { run = "extract %s", block = true, desc = "Extract here" },
 ]
@@ -50,6 +54,19 @@ prepend_rules = [
   { url = "*.m2ts", use = "vlc" },
   { url = "*.ogv",  use = [ "vlc", "browser" ] },
   { url = "*.3gp",  use = "vlc" },
+
+  { url = "*.gp",       use = "guitarpro" },
+  { url = "*.gpx",      use = [ "guitarpro", "edit" ] },
+  { url = "*.gp5",      use = "guitarpro" },
+  { url = "*.gp4",      use = "guitarpro" },
+  { url = "*.gp3",      use = "guitarpro" },
+  { url = "*.gtp",      use = "guitarpro" },
+  { url = "*.mxl",      use = "guitarpro" },
+  { url = "*.musicxml", use = [ "guitarpro", "edit" ] },
+  { url = "*.tef",      use = "guitarpro" },
+  { url = "*.ptb",      use = "guitarpro" },
+  { url = "*.tab",      use = [ "guitarpro", "edit" ] },
+  { url = "*.btab",     use = [ "guitarpro", "edit" ] },
 
   { url = "*.zip",     use = "extract" },
   { url = "*.tar",     use = "extract" },
