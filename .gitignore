@@ -1,6 +1,8 @@
 *.swp
 *.swo
 .nvimlog
+nvim.log
+*.log
 
 # Secrets (global)
 *.env
