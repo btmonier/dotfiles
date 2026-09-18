@@ -66,5 +66,3 @@ export SDKMAN_DIR="$HOME/.sdkman"
 fpath=(/Users/bm646-admin/.docker/completions $fpath)
 autoload -Uz compinit
 compinit
-
-source /opt/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
