@@ -13,6 +13,7 @@
   - [General](#general-nvimluaconfigkeymapslua)
   - [File explorer](#file-explorer-yazinvim)
   - [Fuzzy finder](#fuzzy-finder-nvimluapluginsfzf-lualua)
+  - [Markdown preview](#markdown-preview-nvimluapluginsrender-markdownlua)
 - [tmux keybindings](#tmux-keybindings-tmuxkeybindingsconf)
   - [General](#general)
   - [Pane navigation](#pane-navigation-alt--vim-keys)
@@ -98,6 +99,17 @@ Leader is **Space**. Built-in nvim 0.12 mappings (`gc`/`gcc` commenting, `grn`/`
 | `Space fh` | Search help tags |
 | `Space fr` | Recent files |
 | `Space f/` | Grep current buffer |
+
+### Markdown preview (`nvim/lua/plugins/render-markdown.lua`)
+
+[render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) renders Markdown in-buffer when a `.md` file is opened.
+
+| Key | Action |
+|-----|--------|
+| `Space m` | Toggle rendering on/off (all Markdown buffers) |
+
+- Lines stay rendered under the cursor in normal mode; entering insert mode shows the raw text.
+- Long lines soft-wrap to the window width while rendered (`wrap` + `linebreak`); toggling off restores `nowrap`.
 
 ## tmux keybindings (`tmux/keybindings.conf`)
 
