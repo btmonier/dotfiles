@@ -52,6 +52,8 @@ if [[ -r "$_zsh_dir/secrets/anthropic.env" ]]; then
   set -a
   source "$_zsh_dir/secrets/anthropic.env"
   set +a
+  # Same key, separate name: Claude Code will not expand ANTHROPIC_* in MCP headers.
+  [[ -n "${ANTHROPIC_AUTH_TOKEN:-}" ]] && export CORNELL_AI_GATEWAY_KEY="$ANTHROPIC_AUTH_TOKEN"
 fi
 unset _zsh_dir _zsh_src
 

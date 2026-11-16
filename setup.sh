@@ -58,6 +58,10 @@ link "$DOTFILES/zsh/aliases.zsh" "$CONFIG_DIR/zsh/aliases.zsh"
 link "$DOTFILES/zsh/exports.zsh" "$CONFIG_DIR/zsh/exports.zsh"
 link "$DOTFILES/zsh/functions.zsh" "$CONFIG_DIR/zsh/functions.zsh"
 link "$DOTFILES/zsh/log.sh" "$CONFIG_DIR/zsh/log.sh"
+if [ ! -f "$DOTFILES/zsh/secrets/anthropic.env" ]; then
+    log_warn "no gateway key at zsh/secrets/anthropic.env"
+    log_info "copy zsh/secrets/anthropic.env.example and add your Cornell AI Gateway key"
+fi
 
 echo
 BIN_DIR="$HOME/.local/bin"

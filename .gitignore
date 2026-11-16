@@ -11,6 +11,8 @@ nvim.log
 
 # Secrets
 .config/secrets/
+zsh/secrets/*
+!zsh/secrets/*.example
 
 # direnv
 .envrc
