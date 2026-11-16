@@ -9,9 +9,8 @@ export VISUAL="$EDITOR"
 # The API key stays in zsh/secrets/anthropic.env (gitignored). See anthropic.env.example.
 export ANTHROPIC_BASE_URL=https://api.ai.it.cornell.edu/
 export ANTHROPIC_MODEL=claude-opus-5-5
-export ANTHROPIC_SMALL_FAST_MODEL=claude-haiku-4-5
+export ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-5-5
+export ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-5-5
 export ANTHROPIC_DEFAULT_OPUS_MODEL=claude-opus-5-5
-export ANTHROPIC_DEFAULT_HAIKU_MODEL=claude-haiku-4-5
-export ANTHROPIC_DEFAULT_SONNET_MODEL=claude-sonnet-4-6
 export CLAUDE_CODE_DISABLE_EXPERIMENTAL_BETAS=1
 export DISABLE_TELEMETRY=1
